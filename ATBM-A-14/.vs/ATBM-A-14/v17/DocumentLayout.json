@@ -3,64 +3,28 @@
   "WorkspaceRootPath": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\handlecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:handlecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\handlingunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:handlingunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\handlingemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:handlingemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\loginform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:loginform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\handlestudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:handlestudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\handleregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:handleregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\grantprivileges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:grantprivileges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\create_delete_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:create_delete_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\grantprivileges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:grantprivileges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\create_delete_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:create_delete_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\usertab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:usertab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\roletab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:roletab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\roletab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:roletab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\roletab.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:roletab.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\grantprivileges.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:grantprivileges.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\study at university\\schoolyear3\\semeter2\\atbmtt\\project\\atbmdl\\atbm-a-14\\handlecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:handlecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,185 +38,76 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\LoginForm.cs",
-              "RelativeDocumentMoniker": "LoginForm.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\LoginForm.cs",
-              "RelativeToolTip": "LoginForm.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAYwCQAAAAUAAAA",
+              "DocumentIndex": 3,
+              "Title": "HandleStudent.cs [Design]",
+              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandleStudent.cs",
+              "RelativeDocumentMoniker": "HandleStudent.cs",
+              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandleStudent.cs [Design]",
+              "RelativeToolTip": "HandleStudent.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T02:33:52.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T17:10:21.039Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginForm.resx",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\LoginForm.resx",
-              "RelativeDocumentMoniker": "LoginForm.resx",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\LoginForm.resx",
-              "RelativeToolTip": "LoginForm.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-04-02T02:33:41.527Z",
-              "EditorCaption": ""
+              "DocumentIndex": 1,
+              "Title": "HandlingUnit.cs [Design]",
+              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandlingUnit.cs",
+              "RelativeDocumentMoniker": "HandlingUnit.cs",
+              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandlingUnit.cs [Design]",
+              "RelativeToolTip": "HandlingUnit.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T17:09:57.553Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "LoginForm.Designer.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\LoginForm.Designer.cs",
-              "RelativeDocumentMoniker": "LoginForm.Designer.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\LoginForm.Designer.cs",
-              "RelativeToolTip": "LoginForm.Designer.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "HandleRegistration.cs [Design]",
+              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandleRegistration.cs",
+              "RelativeDocumentMoniker": "HandleRegistration.cs",
+              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandleRegistration.cs [Design]",
+              "RelativeToolTip": "HandleRegistration.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T02:33:33.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T17:09:31.173Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\LoginForm.cs",
-              "RelativeDocumentMoniker": "LoginForm.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\LoginForm.cs [Design]",
-              "RelativeToolTip": "LoginForm.cs [Design]",
+              "Title": "HandlingEmployee.cs [Design]",
+              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandlingEmployee.cs",
+              "RelativeDocumentMoniker": "HandlingEmployee.cs",
+              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandlingEmployee.cs [Design]",
+              "RelativeToolTip": "HandlingEmployee.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T18:09:52.862Z",
+              "WhenOpened": "2024-04-10T17:09:25.518Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAA+wBcAAAAJAAAA",
+              "Title": "HandleCourse.cs",
+              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandleCourse.cs",
+              "RelativeDocumentMoniker": "HandleCourse.cs",
+              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandleCourse.cs",
+              "RelativeToolTip": "HandleCourse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAwAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T13:56:37.332Z",
+              "WhenOpened": "2024-04-10T17:05:47.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GrantPrivileges.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\GrantPrivileges.cs",
-              "RelativeDocumentMoniker": "GrantPrivileges.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\GrantPrivileges.cs*",
-              "RelativeToolTip": "GrantPrivileges.cs*",
-              "ViewState": "AQIAAJkAAAAAAAAAAAAQwKgAAAAvAAAA",
+              "Title": "HandleCourse.cs [Design]",
+              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandleCourse.cs",
+              "RelativeDocumentMoniker": "HandleCourse.cs",
+              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\HandleCourse.cs [Design]",
+              "RelativeToolTip": "HandleCourse.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T16:37:20.067Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Create_Delete_Update.cs [Design]",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\Create_Delete_Update.cs",
-              "RelativeDocumentMoniker": "Create_Delete_Update.cs",
-              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Create_Delete_Update.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Create_Delete_Update.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T16:22:45.677Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Create_Delete_Update.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\Create_Delete_Update.cs",
-              "RelativeDocumentMoniker": "Create_Delete_Update.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\Create_Delete_Update.cs",
-              "RelativeToolTip": "Create_Delete_Update.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAuwCwAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T20:24:06.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GrantPrivileges.cs [Design]",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\GrantPrivileges.cs",
-              "RelativeDocumentMoniker": "GrantPrivileges.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\GrantPrivileges.cs [Design]*",
-              "RelativeToolTip": "GrantPrivileges.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T16:37:10.63Z",
+              "WhenOpened": "2024-04-10T16:10:08.975Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserTab.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\UserTab.cs",
-              "RelativeDocumentMoniker": "UserTab.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\UserTab.cs",
-              "RelativeToolTip": "UserTab.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAuwEUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T17:29:07.448Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RoleTab.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\RoleTab.cs",
-              "RelativeDocumentMoniker": "RoleTab.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\RoleTab.cs",
-              "RelativeToolTip": "RoleTab.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAiwC0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T16:09:55.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RoleTab.cs [Design]",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\RoleTab.cs",
-              "RelativeDocumentMoniker": "RoleTab.cs",
-              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\RoleTab.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\RoleTab.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T20:43:02.982Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "RoleTab.Designer.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\RoleTab.Designer.cs",
-              "RelativeDocumentMoniker": "RoleTab.Designer.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\RoleTab.Designer.cs",
-              "RelativeToolTip": "RoleTab.Designer.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAjwHMAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T16:09:57.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "App.config",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\App.config",
-              "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\App.config",
-              "RelativeToolTip": "App.config",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAEQAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-03-21T18:46:30.641Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "GrantPrivileges.Designer.cs",
-              "DocumentMoniker": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\GrantPrivileges.Designer.cs",
-              "RelativeDocumentMoniker": "GrantPrivileges.Designer.cs",
-              "ToolTip": "D:\\STUDY AT UNIVERSITY\\SchoolYear3\\Semeter2\\ATBMTT\\Project\\ATBMDL\\ATBM-A-14\\GrantPrivileges.Designer.cs",
-              "RelativeToolTip": "GrantPrivileges.Designer.cs",
-              "ViewState": "AQIAAB0BAAAAAAAAAAAIwCwBAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T16:37:29.692Z"
             }
           ]
         }

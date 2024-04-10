@@ -73,6 +73,11 @@ namespace ATBM_A_14
                 else MessageBox.Show($"Failed to connect: {ex.Message}");
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

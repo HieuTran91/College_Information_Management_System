@@ -155,6 +155,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assigment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assigment.Designer.cs">
+      <DependentUpon>Assigment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignmentProcessing.Designer.cs">
+      <DependentUpon>AssignmentProcessing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CourseInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseInformation.Designer.cs">
+      <DependentUpon>CourseInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoursePlanInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoursePlanInformation.Designer.cs">
+      <DependentUpon>CoursePlanInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Create_Delete_Update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +190,36 @@
     </Compile>
     <Compile Include="GrantPrivileges.Designer.cs">
       <DependentUpon>GrantPrivileges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandleCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandleCourse.Designer.cs">
+      <DependentUpon>HandleCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandleRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandleRegistration.Designer.cs">
+      <DependentUpon>HandleRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandleStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandleStudent.Designer.cs">
+      <DependentUpon>HandleStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandlingEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandlingEmployee.Designer.cs">
+      <DependentUpon>HandlingEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandlingUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandlingUnit.Designer.cs">
+      <DependentUpon>HandlingUnit.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -179,8 +233,20 @@
     <Compile Include="NV_MENU.Designer.cs">
       <DependentUpon>NV_MENU.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonalInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalInformation.Designer.cs">
+      <DependentUpon>PersonalInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoleTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,11 +259,29 @@
     <Compile Include="Admin_Menu.Designer.cs">
       <DependentUpon>Admin_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentInformation.Designer.cs">
+      <DependentUpon>StudentInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="SV_MENU.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SV_MENU.Designer.cs">
       <DependentUpon>SV_MENU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitInformation.Designer.cs">
+      <DependentUpon>UnitInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateScore.Designer.cs">
+      <DependentUpon>UpdateScore.cs</DependentUpon>
     </Compile>
     <Compile Include="UserTab.cs">
       <SubType>Form</SubType>
@@ -205,25 +289,67 @@
     <Compile Include="UserTab.Designer.cs">
       <DependentUpon>UserTab.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Assigment.resx">
+      <DependentUpon>Assigment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignmentProcessing.resx">
+      <DependentUpon>AssignmentProcessing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseInformation.resx">
+      <DependentUpon>CourseInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePlanInformation.resx">
+      <DependentUpon>CoursePlanInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Create_Delete_Update.resx">
       <DependentUpon>Create_Delete_Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GrantPrivileges.resx">
       <DependentUpon>GrantPrivileges.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HandleCourse.resx">
+      <DependentUpon>HandleCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandleRegistration.resx">
+      <DependentUpon>HandleRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandleStudent.resx">
+      <DependentUpon>HandleStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandlingEmployee.resx">
+      <DependentUpon>HandlingEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandlingUnit.resx">
+      <DependentUpon>HandlingUnit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalInformation.resx">
+      <DependentUpon>PersonalInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoleTab.resx">
       <DependentUpon>RoleTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_Menu.resx">
       <DependentUpon>Admin_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentInformation.resx">
+      <DependentUpon>StudentInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitInformation.resx">
+      <DependentUpon>UnitInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateScore.resx">
+      <DependentUpon>UpdateScore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserTab.resx">
       <DependentUpon>UserTab.cs</DependentUpon>
@@ -252,6 +378,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HCMUS.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

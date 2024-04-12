@@ -262,7 +262,6 @@ CREATE OR REPLACE TRIGGER TRG_DK_INSERT
 BEFORE INSERT ON DANGKY
 FOR EACH ROW
 DECLARE
-  -- Declaration of the variable without semicolon at the end
   v_hoc_ky_start_date DATE;
 BEGIN
   CASE :NEW.HK

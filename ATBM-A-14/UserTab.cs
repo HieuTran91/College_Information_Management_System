@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
@@ -39,11 +40,10 @@ namespace ATBM_A_14
 
         private void search_Click(object sender, EventArgs e)
         {
-            string user = username.Text;
-            // FROM DBA_SYS_PRIVS ?? DBA_TAB_PRIVS ? 
-            string sql1 = $"SELECT * FROM DBA_TAB_PRIVS WHERE GRANTEE = UPPER('{user}')";
+            string sql1 = "select * from dba_tab_privs where grantee = :username";
             command = new OracleCommand(sql1, Program.conn);
-
+            command.Parameters.Add(new OracleParameter("username", OracleDbType.Varchar2)).Value = username.Text.ToUpper();
+            
             DataTable data2 = new DataTable();
             adapter = new OracleDataAdapter(command);
             adapter.Fill(data2);

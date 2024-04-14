@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
 using System.Windows.Forms;
 
 namespace ATBM_A_14
@@ -37,6 +38,11 @@ namespace ATBM_A_14
             role.TopLevel = false;
             panel4.Controls.Add(role);
             role.Show();
+
+            // turn this one for uncommon user
+            string sql = "ALTER SESSION SET \"_ORACLE_SCRIPT\" = TRUE";
+            OracleCommand cmd = new OracleCommand(sql, Program.conn);
+            cmd.ExecuteNonQuery();
         }
         private void button1_Click(object sender, EventArgs e)
         {

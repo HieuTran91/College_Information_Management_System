@@ -11,23 +11,19 @@ grant SinhVien to SV0002;
 
 -- change to sinh vien user to test this one
 -- alter session set current_schema = SV0001;
-select * from project_sys.SINHVIEN;
-select * from project_sys.DANGKY;
+select * from ad.SINHVIEN;
+select * from ad.DANGKY;
 
-update project_sys.SINHVIEN set DT = '0906858115';
+update SINHVIEN set DT = '0906858115';
 
 --create TruongKhoa
 create user NV003 identified by NV003;
 grant create session to NV003;
 grant TruongKhoa to NV003;
 
-select * from project_sys.NHANSU;
-select * from project_sys.DANGKY;
-select * from project_sys.PHANCONG;
-select * from project_sys.DONVI;
-select * from project_sys.HOCPHAN;
-select * from project_sys.SINHVIEN;
-
-
-
-
+select * from NHANSU;
+select * from DANGKY;
+select * from PHANCONG;
+select * from DONVI;
+select * from HOCPHAN;
+select * from SINHVIEN;

@@ -185,3 +185,17 @@ D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.csproj.CoreCompileInputs.cache
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.csproj.Up2Date
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.exe
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.pdb
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Assigment.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.AssignmentProcessing.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.CourseInformation.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.CoursePlanInformation.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleCourse.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleRegistration.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleStudent.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingEmployee.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingUnit.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.PersonalInformation.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Registration.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.StudentInformation.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UnitInformation.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UpdateScore.resources

@@ -47,11 +47,13 @@ namespace ATBM_A_14
 
         private void delete_user_Click(object sender, EventArgs e)
         {
-            string username = delete_username.Text;
-            string sql = $"SELECT s.sid, s.serial#, s.username FROM v$session s WHERE s.username = '{username.ToUpper()}'";
+            string username = delete_username.Text.ToUpper();
+            string sql = "SELECT sid, serial#, username FROM v$session WHERE username = :username";
             try
             {
                 OracleCommand cmd = new OracleCommand(sql, Program.conn);
+                cmd.Parameters.Add(new OracleParameter("username", OracleDbType.Varchar2)).Value = username;
+
                 OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -59,11 +61,15 @@ namespace ATBM_A_14
                     string serial = reader.GetInt32(1).ToString();
                     cmd = new OracleCommand($"ALTER SYSTEM KILL SESSION '{sid},{serial}'", Program.conn);
                     cmd.ExecuteNonQuery();
+                    // Console.WriteLine($"DELETE SESSION {reader.GetString(2)},{sid},{serial}");
                 }
                 reader.Close();
 
                 sql = $"DROP USER {username}";
+                Console.WriteLine(sql);
                 cmd = new OracleCommand(sql, Program.conn);
+                // cmd.Parameters.Add(new OracleParameter("user", OracleDbType.Varchar2)).Value = username;
+
                 cmd.ExecuteNonQuery();
                 MessageBox.Show($"Successfully deleted user {username}");
             }

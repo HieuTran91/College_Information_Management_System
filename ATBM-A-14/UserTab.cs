@@ -40,6 +40,7 @@ namespace ATBM_A_14
 
         private void search_Click(object sender, EventArgs e)
         {
+            // dba_sys_privs
             string sql1 = "select * from dba_tab_privs where grantee = :username";
             command = new OracleCommand(sql1, Program.conn);
             command.Parameters.Add(new OracleParameter("username", OracleDbType.Varchar2)).Value = username.Text.ToUpper();

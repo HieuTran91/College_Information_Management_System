@@ -16,6 +16,7 @@ namespace ATBM_A_14
         public static string SERVICE = "xe"; // SID is also fine here
         public static string PORT = "1521";
         public static string SCHEMA = "ad";
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

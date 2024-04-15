@@ -30,8 +30,10 @@ namespace ATBM_A_14
 
         private void search_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM DBA_TAB_PRIVS WHERE GRANTEE = UPPER('{textBox1.Text}')";
+            string sql = "SELECT * FROM DBA_TAB_PRIVS WHERE GRANTEE = :username";
             OracleCommand command = new OracleCommand(sql, Program.conn);
+            command.Parameters.Add(new OracleParameter("username", OracleDbType.Varchar2)).Value = textBox1.Text.ToUpper();
+
             try
             {
                 DataTable data = new DataTable();

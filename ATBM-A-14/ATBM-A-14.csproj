@@ -325,6 +325,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NV_MENU.resx">
+      <DependentUpon>NV_MENU.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PersonalInformation.resx">
       <DependentUpon>PersonalInformation.cs</DependentUpon>
     </EmbeddedResource>

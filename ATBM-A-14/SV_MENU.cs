@@ -24,7 +24,20 @@ namespace ATBM_A_14
             panel1.Controls.Add(stu);
             stu.Show();
 
+            CourseInformation course = new CourseInformation();
+            course.TopLevel = false;
+            panel2.Controls.Add(course);
+            course.Show();
 
+            CoursePlanInformation coursePlan = new CoursePlanInformation();
+            coursePlan.TopLevel = false;
+            panel3.Controls.Add(coursePlan);
+            coursePlan.Show();
+
+            HandleCourse handleCourse = new HandleCourse();
+            handleCourse.TopLevel = false;
+            panel4.Controls.Add(handleCourse);
+            handleCourse.Show();
         }
     }
 }

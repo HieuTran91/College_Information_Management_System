@@ -14,3 +14,16 @@ Grant SYSDBA TO AD;
 
 SELECT VALUE FROM v$option WHERE parameter = 'Oracle Label Security';
 SELECT status FROM dba_ols_status WHERE name = 'OLS_CONFIGURE_STATUS';
+
+drop user AD cascade;
+
+CREATE OR REPLACE FUNCTION FUNC_HKKTT (P_SCHEMA varchar2, P_OBJ varchar2)
+RETURN VARCHAR2 AS
+BEGIN
+    RETURN '1=1';
+END;
+DROP FUNCTION FUNC_HKKTT
+
+
+
+select * from USER_OBJECTS where OBJECT_TYPE = 'FUNCTION' AND UPPER(OBJECT_NAME) LIKE '%FUNC%';

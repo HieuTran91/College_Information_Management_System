@@ -35,7 +35,6 @@ GRANT SELECT, DELETE, UPDATE, INSERT ON VIEW_TK_PC TO RL_TK;
 
 grant select, update, delete on NHANSU to RL_TK;
 
-
 -- Được quyền Xem (không giới hạn) dữ liệu trên toàn bộ lược đồ CSDL.
 grant select on SINHVIEN to TruongKhoa;
 grant select on DANGKY to TruongKhoa;
@@ -128,6 +127,9 @@ begin
     end if;
 end;
 /
+
+
+--select * from USER_OBJECTS where OBJECT_TYPE = 'FUNCTION' AND UPPER(OBJECT_NAME) LIKE '%FUNC%';
 
 BEGIN
   DBMS_RLS.ADD_POLICY (
@@ -247,6 +249,7 @@ BEGIN
 );
 END;
 /
+
 BEGIN
     DBMS_RLS.DROP_POLICY(
         object_schema => 'AD',  
@@ -254,7 +257,6 @@ BEGIN
         policy_name => 'SV_DK'  
     );
 END;
-
 
 create or replace function FUNC_SV_Delete (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -333,6 +335,8 @@ BEGIN
     RETURN l_hoc_ky_start_date;
 END;
 
+select FUNC_DATE(2, 2023) from dual;
+
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -391,6 +395,8 @@ BEGIN
     enable          => TRUE);
 END;
 /
+
+
 BEGIN
     DBMS_RLS.DROP_POLICY(
         object_schema => 'AD',  -- replace with your schema name

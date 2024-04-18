@@ -218,3 +218,4 @@ D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.DepartmentInformation.resources
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UpdateScore.resources
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.GIAOVU_MENU.resources
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.NVCB_MENU.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.NVCB.resources

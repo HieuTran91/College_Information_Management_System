@@ -271,6 +271,12 @@
     <Compile Include="StudentInformation.Designer.cs">
       <DependentUpon>StudentInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentView.Designer.cs">
+      <DependentUpon>StudentView.cs</DependentUpon>
+    </Compile>
     <Compile Include="SV_MENU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,12 +294,6 @@
     </Compile>
     <Compile Include="UpdateScore.Designer.cs">
       <DependentUpon>UpdateScore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NVCB.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="NVCB.Designer.cs">
-      <DependentUpon>NVCB.cs</DependentUpon>
     </Compile>
     <Compile Include="UserTab.cs">
       <SubType>Form</SubType>
@@ -363,6 +363,9 @@
     <EmbeddedResource Include="StudentInformation.resx">
       <DependentUpon>StudentInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentView.resx">
+      <DependentUpon>StudentView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SV_MENU.resx">
       <DependentUpon>SV_MENU.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,9 +374,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateScore.resx">
       <DependentUpon>UpdateScore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NVCB.resx">
-      <DependentUpon>NVCB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserTab.resx">
       <DependentUpon>UserTab.cs</DependentUpon>

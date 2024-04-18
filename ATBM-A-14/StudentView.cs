@@ -11,16 +11,15 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace ATBM_A_14
 {
-    public partial class PersonalInformation : Form
+    public partial class StudentView : Form
     {
-        public PersonalInformation()
+        public StudentView()
         {
             InitializeComponent();
         }
-
-        private void PersonalInformation_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            string sql1 = $"select * from {Program.SCHEMA}.NHANSU";
+            string sql1 = $"select * from {Program.SCHEMA}.SINHVIEN";
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
             {
@@ -31,5 +30,20 @@ namespace ATBM_A_14
             }
             catch (OracleException ex) { MessageBox.Show(ex.Message); }
         }
+
+        private void StudentView_Load(object sender, EventArgs e)
+        {
+            string sql1 = $"select * from {Program.SCHEMA}.SINHVIEN";
+            OracleCommand command = new OracleCommand(sql1, Program.conn);
+            try
+            {
+                DataTable data = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(data);
+                dataGridView1.DataSource = data;
+            }
+            catch (OracleException ex) { MessageBox.Show(ex.Message); }
+        }
+
     }
 }

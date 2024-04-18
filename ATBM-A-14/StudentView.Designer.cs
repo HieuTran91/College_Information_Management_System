@@ -1,6 +1,6 @@
 ﻿namespace ATBM_A_14
 {
-    partial class DepartmentInformation
+    partial class StudentView
     {
         /// <summary>
         /// Required designer variable.
@@ -39,18 +39,18 @@
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 23);
+            this.groupBox1.Location = new System.Drawing.Point(25, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1041, 535);
+            this.groupBox1.Size = new System.Drawing.Size(1027, 550);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Unit Information";
+            this.groupBox1.Text = "Information";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(712, 37);
+            this.button1.Location = new System.Drawing.Point(23, 498);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
+            this.button1.Size = new System.Drawing.Size(146, 30);
             this.button1.TabIndex = 1;
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
@@ -59,23 +59,23 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 37);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 29);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 453);
+            this.dataGridView1.Size = new System.Drawing.Size(983, 451);
             this.dataGridView1.TabIndex = 0;
             // 
-            // DepartmentInformation
+            // StudentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 570);
+            this.ClientSize = new System.Drawing.Size(1064, 584);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DepartmentInformation";
-            this.Text = "UnitInformation";
-            this.Load += new System.EventHandler(this.DepartmentInformation_Load);
+            this.Name = "StudentView";
+            this.Text = "StudentInformation";
+            this.Load += new System.EventHandler(this.StudentView_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

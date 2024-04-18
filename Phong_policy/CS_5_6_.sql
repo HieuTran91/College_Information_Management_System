@@ -4,7 +4,12 @@ SELECT * FROM ALL_POLICIES;
 select * from ad.hocphan;
 select * from ad.khmo;
 
-select * from nhansu;
+select * from nhansu where vaitro like '%G%';
+
+SELECT *
+FROM USER_OBJECTS
+WHERE OBJECT_TYPE = 'FUNCTION'
+  AND UPPER(OBJECT_NAME) like '%FUNC%';  -- Replace 'FUNC_DATE' with your function name
 
 -- CS#5:
 -- Như một người dùng có vai trò “Giảng viên”  
@@ -83,13 +88,13 @@ BEGIN
 END;
 /
 
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'ad',  -- replace with your schema name
-        object_name => 'SINHVIEN',  -- replace with your table name
-        policy_name => 'SV_SV'  -- replace with your policy name
-    );
-END;
+--BEGIN
+--    DBMS_RLS.DROP_POLICY(
+--        object_schema => 'ad',  -- replace with your schema name
+--        object_name => 'SINHVIEN',  -- replace with your table name
+--        policy_name => 'SV_SV'  -- replace with your policy name
+--    );
+--END;
 
 create or replace function FUNC_SV_KHMO (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -99,7 +104,7 @@ as
     role VARCHAR(2);
     MA VARCHAR2(4);
     STRSQL VARCHAR2(20000);
-    CURSOR CUR IS (SELECT MACT FROM AD.SINHVIEN where masv = sys_context('userenv','session_user'));
+    CURSOR CUR IS (SELECT MACT FROM AD.SINHVIEN where masv = sys_context('userenv','session_user') and nam = EXTRACT(YEAR FROM SYSDATE));
 begin
     is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
     IF is_dba = 'TRUE' THEN
@@ -143,13 +148,13 @@ BEGIN
 END;
 /
 
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'AD',  -- replace with your schema name
-        object_name => 'KHMO',  -- replace with your table name
-        policy_name => 'SV_KHMO'  -- replace with your policy name
-    );
-END;
+--BEGIN
+--    DBMS_RLS.DROP_POLICY(
+--        object_schema => 'AD',  -- replace with your schema name
+--        object_name => 'KHMO',  -- replace with your table name
+--        policy_name => 'SV_KHMO'  -- replace with your policy name
+--    );
+--END;
 
 create or replace function FUNC_SV_HOCPHAN (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -182,7 +187,7 @@ begin
             CLOSE CUR;
             RETURN 'MAHP IN ('''|| STRSQL||''')';
         else
-            RETURN '1 = 0';
+            RETURN '1 = 1';
         end if;
     end if;
 end;
@@ -321,7 +326,7 @@ end;
 CREATE OR REPLACE FUNCTION FUNC_DATE (
     p_hk IN NUMBER,
     p_nam IN NUMBER
-) RETURN VARCHAR2 AS
+) RETURN DATE AS
     l_hoc_ky_start_date DATE;
 BEGIN
     CASE p_hk

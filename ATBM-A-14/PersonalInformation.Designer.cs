@@ -47,7 +47,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(726, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(998, 197);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox1
@@ -56,17 +56,16 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 219);
+            this.groupBox1.Size = new System.Drawing.Size(1044, 281);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "My Information";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(153, 178);
+            this.button2.Location = new System.Drawing.Point(27, 237);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(452, 23);
+            this.button2.Size = new System.Drawing.Size(99, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = true;
@@ -76,17 +75,16 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 268);
+            this.groupBox2.Location = new System.Drawing.Point(12, 315);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(775, 150);
+            this.groupBox2.Size = new System.Drawing.Size(1044, 147);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update Phone Number";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(561, 64);
+            this.button1.Location = new System.Drawing.Point(565, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 31);
             this.button1.TabIndex = 2;
@@ -95,7 +93,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(229, 68);
+            this.textBox1.Location = new System.Drawing.Point(233, 62);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(303, 22);
             this.textBox1.TabIndex = 1;
@@ -103,7 +101,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 71);
+            this.label1.Location = new System.Drawing.Point(93, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 16);
             this.label1.TabIndex = 0;
@@ -113,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1068, 474);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

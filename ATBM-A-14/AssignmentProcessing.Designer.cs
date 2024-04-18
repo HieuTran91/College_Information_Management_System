@@ -222,6 +222,7 @@
             this.ClientSize = new System.Drawing.Size(800, 518);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AssignmentProcessing";
             this.Text = "AssignmentProcessing";
             this.groupBox1.ResumeLayout(false);

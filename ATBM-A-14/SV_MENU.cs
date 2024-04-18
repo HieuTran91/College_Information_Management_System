@@ -16,5 +16,15 @@ namespace ATBM_A_14
         {
             InitializeComponent();
         }
+
+        private void SV_MENU_Load(object sender, EventArgs e)
+        {
+            StudentInformation stu = new StudentInformation();
+            stu.TopLevel = false;
+            panel1.Controls.Add(stu);
+            stu.Show();
+
+
+        }
     }
 }

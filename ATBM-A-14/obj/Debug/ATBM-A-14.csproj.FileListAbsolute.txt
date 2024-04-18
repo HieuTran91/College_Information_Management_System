@@ -193,9 +193,11 @@ D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.H
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleRegistration.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleStudent.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingEmployee.resources
-D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingUnit.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.PersonalInformation.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Registration.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.StudentInformation.resources
-D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UnitInformation.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UpdateScore.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.NV_MENU.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.SV_MENU.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.DepartmentInformation.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingDepartment.resources

@@ -30,11 +30,11 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,6 +62,15 @@
             this.groupBox1.Text = "My Information";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(153, 178);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(452, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
@@ -73,22 +82,7 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update Phone Number";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "New phone number";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(229, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 22);
-            this.textBox1.TabIndex = 1;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
@@ -99,14 +93,21 @@
             this.button1.Text = "Update";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // textBox1
             // 
-            this.button2.Location = new System.Drawing.Point(153, 178);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(452, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.textBox1.Location = new System.Drawing.Point(229, 68);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(303, 22);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(89, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "New phone number";
             // 
             // PersonalInformation
             // 
@@ -115,6 +116,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PersonalInformation";
             this.Text = "PersonalInformation";
             this.Load += new System.EventHandler(this.PersonalInformation_Load);

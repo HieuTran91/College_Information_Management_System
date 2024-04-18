@@ -21,9 +21,9 @@ create user NV003 identified by NV003;
 grant create session to NV003;
 grant TruongKhoa to NV003;
 
-select * from NHANSU;
-select * from DANGKY;
-select * from PHANCONG;
-select * from DONVI;
-select * from HOCPHAN;
-select * from SINHVIEN;
+select vaitro from ad.NHANSU where manv = 'nv001'; -- sys_context('userenv','current_user');
+select * from ad.DANGKY;
+select * from ad.PHANCONG;
+select * from ad.DONVI;
+select * from ad.HOCPHAN;
+select * from ad.SINHVIEN;

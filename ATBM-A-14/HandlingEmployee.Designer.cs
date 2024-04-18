@@ -267,6 +267,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 466);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HandlingEmployee";
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.HandlingEmployee_Load);

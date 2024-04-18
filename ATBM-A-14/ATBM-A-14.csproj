@@ -215,11 +215,11 @@
     <Compile Include="HandlingEmployee.Designer.cs">
       <DependentUpon>HandlingEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="HandlingUnit.cs">
+    <Compile Include="HandlingDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HandlingUnit.Designer.cs">
-      <DependentUpon>HandlingUnit.cs</DependentUpon>
+    <Compile Include="HandlingDepartment.Designer.cs">
+      <DependentUpon>HandlingDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -271,11 +271,11 @@
     <Compile Include="SV_MENU.Designer.cs">
       <DependentUpon>SV_MENU.cs</DependentUpon>
     </Compile>
-    <Compile Include="UnitInformation.cs">
+    <Compile Include="DepartmentInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UnitInformation.Designer.cs">
-      <DependentUpon>UnitInformation.cs</DependentUpon>
+    <Compile Include="DepartmentInformation.Designer.cs">
+      <DependentUpon>DepartmentInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateScore.cs">
       <SubType>Form</SubType>
@@ -319,8 +319,8 @@
     <EmbeddedResource Include="HandlingEmployee.resx">
       <DependentUpon>HandlingEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HandlingUnit.resx">
-      <DependentUpon>HandlingUnit.cs</DependentUpon>
+    <EmbeddedResource Include="HandlingDepartment.resx">
+      <DependentUpon>HandlingDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -348,8 +348,11 @@
     <EmbeddedResource Include="StudentInformation.resx">
       <DependentUpon>StudentInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnitInformation.resx">
-      <DependentUpon>UnitInformation.cs</DependentUpon>
+    <EmbeddedResource Include="SV_MENU.resx">
+      <DependentUpon>SV_MENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentInformation.resx">
+      <DependentUpon>DepartmentInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateScore.resx">
       <DependentUpon>UpdateScore.cs</DependentUpon>

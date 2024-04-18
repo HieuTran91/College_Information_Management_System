@@ -193,6 +193,8 @@ begin
 end;
 /
 
+select FUNC_SV_HOCPHAN('AD', 'HOCPHAN') from dual;
+
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -317,11 +319,13 @@ begin
             CLOSE CUR;
             RETURN 'MASV IN ('''|| MASV_LIST||''') AND MAGV IN ('''|| MAGV_LIST||''') AND MAHP IN ('''|| MAHP_LIST||''') AND HK IN ('''|| HK_LIST||''') AND NAM IN ('''|| NAM_LIST||''')';
         else
-            RETURN '1 = 0';
+            RETURN '1 = 1';
         end if;
     end if;
 end;
 /
+
+select FUNC_SV_Delete('AD', 'DANGKY') from dual;
 
 CREATE OR REPLACE FUNCTION FUNC_DATE (
     p_hk IN NUMBER,
@@ -476,7 +480,6 @@ as
     MAHP_LIST VARCHAR2(2000);
     HK_LIST VARCHAR2(2000);
     NAM_LIST VARCHAR2(2000);
-    MACT_LIST VARCHAR2(2000);
     MAHP CHAR(4);
     HK CHAR(1);
     NAM CHAR(4);
@@ -489,26 +492,34 @@ begin
     else
         user := sys_context('userenv','session_user');
         role := substr(user,1,2);
-        IF ROLE = 'SV' THEN
+        IF ROLE = 'SY' THEN
             OPEN CUR;
             LOOP 
                 FETCH CUR INTO MAHP, HK, NAM, MACT;
                 EXIT WHEN CUR%NOTFOUND;
               
                 IF (MAHP_LIST IS NOT NULL) THEN 
-                    MAHP_LIST := MAHP_LIST ||''', '''; 
+                    MAHP_LIST := MAHP ||''', '''; 
+                END IF; 
+                IF (HK_LIST IS NOT NULL) THEN 
+                    HK_LIST := HK; 
+                END IF; 
+                IF (NAM_LIST IS NOT NULL) THEN 
+                    NAM_LIST := NAM;
                 END IF; 
                 MAHP_LIST := MAHP_LIST || MAHP;
                 
             END LOOP;
             CLOSE CUR;
-            RETURN 'MAHP IN ('''|| MAHP_LIST ||''')';
+            RETURN 'MAHP IN ('''|| MAHP_LIST ||''') AND HK = '''|| HK_LIST ||''' AND NAM = '''|| NAM_LIST ||'''';
         else
-            RETURN '1 = 0';
+            RETURN '1 = 1';
         end if;
     end if;
 end;
 /
+
+select SYS_CONTEXT('USERENV', 'ISDBA') from dual;
 
 select FUNC_SV_Insert('ad','dangky') from dual;
 

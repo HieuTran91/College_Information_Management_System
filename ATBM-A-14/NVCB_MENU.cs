@@ -29,7 +29,20 @@ namespace ATBM_A_14
             panel2.Controls.Add(stu);
             stu.Show();
 
+            DepartmentInformation depart = new DepartmentInformation();
+            depart.TopLevel = false;
+            panel3.Controls.Add(depart);
+            depart.Show();
 
+            CourseInformation course = new CourseInformation();
+            course.TopLevel = false;
+            panel4.Controls.Add(course);
+            course.Show();
+
+            CoursePlanInformation coursePlan = new CoursePlanInformation();
+            coursePlan.TopLevel = false;
+            panel5.Controls.Add(coursePlan);
+            coursePlan.Show();
         }
     }
 }

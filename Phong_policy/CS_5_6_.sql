@@ -4,7 +4,12 @@ SELECT * FROM ALL_POLICIES;
 select * from ad.hocphan;
 select * from ad.khmo;
 
-select * from nhansu;
+select * from nhansu where vaitro like '%G%';
+
+SELECT *
+FROM USER_OBJECTS
+WHERE OBJECT_TYPE = 'FUNCTION'
+  AND UPPER(OBJECT_NAME) like '%FUNC%';  -- Replace 'FUNC_DATE' with your function name
 
 -- CS#5:
 -- Như một người dùng có vai trò “Giảng viên”  
@@ -180,7 +185,7 @@ begin
             CLOSE CUR;
             RETURN 'MAHP IN ('''|| STRSQL||''')';
         else
-            RETURN '1 = 0';
+            RETURN '1 = 1';
         end if;
     end if;
 end;

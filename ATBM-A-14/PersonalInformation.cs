@@ -31,20 +31,5 @@ namespace ATBM_A_14
             }
             catch (OracleException ex) { MessageBox.Show(ex.Message); }
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

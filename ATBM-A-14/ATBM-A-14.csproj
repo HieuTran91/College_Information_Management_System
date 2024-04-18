@@ -185,6 +185,12 @@
     <Compile Include="Create_Delete_Update.Designer.cs">
       <DependentUpon>Create_Delete_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="GIAOVU_MENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIAOVU_MENU.Designer.cs">
+      <DependentUpon>GIAOVU_MENU.cs</DependentUpon>
+    </Compile>
     <Compile Include="GrantPrivileges.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,11 +233,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NV_MENU.cs">
+    <Compile Include="NVCB_MENU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NV_MENU.Designer.cs">
-      <DependentUpon>NV_MENU.cs</DependentUpon>
+    <Compile Include="NVCB_MENU.Designer.cs">
+      <DependentUpon>NVCB_MENU.cs</DependentUpon>
     </Compile>
     <Compile Include="PersonalInformation.cs">
       <SubType>Form</SubType>
@@ -283,6 +289,12 @@
     <Compile Include="UpdateScore.Designer.cs">
       <DependentUpon>UpdateScore.cs</DependentUpon>
     </Compile>
+    <Compile Include="NVCB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NVCB.Designer.cs">
+      <DependentUpon>NVCB.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Create_Delete_Update.resx">
       <DependentUpon>Create_Delete_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GIAOVU_MENU.resx">
+      <DependentUpon>GIAOVU_MENU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GrantPrivileges.resx">
       <DependentUpon>GrantPrivileges.cs</DependentUpon>
@@ -325,8 +340,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NV_MENU.resx">
-      <DependentUpon>NV_MENU.cs</DependentUpon>
+    <EmbeddedResource Include="NVCB_MENU.resx">
+      <DependentUpon>NVCB_MENU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalInformation.resx">
       <DependentUpon>PersonalInformation.cs</DependentUpon>
@@ -356,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateScore.resx">
       <DependentUpon>UpdateScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NVCB.resx">
+      <DependentUpon>NVCB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserTab.resx">
       <DependentUpon>UserTab.cs</DependentUpon>

@@ -56,7 +56,7 @@ namespace ATBM_A_14
                     MessageBox.Show(role + " code: " + sql);
 
                     // if else for specific tab
-                    NV_MENU userTab = new NV_MENU();
+                    NVCB_MENU userTab = new NVCB_MENU();
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                     userTab.Show();
 

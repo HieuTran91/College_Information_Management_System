@@ -201,3 +201,20 @@ D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.N
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.SV_MENU.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.DepartmentInformation.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingDepartment.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Assigment.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.AssignmentProcessing.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.CourseInformation.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.CoursePlanInformation.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleCourse.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleRegistration.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleStudent.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingEmployee.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingDepartment.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.PersonalInformation.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Registration.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.StudentInformation.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.SV_MENU.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.DepartmentInformation.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UpdateScore.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.GIAOVU_MENU.resources
+D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.NVCB_MENU.resources

@@ -10,15 +10,12 @@ using System.Windows.Forms;
 
 namespace ATBM_A_14
 {
-    public partial class NV_MENU : Form
+    public partial class NVCB : UserControl
     {
-        public NV_MENU()
+        public NVCB()
         {
             InitializeComponent();
-        }
 
-        private void NV_MENU_Load(object sender, EventArgs e)
-        {
             PersonalInformation stu = new PersonalInformation();
             stu.TopLevel = false;
             panel1.Controls.Add(stu);

@@ -1,6 +1,6 @@
 ﻿namespace ATBM_A_14
 {
-    partial class NV_MENU
+    partial class NVCB_MENU
     {
         /// <summary>
         /// Required designer variable.

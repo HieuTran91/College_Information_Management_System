@@ -1,4 +1,4 @@
-alter session set current_schema = ad;
+alter session set current_schema = sv0001;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
 create user SV0001 identified by SV0001;

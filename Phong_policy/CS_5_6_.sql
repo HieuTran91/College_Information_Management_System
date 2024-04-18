@@ -1,15 +1,11 @@
 alter session set current_schema = AD;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
+insert into DANGKY(MASV,MAGV,MAHP,HK,NAM,MACT,DIEMTH, DIEMQT, DIEMCK, DIEMTK) values('SV0001','NV081','HP39',1,2024,'CTTT', 1, NULL, NULL, NULL);
+
 SELECT * FROM ALL_POLICIES;
-select * from ad.hocphan;
-select * from ad.khmo;
 
-select * from nhansu where vaitro like '%G%';
-
-SELECT *
-FROM USER_OBJECTS
-WHERE OBJECT_TYPE = 'FUNCTION'
-  AND UPPER(OBJECT_NAME) like '%FUNC%';  -- Replace 'FUNC_DATE' with your function name
+SELECT * FROM USER_OBJECTS WHERE OBJECT_TYPE = 'FUNCTION' AND UPPER(OBJECT_NAME) like '%FUNC%';  -- Replace 'FUNC_DATE' with your function name
 
 -- CS#5:
 -- Như một người dùng có vai trò “Giảng viên”  
@@ -20,7 +16,6 @@ WHERE OBJECT_TYPE = 'FUNCTION'
 GRANT SELECT ON VIEW_GV_PC TO RL_TK;
 GRANT SELECT ON VIEW_GV_DK TO RL_TK;
 GRANT UPDATE(DIEMTH, DIEMQT, DIEMCK, DIEMTK) ON VIEW_GV_DK TO RL_TK;
-
 
 grant select on SINHVIEN to RL_TK;
 grant select on DONVI to RL_TK;
@@ -53,6 +48,13 @@ grant select on DONVI to TruongKhoa;
 -- Xem danh sách tất cả học phần (HOCPHAN), kế hoạch mở môn (KHMO) của chương trình đào tạo mà sinh viên đang theo học. 
 -- Thêm, Xóa các dòng dữ liệu đăng ký học phần (ĐANGKY) liên quan đến chính sinh viên đó trong học kỳ của năm học hiện tại (nếu thời điểm hiệu chỉnh đăng ký còn hợp lệ).  
 -- Sinh viên không được chỉnh sửa trên các trường liên quan đến điểm.  
+GRANT SELECT ON AD.SINHVIEN TO RL_SV;
+GRANT UPDATE(DT, DCHI) ON AD.SINHVIEN TO RL_SV;
+GRANT SELECT ON AD.KHMO TO RL_SV;
+GRANT SELECT ON AD.HOCPHAN TO RL_SV;
+GRANT SELECT ON AD.DANGKY TO RL_SV;
+GRANT DELETE ON AD.DANGKY TO RL_SV;
+GRANT INSERT ON AD.DANGKY TO RL_SV;
 
 create or replace function FUNC_SV_SV (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -70,7 +72,7 @@ begin
         IF ROLE = 'SV' THEN
             RETURN 'MASV = ''' || USER ||'''';
         else
-            return '';
+            return '1 = 1';
         end if;
     end if;
 end;
@@ -104,7 +106,7 @@ as
     role VARCHAR(2);
     MA VARCHAR2(4);
     STRSQL VARCHAR2(20000);
-    CURSOR CUR IS (SELECT MACT FROM AD.SINHVIEN where masv = sys_context('userenv','session_user') and nam = EXTRACT(YEAR FROM SYSDATE));
+    CURSOR CUR IS (SELECT MACT FROM AD.SINHVIEN where masv = sys_context('userenv','session_user'));
 begin
     is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
     IF is_dba = 'TRUE' THEN
@@ -127,14 +129,11 @@ begin
             CLOSE CUR;
             RETURN 'MACT IN ('''|| STRSQL||''')';
         else
-            RETURN '1 = 0';
+            RETURN '1 = 1';
         end if;
     end if;
 end;
 /
-
-
---select * from USER_OBJECTS where OBJECT_TYPE = 'FUNCTION' AND UPPER(OBJECT_NAME) LIKE '%FUNC%';
 
 BEGIN
   DBMS_RLS.ADD_POLICY (
@@ -193,8 +192,6 @@ begin
 end;
 /
 
-select FUNC_SV_HOCPHAN('AD', 'HOCPHAN') from dual;
-
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -206,22 +203,14 @@ BEGIN
     );
 END;
 /
-SELECT * FROM ALL_POLICIES;
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'AD',  -- replace with your schema name
-        object_name => 'HOCPHAN',  -- replace with your table name
-        policy_name => 'SV_HP'  -- replace with your policy name
-    );
-END;
 
-GRANT SELECT ON AD.SINHVIEN TO RL_SV;
-GRANT UPDATE(DT, DCHI) ON AD.SINHVIEN TO RL_SV;
-GRANT SELECT ON AD.KHMO TO RL_SV;
-GRANT SELECT ON AD.HOCPHAN TO RL_SV;
-GRANT SELECT ON AD.DANGKY TO RL_SV;
-GRANT DELETE ON AD.DANGKY TO RL_SV;
-GRANT INSERT ON AD.DANGKY TO RL_SV;
+--BEGIN
+--    DBMS_RLS.DROP_POLICY(
+--        object_schema => 'AD',  -- replace with your schema name
+--        object_name => 'HOCPHAN',  -- replace with your table name
+--        policy_name => 'SV_HP'  -- replace with your policy name
+--    );
+--END;
 
 create or replace function FUNC_SV_DK (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -239,7 +228,7 @@ begin
         IF ROLE = 'SV' THEN
             RETURN 'MASV = ''' || USER ||'''';
         else
-            return '';
+            return '1 = 1';
         end if;
     end if;
 end;
@@ -257,13 +246,13 @@ BEGIN
 END;
 /
 
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'AD',  
-        object_name => 'DANGKY', 
-        policy_name => 'SV_DK'  
-    );
-END;
+--BEGIN
+--    DBMS_RLS.DROP_POLICY(
+--        object_schema => 'AD',  
+--        object_name => 'DANGKY', 
+--        policy_name => 'SV_DK'  
+--    );
+--END;
 
 create or replace function FUNC_SV_Delete (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -281,7 +270,7 @@ as
     MAHP CHAR(4);
     HK INT;
     NAM INT;
-    CURSOR CUR IS (select MASV, MAGV, MAHP, HK, NAM from AD.DANGKY WHERE MASV = sys_context('userenv','session_user') AND FUNC_DATE(HK, NAM) > (SYSDATE - 120) AND FUNC_DATE(HK, NAM) < SYSDATE);
+    CURSOR CUR IS (select MASV, MAGV, MAHP, HK, NAM from AD.DANGKY WHERE MASV = sys_context('userenv','session_user') AND FUNC_DATE(HK, NAM) > (SYSDATE - 120) AND FUNC_DATE(HK, NAM) < SYSDATE AND DIEMQT IS NULL AND DIEMTH IS NULL AND DIEMCK IS NULL AND DIEMTK IS NULL);
 begin
     is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
     IF is_dba = 'TRUE' THEN
@@ -325,8 +314,6 @@ begin
 end;
 /
 
-select FUNC_SV_Delete('AD', 'DANGKY') from dual;
-
 CREATE OR REPLACE FUNCTION FUNC_DATE (
     p_hk IN NUMBER,
     p_nam IN NUMBER
@@ -344,8 +331,6 @@ BEGIN
     RETURN l_hoc_ky_start_date;
 END;
 
-select FUNC_DATE(2, 2023) from dual;
-
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -359,117 +344,13 @@ BEGIN
 END;
 /
 
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'AD',  
-        object_name => 'DANGKY', 
-        policy_name => 'SV_Delete'  
-    );
-END;
-
-CREATE OR REPLACE FUNCTION SV_avoid_insert_policy (
-    p_schema_name  IN VARCHAR2,
-    p_object_name  IN VARCHAR2
-) RETURN VARCHAR2
-AS
-    user varchar(100);
-    is_dba VARCHAR2(5);
-    role VARCHAR(2);
-    v_condition VARCHAR2(4000);
-BEGIN
-    is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
-    IF is_dba = 'TRUE' THEN
-        RETURN ' ';
-    else
-        user := sys_context('userenv','session_user');
-        role := substr(user,1,2);
-        IF ROLE = 'SV' THEN
-            v_condition := 'CASE WHEN :NEW.DIEMTH IS NULL THEN 1 ELSE 0 END';
-        ELSE
-            v_condition := '1 = 1';
-        END IF;
-    END IF;
-    RETURN v_condition;
-END;
-/
-
-BEGIN
-  DBMS_RLS.ADD_POLICY (
-    object_schema   => 'AD',
-    object_name     => 'DANGKY',
-    policy_name      => 'avoid_insert_policy',
-    policy_function  => 'SV_avoid_insert_policy',
-    statement_types  => 'INSERT, DELETE',
-    update_check    => TRUE,
-    enable          => TRUE);
-END;
-/
-
-
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'AD',  -- replace with your schema name
-        object_name => 'DANGKY',  -- replace with your table name
-        policy_name => 'avoid_insert_policy'  -- replace with your policy name
-    );
-END;
-
---create or replace function FUNC_SV_Insert (P_SCHEMA varchar2, P_OBJ varchar2)
---return varchar2
---as
---    user varchar(100);
---    is_dba VARCHAR2(5);
---    role VARCHAR(2);
---    MAHP_LIST VARCHAR2(2000);
---    HK_LIST VARCHAR2(2000);
---    NAM_LIST VARCHAR2(2000);
---    MACT_LIST VARCHAR2(2000);
---    MAHP CHAR(4);
---    HK CHAR(1);
---    NAM CHAR(4);
---    MACT VARCHAR2(4); -- MACT = (SELECT MACT FROM AD.SINHVIEN where MASV = sys_context('userenv','session_user')) AND
---    CURSOR CUR IS (select MAHP, HK, NAM, MACT from AD.KHMO WHERE FUNC_DATE(HK, NAM) > (SYSDATE - 120) AND FUNC_DATE(HK, NAM) < SYSDATE);
---begin
---    --RETURN 'MAHP IN (select MAHP from AD.KHMO;)';
---    is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
---    IF is_dba = 'TRUE' THEN
---        RETURN ' ';
---    else
---        user := sys_context('userenv','session_user');
---        role := substr(user,1,2);
---        IF ROLE = 'SV' THEN
---            OPEN CUR;
---            LOOP 
---                FETCH CUR INTO MAHP, HK, NAM, MACT;
---                EXIT WHEN CUR%NOTFOUND;
---              
---                IF (MAHP_LIST IS NOT NULL) THEN 
---                    MAHP_LIST := MAHP_LIST ||''', '''; 
---                END IF; 
---                IF (HK_LIST IS NOT NULL) THEN 
---                    HK_LIST := HK_LIST ||''', '''; 
---                END IF; 
---                IF (NAM_LIST IS NOT NULL) THEN 
---                    NAM_LIST := NAM_LIST ||''', '''; 
---                END IF; 
---                IF (MACT_LIST IS NOT NULL) THEN 
---                    MACT_LIST := MACT_LIST ||''', '''; 
---                END IF; 
---                MAHP_LIST := MAHP_LIST || MAHP;
---                HK_LIST := HK_LIST || HK;
---                NAM_LIST := NAM_LIST || NAM;
---                MACT_LIST := MACT_LIST || MACT;
---                
---            END LOOP;
---            CLOSE CUR;
---            RETURN 'MAHP IN ('''|| MAHP_LIST ||''') AND HK IN ('''|| HK_LIST ||''') AND NAM IN ('''|| NAM_LIST ||''') AND MACT IN ('''|| MACT_LIST ||''')';
---        else
---            RETURN '1 = 0';
---        end if;
---    end if;
---end;
---/
-
+--BEGIN
+--    DBMS_RLS.DROP_POLICY(
+--        object_schema => 'AD',  
+--        object_name => 'DANGKY', 
+--        policy_name => 'SV_Delete'  
+--    );
+--END;
 
 create or replace function FUNC_SV_Insert (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -480,38 +361,45 @@ as
     MAHP_LIST VARCHAR2(2000);
     HK_LIST VARCHAR2(2000);
     NAM_LIST VARCHAR2(2000);
+    MACT_LIST VARCHAR2(2000);
     MAHP CHAR(4);
     HK CHAR(1);
     NAM CHAR(4);
-    MACT VARCHAR2(4); -- MACT = (SELECT MACT FROM AD.SINHVIEN where MASV = sys_context('userenv','session_user')) AND
-    CURSOR CUR IS (select MAHP, HK, NAM, MACT from AD.KHMO WHERE FUNC_DATE(HK, NAM) > (SYSDATE - 120) AND FUNC_DATE(HK, NAM) < SYSDATE);
+    MACT VARCHAR2(4);
+    CURSOR CUR IS (select MAHP, HK, NAM, MACT from AD.KHMO WHERE MACT = (SELECT MACT FROM AD.SINHVIEN where MASV = sys_context('userenv','session_user')) AND FUNC_DATE(HK, NAM) > (SYSDATE - 120) AND FUNC_DATE(HK, NAM) < SYSDATE);
 begin
     is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
     IF is_dba = 'TRUE' THEN
-        RETURN ' ';
+        RETURN '';
     else
         user := sys_context('userenv','session_user');
         role := substr(user,1,2);
-        IF ROLE = 'SY' THEN
+        IF ROLE = 'SV' THEN
             OPEN CUR;
             LOOP 
                 FETCH CUR INTO MAHP, HK, NAM, MACT;
                 EXIT WHEN CUR%NOTFOUND;
               
                 IF (MAHP_LIST IS NOT NULL) THEN 
-                    MAHP_LIST := MAHP ||''', '''; 
+                    MAHP_LIST := MAHP_LIST ||''', '''; 
                 END IF; 
                 IF (HK_LIST IS NOT NULL) THEN 
-                    HK_LIST := HK; 
+                    HK_LIST := HK_LIST ||''', '''; 
                 END IF; 
                 IF (NAM_LIST IS NOT NULL) THEN 
-                    NAM_LIST := NAM;
+                    NAM_LIST := NAM_LIST ||''', '''; 
+                END IF; 
+                IF (MACT_LIST IS NOT NULL) THEN 
+                    MACT_LIST := MACT_LIST ||''', '''; 
                 END IF; 
                 MAHP_LIST := MAHP_LIST || MAHP;
+                HK_LIST := HK_LIST || HK;
+                NAM_LIST := NAM_LIST || NAM;
+                MACT_LIST := MACT_LIST || MACT;
                 
             END LOOP;
             CLOSE CUR;
-            RETURN 'MAHP IN ('''|| MAHP_LIST ||''') AND HK = '''|| HK_LIST ||''' AND NAM = '''|| NAM_LIST ||'''';
+            RETURN 'MAHP IN ('''|| MAHP_LIST ||''') AND HK IN ('''|| HK_LIST ||''') AND NAM IN ('''|| NAM_LIST ||''') AND MACT IN ('''|| MACT_LIST ||''') AND DIEMQT IS NULL AND DIEMTH IS NULL AND DIEMCK IS NULL AND DIEMTK IS NULL';
         else
             RETURN '1 = 1';
         end if;
@@ -519,28 +407,23 @@ begin
 end;
 /
 
-select SYS_CONTEXT('USERENV', 'ISDBA') from dual;
-
-select FUNC_SV_Insert('ad','dangky') from dual;
-
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
     object_name     => 'DANGKY',
     policy_name     => 'SV_Insert',
-    function_schema => 'AD',
     policy_function => 'FUNC_SV_Insert',
     statement_types => 'INSERT',
     update_check    => TRUE,
-    enable          => TRUE
+    enable => TRUE
   );
 END;
 /
 
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'AD',  -- replace with your schema name
-        object_name => 'DANGKY',  -- replace with your table name
-        policy_name => 'SV_Insert'  -- replace with your policy name
-    );
-END;
+--BEGIN
+--    DBMS_RLS.DROP_POLICY(
+--        object_schema => 'AD',  -- replace with your schema name
+--        object_name => 'DANGKY',  -- replace with your table name
+--        policy_name => 'SV_Insert'  -- replace with your policy name
+--    );
+--END;

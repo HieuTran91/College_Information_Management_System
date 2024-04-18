@@ -197,7 +197,6 @@ D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.P
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Registration.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.StudentInformation.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UpdateScore.resources
-D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.NV_MENU.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.SV_MENU.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.DepartmentInformation.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandlingDepartment.resources
@@ -323,3 +322,6 @@ D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.exe
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.pdb
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.StudentView.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.GIAOVU_MENU.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.NVCB_MENU.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.StudentView.resources

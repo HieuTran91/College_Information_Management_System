@@ -142,7 +142,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -262,8 +262,7 @@
               "RelativeToolTip": "LoginForm.cs",
               "ViewState": "AQIAAFoAAAAAAAAAAAAhwGgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T06:17:28.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-12T06:17:28.421Z"
             },
             {
               "$type": "Document",
@@ -394,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Assigment.cs [Design]",
               "DocumentMoniker": "D:\\gitproj\\ATBMDL\\ATBM-A-14\\Assigment.cs",
               "RelativeDocumentMoniker": "Assigment.cs",

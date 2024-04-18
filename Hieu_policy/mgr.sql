@@ -44,6 +44,7 @@ grant RL_TDV to NV004
 
 -- TRƯỞNG ĐƠN VỊ
 -- Như một người dùng có vai trò “Giảng viên” (xem mô tả CS#2)
+GRANT UPDATE(DIEMTH, DIEMQT, DIEMCK, DIEMTK) ON VIEW_GV_DK TO RL_TDV;
 GRANT SELECT ON VIEW_GV_PC TO RL_TDV;
 GRANT SELECT ON VIEW_GV_DK TO RL_TDV;
 grant select on SINHVIEN to RL_TDV;

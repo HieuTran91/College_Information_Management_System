@@ -90,7 +90,7 @@ create role RL_TK;
 create role RL_SV;
 
 --revoke select,UPDATE on ad.NHANSU from RL_NVCB;
-grant select on ad.NHANSU to RL_NVCB;
+-- grant select on ad.NHANSU to RL_NVCB; -- sai quyền truy cập
 grant select on ad.SINHVIEN to RL_NVCB;
 grant select on ad.DONVI to RL_NVCB;
 grant select on ad.HOCPHAN to RL_NVCB;
@@ -240,49 +240,52 @@ BEGIN
  RETURN 'MAHP IN ('''||STRSQL||''')';
 END;
 
-CREATE OR REPLACE TRIGGER TRG_DK_DELETE
-BEFORE DELETE ON DANGKY
-FOR EACH ROW
-DECLARE
-    v_hoc_ky_start_date DATE;
-BEGIN
-  CASE :OLD.HK
-    WHEN 1 THEN
-      v_hoc_ky_start_date := TO_DATE('01-JAN-' || TO_CHAR(:OLD.NAM), 'DD-MON-YYYY');
-    WHEN 2 THEN
-      v_hoc_ky_start_date := TO_DATE('01-MAY-' || TO_CHAR(:OLD.NAM), 'DD-MON-YYYY');
-    WHEN 3 THEN
-      v_hoc_ky_start_date := TO_DATE('01-SEP-' || TO_CHAR(:OLD.NAM), 'DD-MON-YYYY');
-    ELSE
-      RAISE_APPLICATION_ERROR(-20002, 'Invalid semester value');
-  END CASE;
-  IF (SYSDATE - v_hoc_ky_start_date) > 14 THEN
-    RAISE_APPLICATION_ERROR(-20001, 'Deletion deadline exceeded');
-  END IF;
-END;
-/
+--drop trigger TRG_DK_DELETE
 
-CREATE OR REPLACE TRIGGER TRG_DK_INSERT
-BEFORE INSERT ON DANGKY
-FOR EACH ROW
-DECLARE
-  v_hoc_ky_start_date DATE;
-BEGIN
-  CASE :NEW.HK
-    WHEN 1 THEN
-      v_hoc_ky_start_date := TO_DATE('01-JAN-' || TO_CHAR(:NEW.NAM), 'DD-MON-YYYY');
-    WHEN 2 THEN
-      v_hoc_ky_start_date := TO_DATE('01-MAY-' || TO_CHAR(:NEW.NAM), 'DD-MON-YYYY');
-    WHEN 3 THEN
-      v_hoc_ky_start_date := TO_DATE('01-SEP-' || TO_CHAR(:NEW.NAM), 'DD-MON-YYYY');
-    ELSE
-      RAISE_APPLICATION_ERROR(-20002, 'Invalid semester value');
-  END CASE;
-  IF (SYSDATE - v_hoc_ky_start_date) > 14 THEN
-    RAISE_APPLICATION_ERROR(-20001, 'Insertion deadline exceeded');
-  END IF;
-END;
-/
+--
+--CREATE OR REPLACE TRIGGER TRG_DK_DELETE
+--BEFORE DELETE ON DANGKY
+--FOR EACH ROW
+--DECLARE
+--    v_hoc_ky_start_date DATE;
+--BEGIN
+--  CASE :OLD.HK
+--    WHEN 1 THEN
+--      v_hoc_ky_start_date := TO_DATE('01-JAN-' || TO_CHAR(:OLD.NAM), 'DD-MON-YYYY');
+--    WHEN 2 THEN
+--      v_hoc_ky_start_date := TO_DATE('01-MAY-' || TO_CHAR(:OLD.NAM), 'DD-MON-YYYY');
+--    WHEN 3 THEN
+--      v_hoc_ky_start_date := TO_DATE('01-SEP-' || TO_CHAR(:OLD.NAM), 'DD-MON-YYYY');
+--    ELSE
+--      RAISE_APPLICATION_ERROR(-20002, 'Invalid semester value');
+--  END CASE;
+--  IF (SYSDATE - v_hoc_ky_start_date) > 14 THEN
+--    RAISE_APPLICATION_ERROR(-20001, 'Deletion deadline exceeded');
+--  END IF;
+--END;
+--/
+--
+--CREATE OR REPLACE TRIGGER TRG_DK_INSERT
+--BEFORE INSERT ON DANGKY
+--FOR EACH ROW
+--DECLARE
+--  v_hoc_ky_start_date DATE;
+--BEGIN
+--  CASE :NEW.HK
+--    WHEN 1 THEN
+--      v_hoc_ky_start_date := TO_DATE('01-JAN-' || TO_CHAR(:NEW.NAM), 'DD-MON-YYYY');
+--    WHEN 2 THEN
+--      v_hoc_ky_start_date := TO_DATE('01-MAY-' || TO_CHAR(:NEW.NAM), 'DD-MON-YYYY');
+--    WHEN 3 THEN
+--      v_hoc_ky_start_date := TO_DATE('01-SEP-' || TO_CHAR(:NEW.NAM), 'DD-MON-YYYY');
+--    ELSE
+--      RAISE_APPLICATION_ERROR(-20002, 'Invalid semester value');
+--  END CASE;
+--  IF (SYSDATE - v_hoc_ky_start_date) > 14 THEN
+--    RAISE_APPLICATION_ERROR(-20001, 'Insertion deadline exceeded');
+--  END IF;
+--END;
+--/
 
 
 select GV('AD','PHANCONG') from dual;

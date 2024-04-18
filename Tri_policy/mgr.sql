@@ -6,7 +6,7 @@ ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
 -- RUN AGAIN
 
-CREATE OR REPLACE PROCEDURE USP_CREATENHANVIEN
+CREATE OR REPLACE PROCEDURE USP_CREATENHANVIEN authid current_user -- to fix insufficient bug, need to grant inherit to DBA
 AS 
     CURSOR CUR IS (SELECT MANV 
                     FROM NHANSU 
@@ -14,7 +14,7 @@ AS
                                                 FROM ALL_USERS) 
                     ); 
     STRSQL VARCHAR(2000); 
-    USR VARCHAR2(4); 
+    USR VARCHAR2(5); 
 BEGIN 
     OPEN CUR; 
     STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
@@ -27,6 +27,8 @@ BEGIN
         EXECUTE IMMEDIATE(STRSQL); 
         STRSQL := 'GRANT CONNECT TO '||USR; 
         EXECUTE IMMEDIATE(STRSQL); 
+        
+        -- do some if else to grant specific role here
     END LOOP; 
     STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
     EXECUTE IMMEDIATE(STRSQL); 
@@ -55,7 +57,8 @@ BEGIN
         STRSQL := 'CREATE USER '||USR||' IDENTIFIED BY 123'; 
         EXECUTE IMMEDIATE(STRSQL); 
         STRSQL := 'GRANT CONNECT TO '||USR; 
-        EXECUTE IMMEDIATE(STRSQL); 
+        EXECUTE IMMEDIATE(STRSQL);
+        
     END LOOP; 
     STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
     EXECUTE IMMEDIATE(STRSQL); 
@@ -87,6 +90,7 @@ create role RL_TK;
 create role RL_SV;
 
 --revoke select,UPDATE on ad.NHANSU from RL_NVCB;
+grant select on ad.NHANSU to RL_NVCB;
 grant select on ad.SINHVIEN to RL_NVCB;
 grant select on ad.DONVI to RL_NVCB;
 grant select on ad.HOCPHAN to RL_NVCB;

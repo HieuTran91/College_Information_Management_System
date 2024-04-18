@@ -1,6 +1,6 @@
 ﻿namespace ATBM_A_14
 {
-    partial class HandlingUnit
+    partial class HandlingDepartment
     {
         /// <summary>
         /// Required designer variable.
@@ -157,6 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HandlingUnit";
             this.Text = "HandlingUnit";
             this.groupBox1.ResumeLayout(false);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Configuration;
 using Oracle.ManagedDataAccess.Client;
+using System.Data.SqlTypes;
 
 namespace ATBM_A_14
 {
@@ -23,9 +24,9 @@ namespace ATBM_A_14
                 return;
             }
             string conn_str = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={Program.HOST})(PORT={Program.PORT})))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={Program.SERVICE})));User Id={_username};Password={_password};";
-            OracleConnection conn = new OracleConnection(conn_str);
             try
             {
+                OracleConnection conn = new OracleConnection(conn_str);
                 conn.Open();
                 Program.conn = conn;
                 Program.username = _username;
@@ -47,13 +48,21 @@ namespace ATBM_A_14
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                     userTab.Show();
                 }
-                else if (_username.Contains("NV"))
+                else if (_username.ToUpper().Contains("NV"))
                 {
+                    string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.NHANSU WHERE MANV = '{_username.ToUpper()}'";
+                    OracleCommand cmd = new OracleCommand(sql, Program.conn);
+                    string role = cmd.ExecuteScalar().ToString();
+                    MessageBox.Show(role + " code: " + sql);
+
+                    // if else for specific tab
                     NV_MENU userTab = new NV_MENU();
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                     userTab.Show();
+
+                    // do some sql to check if a table exist to the user
                 }
-                else if (_username.Contains("SV"))
+                else if (_username.ToUpper().Contains("SV"))
                 {
                     SV_MENU userTab = new SV_MENU();
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed

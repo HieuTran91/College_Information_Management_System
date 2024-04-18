@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ATBM_A_14
 {
-    public partial class UnitInformation : Form
+    public partial class DepartmentInformation : Form
     {
-        public UnitInformation()
+        public DepartmentInformation()
         {
             InitializeComponent();
         }

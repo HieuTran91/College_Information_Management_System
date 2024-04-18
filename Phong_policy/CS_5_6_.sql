@@ -3,6 +3,9 @@ ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 SELECT * FROM ALL_POLICIES;
 select * from ad.hocphan;
 select * from ad.khmo;
+
+select * from nhansu;
+
 -- CS#5:
 -- Như một người dùng có vai trò “Giảng viên”  
 -- Thêm, Xóa, Cập nhật dữ liệu trên quan hệ PHANCONG đối với các học phần quản lý bởi đơn vị “Văn phòng khoa”. 

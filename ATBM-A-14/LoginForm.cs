@@ -53,13 +53,39 @@ namespace ATBM_A_14
                     string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.NHANSU WHERE MANV = '{_username.ToUpper()}'";
                     OracleCommand cmd = new OracleCommand(sql, Program.conn);
                     string role = cmd.ExecuteScalar().ToString();
-                    MessageBox.Show(role + " code: " + sql);
+                    //  MessageBox.Show(role + " code: " + sql);
 
                     // if else for specific tab
-                    NVCB_MENU userTab = new NVCB_MENU();
-                    userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
-                    userTab.Show();
-
+                    if (role.Contains("Nhân viên cơ bản"))
+                    {
+                        NVCB_MENU userTab = new NVCB_MENU();
+                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
+                        userTab.Show();
+                    }
+                    if (role.Contains("Giáo vụ"))
+                    {
+                        GIAOVU_MENU userTab = new GIAOVU_MENU();
+                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
+                        userTab.Show();
+                    }
+                    if (role.Contains("Giáo viên"))
+                    {
+                        NVCB_MENU userTab = new NVCB_MENU();
+                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
+                        userTab.Show();
+                    }
+                    if (role.Contains("Trưởng đơn vị"))
+                    {
+                        NVCB_MENU userTab = new NVCB_MENU();
+                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
+                        userTab.Show();
+                    }
+                    if (role.Contains("Trưởng khoa"))
+                    {
+                        NVCB_MENU userTab = new NVCB_MENU();
+                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
+                        userTab.Show();
+                    }
                     // do some sql to check if a table exist to the user
                 }
                 else if (_username.ToUpper().Contains("SV"))

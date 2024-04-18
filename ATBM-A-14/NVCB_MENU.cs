@@ -19,9 +19,14 @@ namespace ATBM_A_14
 
         private void NV_MENU_Load(object sender, EventArgs e)
         {
-            PersonalInformation stu = new PersonalInformation();
+            PersonalInformation human = new PersonalInformation();
+            human.TopLevel = false;
+            panel1.Controls.Add(human);
+            human.Show();
+
+            StudentView stu = new StudentView();
             stu.TopLevel = false;
-            panel1.Controls.Add(stu);
+            panel2.Controls.Add(stu);
             stu.Show();
 
 

@@ -16,5 +16,14 @@ namespace ATBM_A_14
         {
             InitializeComponent();
         }
+        private void GIAOVU_MENU_Load(object sender, EventArgs e)
+        {
+            PersonalInformation stu = new PersonalInformation();
+            stu.TopLevel = false;
+            panel1.Controls.Add(stu);
+            stu.Show();
+
+
+        }
     }
 }

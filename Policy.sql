@@ -135,9 +135,6 @@ GRANT SELECT ON VIEW_THONGTIN_NVCB TO RL_NVCB;
 GRANT UPDATE(DT) ON VIEW_THONGTIN_NVCB TO RL_NVCB;
 
 
-
-
-
 -- cs2: Người dùng có VAITRO là “Giảng viên”
 
 ---- Như một người dùng có vai trò “Nhân viên cơ bản” (xem mô tả CS#1).

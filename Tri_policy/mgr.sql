@@ -35,7 +35,6 @@ BEGIN
     CLOSE CUR; 
 END; 
 
-Exec USP_CREATENHANVIEN;
 
 CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN
 AS 
@@ -68,6 +67,10 @@ END;
 exec USP_CREATESINHVIEN;
 exec USP_CREATENHANVIEN;
 
+SELECT * FROM dba_roles;
+SELECT * FROM dba_users;
+
+
 SELECT username, created FROM dba_users where username like 'SV%' or username like 'NV%';
 
 
@@ -77,8 +80,9 @@ SELECT username, created FROM dba_users where username like 'SV%' or username li
 --GRANT CREATE SESSION TO NV009 container = all;
 
 --create role RL_NVCB;
+select * from nhansu;
 
-select * from nhansu
+
 -- create role
 create role RL_NVCB;
 create role RL_GIAOVU;
@@ -86,6 +90,76 @@ create role RL_GIANGVIEN;
 create role RL_TDV;
 create role RL_TK;
 create role RL_SV;
+
+
+--drop role RL_NVCB;
+--drop role RL_GIAOVU;
+--drop role RL_GIANGVIEN;
+--drop role RL_TDV;
+--drop role RL_TK;
+--drop role RL_SV;
+
+--grant ROLE to USER
+CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_SV
+AS 
+    CURSOR CUR IS (SELECT MASV FROM AD.SINHVIEN); 
+    STRSQL VARCHAR(2000); 
+    USR VARCHAR2(6);
+BEGIN 
+    OPEN CUR; 
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    LOOP 
+        FETCH CUR INTO USR; 
+        EXIT WHEN CUR%NOTFOUND; 
+             
+        STRSQL := 'GRANT RL_SV TO '||USR; 
+        EXECUTE IMMEDIATE(STRSQL);     
+    END LOOP;     
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    CLOSE CUR;
+END; 
+
+
+CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_NV
+AS 
+    CURSOR CUR IS (SELECT MANV, VAITRO FROM AD.NHANSU); 
+    STRSQL VARCHAR(2000); 
+    USR VARCHAR2(5);
+    ROLE_USR NVARCHAR2(50);
+BEGIN 
+    OPEN CUR; 
+    LOOP 
+        FETCH CUR INTO USR, ROLE_USR; 
+        EXIT WHEN CUR%NOTFOUND; 
+        IF ROLE_USR = 'NHÂN VIÊN CƠ BẢN' THEN
+            STRSQL := 'GRANT RL_NVCB TO '||USR; 
+        END IF;
+        IF ROLE_USR = 'GIẢNG VIÊN' THEN
+            STRSQL := 'GRANT RL_GIANGVIEN TO '||USR; 
+        END IF;
+        IF ROLE_USR = 'GIÁO VỤ' THEN
+            STRSQL := 'GRANT RL_GIAOVU TO '||USR; 
+        END IF;
+        IF ROLE_USR = 'TRƯỞNG ĐƠN VỊ' THEN
+            STRSQL := 'GRANT RL_TDV TO '||USR; 
+        END IF;
+        IF ROLE_USR = 'TRƯỞNG KHOA' THEN
+            STRSQL := 'GRANT RL_TK TO '||USR; 
+        END IF;
+        EXECUTE IMMEDIATE(STRSQL);     
+    END LOOP; 
+    
+    
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    CLOSE CUR;
+END; 
+
+EXEC GRANT_ROLE_TO_SV;
+EXEC GRANT_ROLE_TO_NV;
+
 
 --revoke select,UPDATE on ad.NHANSU from RL_NVCB;
 -- grant select on ad.NHANSU to RL_NVCB; -- sai quyền truy cập

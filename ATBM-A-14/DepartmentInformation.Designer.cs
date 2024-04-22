@@ -44,11 +44,11 @@
             this.groupBox1.Size = new System.Drawing.Size(1041, 535);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Unit Information";
+            this.groupBox1.Text = "Department Information";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(712, 37);
+            this.button1.Location = new System.Drawing.Point(6, 512);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 1;

@@ -5,16 +5,16 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace ATBM_A_14
 {
-    public partial class Registration : Form
+    public partial class Assignment : Form
     {
-        public Registration()
+        public Assignment()
         {
             InitializeComponent();
         }
 
-        private void Registration_Load(object sender, EventArgs e)
+        private void Assigment_Load(object sender, EventArgs e)
         {
-            string sql1 = $"select * from {Program.SCHEMA}.DANGKY";
+            string sql1 = $"select * from {Program.SCHEMA}.PHANCONG";
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
             {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ATBM_A_14
 {
-    public partial class Assigment : Form
+    public partial class HandleCoursePlan : Form
     {
-        public Assigment()
+        public HandleCoursePlan()
         {
             InitializeComponent();
         }

@@ -34,9 +34,14 @@ namespace ATBM_A_14
             panel3.Controls.Add(coursePlan);
             coursePlan.Show();
 
+            Registration registration = new Registration();
+            registration.TopLevel = false;
+            panel4.Controls.Add(registration);
+            registration.Show();
+
             HandleCourse handleCourse = new HandleCourse();
             handleCourse.TopLevel = false;
-            panel4.Controls.Add(handleCourse);
+            panel5.Controls.Add(handleCourse);
             handleCourse.Show();
         }
     }

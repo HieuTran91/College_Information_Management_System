@@ -185,7 +185,6 @@ D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.csproj.CoreCompileInputs.cache
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.csproj.Up2Date
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.exe
 D:\gitproj\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.pdb
-D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Assigment.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.AssignmentProcessing.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.CourseInformation.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.CoursePlanInformation.resources
@@ -325,3 +324,8 @@ D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.GIAOVU_MENU.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.NVCB_MENU.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.StudentView.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.GIANGVIEN_MENU.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.TDV_MENU.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.TK_MENU.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Assignment.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleCoursePlan.resources

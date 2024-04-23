@@ -10,17 +10,17 @@ select * from AD.hocphan;
 
 select * from ad.khmo;
 
-select * from ad.phancong;
+select * from ad.phancong where mahp = 'HP26' AND MAGV = 'NV012';
 
 SELECT SYS_CONTEXT('USERENV', 'SESSION_USER') FROM DUAL;
 SELECT SYS_CONTEXT('USERENV', 'ISDBA') FROM DUAL;
 
 UPDATE ad.PHANCONG
 SET MACT = 'VP'
-WHERE MAGV = 'NV048' AND MAHP = 'HP04' AND HK = 1 AND NAM = 2020;
+WHERE MAGV = 'NV048' AND MAHP = 'HP01' AND HK = 1 AND NAM = 2020;
 
 UPDATE ad.PHANCONG
-SET MACT = 'CLC'
+SET MACT = 'TT'
 WHERE MAGV = 'NV012' AND MAHP = 'HP26' AND HK = 2 AND NAM = 2023;
 
 select * from ad.dangky where masv = 'SV0499' ;

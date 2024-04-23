@@ -1,6 +1,7 @@
 alter session set current_schema = AD;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-
+select * from ad.nhansu;
+select * From ad.donvi;
 --insert into DANGKY(MASV,MAGV,MAHP,HK,NAM,MACT,DIEMTH, DIEMQT, DIEMCK, DIEMTK) values('SV0001','NV081','HP39',1,2024,'CTTT', 1, NULL, NULL, NULL);
 
 SELECT * FROM ALL_POLICIES;

@@ -575,7 +575,6 @@ BEGIN
 END;
 /
 
-
 create or replace function FUNC_SV_Insert (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
 as

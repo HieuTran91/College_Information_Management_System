@@ -145,8 +145,8 @@ END;
 EXEC GRANT_ROLE_TO_SV;
 EXEC GRANT_ROLE_TO_NV;
 
-
-
+--
+--revoke select on ad.nhansu from RL_NVCB
 -- cs1: Người dùng có VAITRO là “Nhân viên cơ bản” 
 
 ---- Xem thông tin của tất cả SINHVIEN, ĐƠNVỊ, HOCPHAN, KHMO. 
@@ -160,14 +160,13 @@ grant select on ad.KHMO to RL_NVCB;
 
 ---- Xem dòng dữ liệu của chính mình trong quan hệ NHANSU, có thể chỉnh sửa số điện thoại (ĐT) của chính mình (nếu số điện thoại có thay đổi). 
 
-CREATE VIEW VIEW_THONGTIN_NVCB AS
+CREATE or replace VIEW VIEW_THONGTIN_NVCB AS
 SELECT *
 FROM ad.NHANSU
 WHERE MaNV = SYS_CONTEXT('USERENV', 'SESSION_USER');
 
 GRANT SELECT ON VIEW_THONGTIN_NVCB TO RL_NVCB;
 GRANT UPDATE(DT) ON VIEW_THONGTIN_NVCB TO RL_NVCB;
-
 
 -- cs2: Người dùng có VAITRO là “Giảng viên”
 

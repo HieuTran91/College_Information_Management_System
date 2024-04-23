@@ -13,7 +13,7 @@ namespace ATBM_A_14
 
         private void Audit_Load(object sender, EventArgs e)
         {
-            label1.Text = "OFF"; // read from the database
+            // label1.Text = "OFF"; // read from the database
         }
     }
 }

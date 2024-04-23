@@ -38,21 +38,21 @@ GRANT LBAC_DBA TO ADMIN_OLS;
 GRANT EXECUTE ON sa_sysdba TO ADMIN_OLS;  
 GRANT EXECUTE ON TO_LBAC_DATA_LABEL TO ADMIN_OLS; -- CẤP QUYỀN THỰC THI 
 GRANT notification_policy_DBA to ADMIN_OLS;
+
+
 --GRANT CREATE SESSION TO ADMIN_OLS;
-
-
---TEST USER
-CREATE USER sales_manager IDENTIFIED BY 123;
-GRANT CONNECT TO sales_manager;
-BEGIN
- SA_USER_ADMIN.SET_USER_LABELS('notification_policy','admin_ols','TK:HTTT:CS1');
-END; 
-
-grant inherit privileges on user sys to admin_ols;
-
-SELECT policy_name
-FROM user_policies
-WHERE policy_name = 'TEN_POLICY_BAN_MUON_KIEM_TRA';
+----TEST USER
+--CREATE USER sales_manager IDENTIFIED BY 123;
+--GRANT CONNECT TO sales_manager;
+--BEGIN
+-- SA_USER_ADMIN.SET_USER_LABELS('notification_policy','admin_ols','TK:HTTT:CS1');
+--END; 
+--
+--grant inherit privileges on user sys to admin_ols;
+--
+--SELECT policy_name
+--FROM user_policies
+--WHERE policy_name = 'TEN_POLICY_BAN_MUON_KIEM_TRA';
 
 
 

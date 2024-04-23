@@ -1,5 +1,7 @@
 alter session set current_schema = ad;
 
+select * from ad.nhansu;
+
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
 -- DELETE USER HERE

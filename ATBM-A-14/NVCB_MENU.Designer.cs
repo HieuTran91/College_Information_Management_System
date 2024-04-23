@@ -86,7 +86,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(939, 587);
+            this.tabPage2.Size = new System.Drawing.Size(1074, 587);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Student";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(933, 581);
+            this.panel2.Size = new System.Drawing.Size(1068, 581);
             this.panel2.TabIndex = 0;
             // 
             // tabPage3
@@ -105,7 +105,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(939, 587);
+            this.tabPage3.Size = new System.Drawing.Size(1074, 587);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Department";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(933, 581);
+            this.panel3.Size = new System.Drawing.Size(1068, 581);
             this.panel3.TabIndex = 0;
             // 
             // tabPage4
@@ -164,7 +164,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "NVCB_MENU";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NV_MENU";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.NV_MENU_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

@@ -15,13 +15,20 @@ END;
 /
 
 BEGIN 
-SA_SYSDBA.CREATE_POLICY( 
-policy_name => 'notification_policy',  
-column_name => 'notification_label' 
-); 
+    SA_SYSDBA.CREATE_POLICY( 
+    policy_name => 'notification_policy',  
+    column_name => 'notification_label' 
+    ); 
 END;
 
-EXEC SA_SYSDBA.ENABLE_POLICY ('notification_policy'); 
+BEGIN
+    SA_SYSDBA.DROP_POLICY(
+        policy_name => 'notification_policy',  -- replace with your policy name
+        drop_column=> true
+    );
+END;
+
+EXEC SA_SYSDBA.ENABLE_POLICY ('NOTIFICATION_POLICY'); 
 
 -- create level
 EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',120,'TK', 'TRUONG KHOA'); 

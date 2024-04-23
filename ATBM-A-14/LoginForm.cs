@@ -68,25 +68,24 @@ namespace ATBM_A_14
                         userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                         userTab.Show();
                     }
-                    if (role.Contains("Giáo viên"))
+                    if (role.Contains("Giảng viên"))
                     {
-                        NVCB_MENU userTab = new NVCB_MENU();
+                        GIANGVIEN_MENU userTab = new GIANGVIEN_MENU();
                         userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                         userTab.Show();
                     }
                     if (role.Contains("Trưởng đơn vị"))
                     {
-                        NVCB_MENU userTab = new NVCB_MENU();
+                        TDV_MENU userTab = new TDV_MENU();
                         userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                         userTab.Show();
                     }
                     if (role.Contains("Trưởng khoa"))
                     {
-                        NVCB_MENU userTab = new NVCB_MENU();
+                        TK_MENU userTab = new TK_MENU();
                         userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                         userTab.Show();
                     }
-                    // do some sql to check if a table exist to the user
                 }
                 else if (_username.ToUpper().Contains("SV"))
                 {
@@ -107,11 +106,6 @@ namespace ATBM_A_14
                 if (ex.Message.Contains("ORA-28009")) MessageBox.Show("We don't use highest SYSDBA here, pls use another lower SYSDBA account");
                 else MessageBox.Show($"Failed to connect: {ex.Message}");
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

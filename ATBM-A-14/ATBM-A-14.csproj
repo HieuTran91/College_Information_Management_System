@@ -155,17 +155,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assigment.cs">
+    <Compile Include="Assignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Assigment.Designer.cs">
-      <DependentUpon>Assigment.cs</DependentUpon>
+    <Compile Include="Assignment.Designer.cs">
+      <DependentUpon>Assignment.cs</DependentUpon>
     </Compile>
     <Compile Include="AssignmentProcessing.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AssignmentProcessing.Designer.cs">
       <DependentUpon>AssignmentProcessing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audit.Designer.cs">
+      <DependentUpon>Audit.cs</DependentUpon>
     </Compile>
     <Compile Include="CourseInformation.cs">
       <SubType>Form</SubType>
@@ -185,6 +191,12 @@
     <Compile Include="Create_Delete_Update.Designer.cs">
       <DependentUpon>Create_Delete_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="GIANGVIEN_MENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIANGVIEN_MENU.Designer.cs">
+      <DependentUpon>GIANGVIEN_MENU.cs</DependentUpon>
+    </Compile>
     <Compile Include="GIAOVU_MENU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +214,12 @@
     </Compile>
     <Compile Include="HandleCourse.Designer.cs">
       <DependentUpon>HandleCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandleCoursePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandleCoursePlan.Designer.cs">
+      <DependentUpon>HandleCoursePlan.cs</DependentUpon>
     </Compile>
     <Compile Include="HandleRegistration.cs">
       <SubType>Form</SubType>
@@ -289,6 +307,18 @@
     <Compile Include="DepartmentInformation.Designer.cs">
       <DependentUpon>DepartmentInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="TDV_MENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TDV_MENU.Designer.cs">
+      <DependentUpon>TDV_MENU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TK_MENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TK_MENU.Designer.cs">
+      <DependentUpon>TK_MENU.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,11 +331,14 @@
     <Compile Include="UserTab.Designer.cs">
       <DependentUpon>UserTab.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Assigment.resx">
-      <DependentUpon>Assigment.cs</DependentUpon>
+    <EmbeddedResource Include="Assignment.resx">
+      <DependentUpon>Assignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AssignmentProcessing.resx">
       <DependentUpon>AssignmentProcessing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audit.resx">
+      <DependentUpon>Audit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseInformation.resx">
       <DependentUpon>CourseInformation.cs</DependentUpon>
@@ -316,6 +349,9 @@
     <EmbeddedResource Include="Create_Delete_Update.resx">
       <DependentUpon>Create_Delete_Update.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GIANGVIEN_MENU.resx">
+      <DependentUpon>GIANGVIEN_MENU.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GIAOVU_MENU.resx">
       <DependentUpon>GIAOVU_MENU.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HandleCourse.resx">
       <DependentUpon>HandleCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandleCoursePlan.resx">
+      <DependentUpon>HandleCoursePlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandleRegistration.resx">
       <DependentUpon>HandleRegistration.cs</DependentUpon>
@@ -371,6 +410,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentInformation.resx">
       <DependentUpon>DepartmentInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TDV_MENU.resx">
+      <DependentUpon>TDV_MENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TK_MENU.resx">
+      <DependentUpon>TK_MENU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateScore.resx">
       <DependentUpon>UpdateScore.cs</DependentUpon>

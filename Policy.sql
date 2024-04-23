@@ -1,6 +1,6 @@
 ------Yêu cầu 1: Cấp quyền truy cập 
 
-
+select * from AD.NHANSU;
 -- xác đinh schema
 alter session set current_schema = ad;
 

@@ -1,8 +1,10 @@
 alter session set current_schema = ad;
 
-select * from ad.nhansu;
+select * from ad.sinhvien;
 
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
+GRANT INHERIT PRIVILEGES ON USER sys TO ad; -- avoid insufficient bug by granting inherit
 
 -- DELETE USER HERE
 
@@ -36,9 +38,9 @@ BEGIN
     EXECUTE IMMEDIATE(STRSQL); 
     CLOSE CUR; 
 END; 
+/
 
-
-CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN
+CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN authid current_user
 AS 
     CURSOR CUR IS (SELECT MASV 
                     FROM SINHVIEN 
@@ -65,6 +67,7 @@ BEGIN
     EXECUTE IMMEDIATE(STRSQL); 
     CLOSE CUR; 
 END; 
+/
 
 exec USP_CREATESINHVIEN;
 exec USP_CREATENHANVIEN;
@@ -102,9 +105,9 @@ create role RL_SV;
 --drop role RL_SV;
 
 --grant ROLE to USER
-CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_SV
+CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_SV authid current_user
 AS 
-    CURSOR CUR IS (SELECT MASV FROM AD.SINHVIEN); 
+    CURSOR CUR IS (SELECT MASV FROM SINHVIEN); 
     STRSQL VARCHAR(2000); 
     USR VARCHAR2(6);
 BEGIN 
@@ -115,7 +118,7 @@ BEGIN
         FETCH CUR INTO USR; 
         EXIT WHEN CUR%NOTFOUND; 
              
-        STRSQL := 'GRANT RL_SV TO '||USR; 
+        STRSQL := 'GRANT RL_SV TO '|| USR; 
         EXECUTE IMMEDIATE(STRSQL);     
     END LOOP;     
     STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
@@ -124,7 +127,7 @@ BEGIN
 END; 
 /
 
-CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_NV
+CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_NV authid current_user
 AS 
     CURSOR CUR IS (SELECT MANV, VAITRO FROM AD.NHANSU); 
     STRSQL VARCHAR(2000); 
@@ -135,19 +138,19 @@ BEGIN
     LOOP 
         FETCH CUR INTO USR, ROLE_USR; 
         EXIT WHEN CUR%NOTFOUND; 
-        IF ROLE_USR = 'NHÂN VIÊN CƠ BẢN' THEN
+        IF ROLE_USR = 'Nhân viên cơ bản' THEN
             STRSQL := 'GRANT RL_NVCB TO '||USR; 
         END IF;
-        IF ROLE_USR = 'GIẢNG VIÊN' THEN
+        IF ROLE_USR = 'Giảng viên' THEN
             STRSQL := 'GRANT RL_GIANGVIEN TO '||USR; 
         END IF;
-        IF ROLE_USR = 'GIÁO VỤ' THEN
+        IF ROLE_USR = 'Giáo vụ' THEN
             STRSQL := 'GRANT RL_GIAOVU TO '||USR; 
         END IF;
-        IF ROLE_USR = 'TRƯỞNG ĐƠN VỊ' THEN
+        IF ROLE_USR = 'Trưởng đơn vị' THEN
             STRSQL := 'GRANT RL_TDV TO '||USR; 
         END IF;
-        IF ROLE_USR = 'TRƯỞNG KHOA' THEN
+        IF ROLE_USR = 'Trưởng khoa' THEN
             STRSQL := 'GRANT RL_TK TO '||USR; 
         END IF;
         EXECUTE IMMEDIATE(STRSQL);     

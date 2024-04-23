@@ -8,7 +8,7 @@ ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
 -- tạo user
 
-CREATE OR REPLACE PROCEDURE USP_CREATENHANVIEN
+CREATE OR REPLACE PROCEDURE USP_CREATENHANVIEN authid current_user
 AS 
     CURSOR CUR IS (SELECT MANV 
                     FROM NHANSU 
@@ -39,7 +39,7 @@ END;
 
 Exec USP_CREATENHANVIEN;
 
-CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN
+CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN authid current_user
 AS 
     CURSOR CUR IS (SELECT MASV 
                     FROM SINHVIEN 
@@ -70,6 +70,8 @@ END;
 exec USP_CREATESINHVIEN;
 exec USP_CREATENHANVIEN;
 
+
+
 -- kiểm tra user đã tạo
 SELECT username, created FROM dba_users where username like 'SV%' or username like 'NV%';
 
@@ -82,37 +84,69 @@ create role RL_TK;
 create role RL_SV;
 
 -- gán role cho user
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
+CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_SV authid current_user
+AS 
+    CURSOR CUR IS (SELECT MASV FROM SINHVIEN); 
+    STRSQL VARCHAR(2000); 
+    USR VARCHAR2(6);
+BEGIN 
+    OPEN CUR; 
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    LOOP 
+        FETCH CUR INTO USR; 
+        EXIT WHEN CUR%NOTFOUND; 
+             
+        STRSQL := 'GRANT RL_SV TO '|| USR; 
+        EXECUTE IMMEDIATE(STRSQL);     
+    END LOOP;     
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    CLOSE CUR;
+END; 
+/
 
+CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_NV authid current_user
+AS 
+    CURSOR CUR IS (SELECT MANV, VAITRO FROM AD.NHANSU); 
+    STRSQL VARCHAR(2000); 
+    USR VARCHAR2(5);
+    ROLE_USR NVARCHAR2(50);
+BEGIN 
+    OPEN CUR; 
+    LOOP 
+        FETCH CUR INTO USR, ROLE_USR; 
+        EXIT WHEN CUR%NOTFOUND; 
+        IF ROLE_USR = 'Nhân viên cơ bản' THEN
+            STRSQL := 'GRANT RL_NVCB TO '||USR; 
+        END IF;
+        IF ROLE_USR = 'Giảng viên' THEN
+            STRSQL := 'GRANT RL_GIANGVIEN TO '||USR; 
+        END IF;
+        IF ROLE_USR = 'Giáo vụ' THEN
+            STRSQL := 'GRANT RL_GIAOVU TO '||USR; 
+        END IF;
+        IF ROLE_USR = 'Trưởng đơn vị' THEN
+            STRSQL := 'GRANT RL_TDV TO '||USR; 
+        END IF;
+        IF ROLE_USR = 'Trưởng khoa' THEN
+            STRSQL := 'GRANT RL_TK TO '||USR; 
+        END IF;
+        EXECUTE IMMEDIATE(STRSQL);     
+    END LOOP; 
+    
+    
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    CLOSE CUR;
+END; 
+/
 
+EXEC GRANT_ROLE_TO_SV;
+EXEC GRANT_ROLE_TO_NV;
 
-
-
+--
+--revoke select on ad.nhansu from RL_NVCB
 -- cs1: Người dùng có VAITRO là “Nhân viên cơ bản” 
 
 ---- Xem thông tin của tất cả SINHVIEN, ĐƠNVỊ, HOCPHAN, KHMO. 
@@ -126,14 +160,13 @@ grant select on ad.KHMO to RL_NVCB;
 
 ---- Xem dòng dữ liệu của chính mình trong quan hệ NHANSU, có thể chỉnh sửa số điện thoại (ĐT) của chính mình (nếu số điện thoại có thay đổi). 
 
-CREATE VIEW VIEW_THONGTIN_NVCB AS
+CREATE or replace VIEW VIEW_THONGTIN_NVCB AS
 SELECT *
 FROM ad.NHANSU
 WHERE MaNV = SYS_CONTEXT('USERENV', 'SESSION_USER');
 
 GRANT SELECT ON VIEW_THONGTIN_NVCB TO RL_NVCB;
 GRANT UPDATE(DT) ON VIEW_THONGTIN_NVCB TO RL_NVCB;
-
 
 -- cs2: Người dùng có VAITRO là “Giảng viên”
 

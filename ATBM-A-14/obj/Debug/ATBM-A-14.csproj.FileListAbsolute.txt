@@ -330,3 +330,4 @@ D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.T
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Assignment.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleCoursePlan.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Audit.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.ModifyAudit.resources

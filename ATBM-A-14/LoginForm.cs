@@ -50,10 +50,9 @@ namespace ATBM_A_14
                 }
                 else if (_username.ToUpper().Contains("NV"))
                 {
-                    string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.NHANSU WHERE MANV = '{_username.ToUpper()}'";
+                    string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.VIEW_THONGTIN_NVCB";
                     OracleCommand cmd = new OracleCommand(sql, Program.conn);
                     string role = cmd.ExecuteScalar().ToString();
-                    //  MessageBox.Show(role + " code: " + sql);
 
                     // if else for specific tab
                     if (role.Contains("Nhân viên cơ bản"))
@@ -99,12 +98,11 @@ namespace ATBM_A_14
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                     userTab.Show();
                 }
-                // Program.conn.Close();
             }
             catch (OracleException ex)
             {
                 if (ex.Message.Contains("ORA-28009")) MessageBox.Show("We don't use highest SYSDBA here, pls use another lower SYSDBA account");
-                else MessageBox.Show($"Failed to connect: {ex.Message}");
+                else MessageBox.Show($"Failed to connect: + {ex.Message}");
             }
         }
     }

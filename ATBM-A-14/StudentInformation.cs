@@ -45,12 +45,42 @@ namespace ATBM_A_14
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // string sql = $"update {Program.SCHEMA}.SINHVIEN set DT = {}";
+            if (textBox1.Text.Length != 10)
+            {
+                MessageBox.Show("Phone number must be exactly 10 characters.");
+                return;
+            }
+            string sql = $"UPDATE {Program.SCHEMA}.SINHVIEN SET DT = :phone";
+            try
+            {
+                OracleCommand cmd = new OracleCommand(sql, Program.conn);
+                OracleParameter param = new OracleParameter("phone", OracleDbType.Char);
+                param.Value = textBox1.Text;
+                param.Size = 10;
+                cmd.Parameters.Add(param);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Successfully changed user phone");
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Failed to change user phone ");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            string sql = $"UPDATE {Program.SCHEMA}.SINHVIEN SET DCHI = :address";
+            try
+            {
+                OracleCommand cmd = new OracleCommand(sql, Program.conn);
+                cmd.Parameters.Add(new OracleParameter("address", OracleDbType.Varchar2)).Value = textBox2.Text;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show($"Successfully changed user phone");
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Failed to change user address ");
+            }
         }
     }
 }

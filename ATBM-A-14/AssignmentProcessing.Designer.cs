@@ -90,16 +90,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Handle Assignment";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(520, 167);
+            this.button4.Location = new System.Drawing.Point(376, 167);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(108, 32);
             this.button4.TabIndex = 12;
             this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox4
             // 
@@ -118,12 +118,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(334, 167);
+            this.button3.Location = new System.Drawing.Point(549, 167);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 32);
             this.button3.TabIndex = 11;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox3
             // 
@@ -149,6 +150,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Insert";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox1
             // 
@@ -175,7 +177,6 @@
             this.label4.Size = new System.Drawing.Size(36, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Year";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 

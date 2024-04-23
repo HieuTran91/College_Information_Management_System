@@ -6,13 +6,13 @@ BEGIN
 END;
 /
 
-BEGIN
-    SA_SYSDBA.DROP_POLICY(
-        policy_name     => 'nhansu_policy',
-        drop_column     => TRUE
-    );
-END;
-/
+--BEGIN
+--    SA_SYSDBA.DROP_POLICY(
+--        policy_name     => 'nhansu_policy',
+--        drop_column     => TRUE
+--    );
+--END;
+--/
 
 BEGIN 
     SA_SYSDBA.CREATE_POLICY( 

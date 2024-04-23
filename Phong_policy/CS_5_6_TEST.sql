@@ -27,3 +27,11 @@ select * from ad.PHANCONG;
 select * from ad.DONVI;
 select * from ad.HOCPHAN;
 select * from ad.SINHVIEN;
+
+
+select VAITRO from ad.VIEW_THONGTIN_NVCB;
+
+
+SELECT distinct GRANTEE, GRANTED_ROLE FROM DBA_ROLE_PRIVS WHERE GRANTEE like '%SV%' and GRANTED_ROLE <> 'CONNECT';
+
+select * from dba_roles where role like 'RL%';

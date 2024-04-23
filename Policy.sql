@@ -192,33 +192,200 @@ grant select,update on ad.PHANCONG to RL_GIAOVU;
 ---- Xóa hoặc Thêm mới dữ liệu trên quan hệ ĐANGKY theo yêu cầu của sinh viên trong khoảng thời gian còn cho hiệu chỉnh đăng ký, xem điều kiện có thể hiệu chỉnh đăng ký học phần được mô tả bên dưới.
 grant insert, delete, select on ad.DANGKY to RL_GIAOVU;
 
---tạo policy/proc
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
---
+CREATE OR REPLACE FUNCTION FUNC_DATE (
+    p_hk IN NUMBER,
+    p_nam IN NUMBER
+) RETURN DATE AS
+    l_hoc_ky_start_date DATE;
+BEGIN
+    CASE p_hk
+        WHEN 1 THEN
+            l_hoc_ky_start_date := TO_DATE('01-JAN-' || TO_CHAR(p_nam), 'DD-MON-YYYY');
+        WHEN 2 THEN
+            l_hoc_ky_start_date := TO_DATE('01-MAY-' || TO_CHAR(p_nam), 'DD-MON-YYYY');
+        WHEN 3 THEN
+            l_hoc_ky_start_date := TO_DATE('01-SEP-' || TO_CHAR(p_nam), 'DD-MON-YYYY');
+    END CASE;
+    RETURN l_hoc_ky_start_date;
+END;
 
+CREATE OR REPLACE FUNCTION GV (P_SCHEMA varchar2, P_OBJ varchar2)
+return varchar2
+as
+    user varchar(100);
+    is_dba VARCHAR2(5);
+    role VARCHAR(2);
+    MA CHAR(4);
+    STRSQL VARCHAR2(2000);
+    CURSOR CUR IS 
+       (SELECT MAHP 
+       FROM AD.HOCPHAN hp JOIN AD.DONVI dv ON hp.MADV = dv.MADV --JOIN AD.NHANSU ns ON dv.TRGDV = ns.MANV WHERE ns.VAITRO = 'Trưởng khoa'
+       WHERE dv.TENDV = 'Văn phòng khoa');
+BEGIN
+    is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
+    IF is_dba = 'TRUE' THEN
+        RETURN '';
+    else
+        user := sys_context('userenv','session_user');
+        role := substr(user,1,2);
+        IF ROLE = 'GV' THEN
+            OPEN CUR;
+             LOOP
+             FETCH CUR INTO MA;
+             EXIT WHEN CUR%NOTFOUND;
+             IF (STRSQL IS NOT NULL) THEN
+             STRSQL := STRSQL ||''',''';
+             END IF;
+             STRSQL := STRSQL || MA;
+             END LOOP;
+             CLOSE CUR;           
+             RETURN 'MAHP IN ('''||STRSQL||''')';
+        else
+            RETURN '1 = 1';
+        end if;
+    end if;
+END;
 
+BEGIN
+ DBMS_RLS.ADD_POLICY(
+ OBJECT_SCHEMA =>'AD',
+ OBJECT_NAME=>'PHANCONG',
+ POLICY_NAME =>'GV_PHANCONG',
+ FUNCTION_SCHEMA => 'AD',
+ POLICY_FUNCTION=>'GV',
+ STATEMENT_TYPES=>'UPDATE',
+ UPDATE_CHECK => TRUE 
+ );
+END;
+
+create or replace function FUNC_GV_Delete (P_SCHEMA varchar2, P_OBJ varchar2)
+return varchar2
+as
+    user varchar(100);
+    is_dba VARCHAR2(5);
+    role VARCHAR(2);
+    MAHP_LIST VARCHAR2(2000);
+    HK_LIST VARCHAR2(2000);
+    NAM_LIST VARCHAR2(2000);
+    MAHP CHAR(4);
+    HK INT;
+    NAM INT;
+    CURSOR CUR IS (select MAHP, HK, NAM from AD.DANGKY WHERE FUNC_DATE(HK, NAM) > (SYSDATE - 120) AND FUNC_DATE(HK, NAM) < SYSDATE);
+begin
+    is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
+    IF is_dba = 'TRUE' THEN
+        RETURN '1=1';
+    else
+        user := sys_context('userenv','session_user');
+        role := substr(user,1,2);
+        IF ROLE = 'GV' THEN
+            OPEN CUR;
+            LOOP 
+                FETCH CUR INTO MAHP, HK, NAM;
+                EXIT WHEN CUR%NOTFOUND;
+              
+                IF (MAHP_LIST IS NOT NULL) THEN 
+                    MAHP_LIST := MAHP_LIST ||''', '''; 
+                END IF; 
+                IF (HK_LIST IS NOT NULL) THEN 
+                    HK_LIST := HK_LIST ||''', '''; 
+                END IF; 
+                IF (NAM_LIST IS NOT NULL) THEN 
+                    NAM_LIST := NAM_LIST ||''', '''; 
+                END IF; 
+                MAHP_LIST := MAHP_LIST || MAHP;
+                HK_LIST := HK_LIST || HK;
+                NAM_LIST := NAM_LIST || NAM;
+            END LOOP;
+            CLOSE CUR;
+            RETURN 'MAHP IN ('''|| MAHP_LIST||''') AND HK IN ('''|| HK_LIST||''') AND NAM IN ('''|| NAM_LIST||''')';
+        else
+            RETURN '1 = 1';
+        end if;
+    end if;
+end;
+/
+
+BEGIN
+  DBMS_RLS.ADD_POLICY (
+    object_schema   => 'AD',
+    object_name     => 'DANGKY',
+    policy_name     => 'GV_Delete',
+    function_schema => 'AD',
+    policy_function => 'FUNC_GV_Delete ',
+    statement_types => 'DELETE',
+    update_check    => TRUE,
+    enable          => TRUE);
+END;
+/
+
+create or replace function FUNC_GV_Insert (P_SCHEMA varchar2, P_OBJ varchar2)
+return varchar2
+as
+    user varchar(100);
+    is_dba VARCHAR2(5);
+    role VARCHAR(2);
+    MAHP_LIST VARCHAR2(2000);
+    HK_LIST VARCHAR2(2000);
+    NAM_LIST VARCHAR2(2000);
+    MACT_LIST VARCHAR2(2000);
+    MAHP CHAR(4);
+    HK CHAR(1);
+    NAM CHAR(4);
+    MACT VARCHAR2(4);
+    CURSOR CUR IS (select MAHP, HK, NAM, MACT from AD.KHMO WHERE FUNC_DATE(HK, NAM) > (SYSDATE - 120) AND FUNC_DATE(HK, NAM) < SYSDATE);
+begin
+    is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
+    IF is_dba = 'TRUE' THEN
+        RETURN '';
+    else
+        user := sys_context('userenv','session_user');
+        role := substr(user,1,2);
+        IF ROLE = 'GV' THEN
+            OPEN CUR;
+            LOOP 
+                FETCH CUR INTO MAHP, HK, NAM, MACT;
+                EXIT WHEN CUR%NOTFOUND;
+              
+                IF (MAHP_LIST IS NOT NULL) THEN 
+                    MAHP_LIST := MAHP_LIST ||''', '''; 
+                END IF; 
+                IF (HK_LIST IS NOT NULL) THEN 
+                    HK_LIST := HK_LIST ||''', '''; 
+                END IF; 
+                IF (NAM_LIST IS NOT NULL) THEN 
+                    NAM_LIST := NAM_LIST ||''', '''; 
+                END IF; 
+                IF (MACT_LIST IS NOT NULL) THEN 
+                    MACT_LIST := MACT_LIST ||''', '''; 
+                END IF; 
+                MAHP_LIST := MAHP_LIST || MAHP;
+                HK_LIST := HK_LIST || HK;
+                NAM_LIST := NAM_LIST || NAM;
+                MACT_LIST := MACT_LIST || MACT;
+                
+            END LOOP;
+            CLOSE CUR;
+            RETURN 'MAHP IN ('''|| MAHP_LIST ||''') AND HK IN ('''|| HK_LIST ||''') AND NAM IN ('''|| NAM_LIST ||''') AND MACT IN ('''|| MACT_LIST ||''')';
+        else
+            RETURN '1 = 1';
+        end if;
+    end if;
+end;
+/
+
+BEGIN
+  DBMS_RLS.ADD_POLICY (
+    object_schema   => 'AD',
+    object_name     => 'DANGKY',
+    policy_name     => 'GV_Insert',
+    policy_function => 'FUNC_GV_Insert',
+    statement_types => 'INSERT',
+    update_check    => TRUE,
+    enable => TRUE
+  );
+END;
+/
 
 
 
@@ -544,23 +711,6 @@ begin
     end if;
 end;
 /
-
-CREATE OR REPLACE FUNCTION FUNC_DATE (
-    p_hk IN NUMBER,
-    p_nam IN NUMBER
-) RETURN DATE AS
-    l_hoc_ky_start_date DATE;
-BEGIN
-    CASE p_hk
-        WHEN 1 THEN
-            l_hoc_ky_start_date := TO_DATE('01-JAN-' || TO_CHAR(p_nam), 'DD-MON-YYYY');
-        WHEN 2 THEN
-            l_hoc_ky_start_date := TO_DATE('01-MAY-' || TO_CHAR(p_nam), 'DD-MON-YYYY');
-        WHEN 3 THEN
-            l_hoc_ky_start_date := TO_DATE('01-SEP-' || TO_CHAR(p_nam), 'DD-MON-YYYY');
-    END CASE;
-    RETURN l_hoc_ky_start_date;
-END;
 
 BEGIN
   DBMS_RLS.ADD_POLICY (

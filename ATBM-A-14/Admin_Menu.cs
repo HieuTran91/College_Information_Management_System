@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using System.Windows.Forms;
 
@@ -38,6 +31,11 @@ namespace ATBM_A_14
             role.TopLevel = false;
             panel4.Controls.Add(role);
             role.Show();
+
+            Audit audit = new Audit();
+            audit.TopLevel = false;
+            panel5.Controls.Add(audit);
+            audit.Show();
 
             // turn this one for uncommon user
             string sql = "ALTER SESSION SET \"_ORACLE_SCRIPT\" = TRUE";

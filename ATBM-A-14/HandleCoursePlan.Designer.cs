@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -39,6 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,24 +60,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Course Plan";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(183, 280);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 32);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(30, 280);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 32);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // comboBox4
             // 
@@ -146,6 +128,26 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "ID Course";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(183, 280);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(133, 32);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Update";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(30, 280);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 32);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // HandleCoursePlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,6 +157,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HandleCoursePlan";
             this.Text = "HandleCoursePlan";
+            this.Load += new System.EventHandler(this.HandleCoursePlan_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

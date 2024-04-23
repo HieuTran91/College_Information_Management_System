@@ -167,6 +167,12 @@
     <Compile Include="AssignmentProcessing.Designer.cs">
       <DependentUpon>AssignmentProcessing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Audit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audit.Designer.cs">
+      <DependentUpon>Audit.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AssignmentProcessing.resx">
       <DependentUpon>AssignmentProcessing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audit.resx">
+      <DependentUpon>Audit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseInformation.resx">
       <DependentUpon>CourseInformation.cs</DependentUpon>

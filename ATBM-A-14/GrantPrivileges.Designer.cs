@@ -130,7 +130,7 @@ namespace ATBM_A_14
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "User Name";
+            this.label1.Text = "User / Role";
             // 
             // groupBox2
             // 

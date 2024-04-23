@@ -39,7 +39,7 @@ namespace ATBM_A_14
             panel4.Controls.Add(registration);
             registration.Show();
 
-            HandleCourse handleCourse = new HandleCourse();
+            HandleRegistration handleCourse = new HandleRegistration();
             handleCourse.TopLevel = false;
             panel5.Controls.Add(handleCourse);
             handleCourse.Show();

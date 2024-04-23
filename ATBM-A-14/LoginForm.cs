@@ -50,10 +50,9 @@ namespace ATBM_A_14
                 }
                 else if (_username.ToUpper().Contains("NV"))
                 {
-                    string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.NHANSU WHERE MANV = '{_username.ToUpper()}'";
+                    string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.NHANSU WHERE MANV = sys_context('userenv','current_user')";
                     OracleCommand cmd = new OracleCommand(sql, Program.conn);
                     string role = cmd.ExecuteScalar().ToString();
-                    //  MessageBox.Show(role + " code: " + sql);
 
                     // if else for specific tab
                     if (role.Contains("Nhân viên cơ bản"))

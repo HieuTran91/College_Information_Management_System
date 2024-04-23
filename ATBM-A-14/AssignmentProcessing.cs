@@ -11,17 +11,6 @@ namespace ATBM_A_14
         {
             InitializeComponent();
         }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AssignmentProcessing_Load(object sender, EventArgs e)
         {
             string sql1 = $"select * from {Program.SCHEMA}.PHANCONG";
@@ -34,6 +23,21 @@ namespace ATBM_A_14
                 dataGridView1.DataSource = data;
             }
             catch (OracleException ex) { MessageBox.Show(ex.Message); }
+        }
+        // Insert
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Delete
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Update
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

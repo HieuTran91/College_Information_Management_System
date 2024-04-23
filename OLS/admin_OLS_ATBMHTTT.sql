@@ -1,14 +1,23 @@
+alter session set current_schema = ADMIN_OLS;
+
 BEGIN 
-SA_SYSDBA.CREATE_POLICY( 
-policy_name => 'notification_policy',  
-column_name => 'notification_label' 
-); 
+    SA_SYSDBA.CREATE_POLICY( 
+    policy_name => 'notification_policy',  
+    column_name => 'notification_label' 
+    ); 
 END;
 
-EXEC SA_SYSDBA.ENABLE_POLICY ('notification_policy'); 
+BEGIN
+    SA_SYSDBA.DROP_POLICY(
+        policy_name => 'notification_policy',  -- replace with your policy name
+        drop_column=> true
+    );
+END;
+
+EXEC SA_SYSDBA.ENABLE_POLICY ('NOTIFICATION_POLICY'); 
 
 -- create level
-EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',20,'TK','TRƯỞNG KHOA'); 
+EXECUTE SA_COMPONENTS.CREATE_LEVEL('NOTIFICATION_POLICY', 20, 'TK', 'TRUONG KHOA'); 
 EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',40,'TDV','TRƯỞNG ĐƠN VỊ'); 
 EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',60,'GVN','GIÁO VIÊN');
 EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',80,'GV','GIÁO VỤ');

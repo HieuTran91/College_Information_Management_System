@@ -10,10 +10,13 @@ namespace ATBM_A_14
         public AssignmentProcessing()
         {
             InitializeComponent();
+
+
         }
         private void AssignmentProcessing_Load(object sender, EventArgs e)
         {
-            string sql1 = $"select * from {Program.SCHEMA}.PHANCONG";
+            // string table = (!Program.human.getName().Contains("Trưởng đơn vị")) ? Program.human.PHANCONG() : ;
+            string sql1 = $"select * from {Program.SCHEMA}.{Program.human.PHANCONG()}";
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
             {
@@ -38,6 +41,11 @@ namespace ATBM_A_14
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+        // Refresh button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AssignmentProcessing_Load(sender,e);
         }
     }
 }

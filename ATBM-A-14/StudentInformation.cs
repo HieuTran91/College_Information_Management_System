@@ -34,13 +34,7 @@ namespace ATBM_A_14
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql1 = $"select * from {Program.SCHEMA}.SINHVIEN";
-            OracleCommand command = new OracleCommand(sql1, Program.conn);
-
-            DataTable data = new DataTable();
-            OracleDataAdapter adapter = new OracleDataAdapter(command);
-            adapter.Fill(data);
-            dataGridView1.DataSource = data;
+            StudentInformation_Load(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)

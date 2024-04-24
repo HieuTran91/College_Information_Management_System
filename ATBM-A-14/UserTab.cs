@@ -53,20 +53,7 @@ namespace ATBM_A_14
 
         private void button1_Click(object sender, EventArgs e) // for refresh
         {
-            try
-            {
-                string sql = $"select * from DBA_USERS"; // for system table we dont need schema
-                command = new OracleCommand(sql, Program.conn);
-
-                DataTable data = new DataTable();
-                adapter = new OracleDataAdapter(command);
-                adapter.Fill(data);
-                dataGridView1.DataSource = data;
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            UserTab_Load(sender, e);
         }
     }
 }

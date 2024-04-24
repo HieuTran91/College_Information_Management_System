@@ -14,7 +14,8 @@ namespace ATBM_A_14
 
         private void Assigment_Load(object sender, EventArgs e)
         {
-            string sql1 = $"select * from {Program.SCHEMA}.PHANCONG";
+            string sql1 = $"select * from {Program.SCHEMA}.{Program.human.PHANCONG()}";
+            MessageBox.Show(sql1);
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
             {
@@ -25,19 +26,10 @@ namespace ATBM_A_14
             }
             catch (OracleException ex) { MessageBox.Show(ex.Message); }
         }
-
+        // refresh button
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql1 = $"select * from {Program.SCHEMA}.PHANCONG";
-            OracleCommand command = new OracleCommand(sql1, Program.conn);
-            try
-            {
-                DataTable data = new DataTable();
-                OracleDataAdapter adapter = new OracleDataAdapter(command);
-                adapter.Fill(data);
-                dataGridView1.DataSource = data;
-            }
-            catch (OracleException ex) { MessageBox.Show(ex.Message); }
+            Assigment_Load(sender, e);
         }
     }
 }

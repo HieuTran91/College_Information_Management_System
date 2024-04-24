@@ -136,10 +136,14 @@ while len(PHANCONGlist) < PHANCONGsize:
     File.write(text_val)
 
 #------------GEN DANGKY
+combined_employees = []
+combined_employees.extend(EmployeeDict["N'Giảng viên'"])
+combined_employees.extend(EmployeeDict["N'Trưởng đơn vị'"])
+combined_employees.extend(EmployeeDict["N'Trưởng khoa'"])
 while len(DANGKYlist) < DANGKYsize:
     text = """insert into DANGKY(MASV,MAGV,MAHP,HK,NAM,MACT,DIEMTH,DIEMQT,DIEMCK,DIEMTK) values('{0}','{1}','{2}',{3},{4},{5},{6},{7},{8},{9});\n"""
     masv = random.choice(student_list)
-    magv = random.choice(EmployeeDict["N'Giảng viên'"][2])
+    magv = random.choice(combined_employees[2])
     hp = random.choice(HocPhan)
     hk = random.randint(1,3)
     nam = random.randint(2020,2024)

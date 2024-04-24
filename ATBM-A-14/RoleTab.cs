@@ -49,13 +49,7 @@ namespace ATBM_A_14
 
         private void button1_Click(object sender, EventArgs e) // for refresh
         {
-            string sql = $"SELECT * FROM DBA_ROLES";
-            OracleCommand command = new OracleCommand(sql, Program.conn);
-
-            DataTable data2 = new DataTable();
-            OracleDataAdapter adapter = new OracleDataAdapter(command);
-            adapter.Fill(data2);
-            dataGridView1.DataSource = data2;
+            RoleTab_Load(sender, e);
         }
     }
 }

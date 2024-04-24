@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
-using System.Configuration;
 using Oracle.ManagedDataAccess.Client;
-using System.Data.SqlTypes;
 
 namespace ATBM_A_14
 {
@@ -53,46 +51,19 @@ namespace ATBM_A_14
                     string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.VIEW_THONGTIN_NVCB";
                     OracleCommand cmd = new OracleCommand(sql, Program.conn);
                     string role = cmd.ExecuteScalar().ToString();
-
-                    // if else for specific tab
-                    if (role.Contains("Nhân viên cơ bản"))
-                    {
-                        NVCB_MENU userTab = new NVCB_MENU();
-                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
-                        userTab.Show();
-                    }
-                    if (role.Contains("Giáo vụ"))
-                    {
-                        GIAOVU_MENU userTab = new GIAOVU_MENU();
-                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
-                        userTab.Show();
-                    }
-                    if (role.Contains("Giảng viên"))
-                    {
-                        GIANGVIEN_MENU userTab = new GIANGVIEN_MENU();
-                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
-                        userTab.Show();
-                    }
-                    if (role.Contains("Trưởng đơn vị"))
-                    {
-                        TDV_MENU userTab = new TDV_MENU();
-                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
-                        userTab.Show();
-                    }
-                    if (role.Contains("Trưởng khoa"))
-                    {
-                        TK_MENU userTab = new TK_MENU();
-                        userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
-                        userTab.Show();
-                    }
+                    Program.human = Human.getClass(role);
+                    Form sub = Human.getForm(role);
+                    sub.Closed += (s, args) => this.Show();
+                    sub.Show();
                 }
                 else if (_username.ToUpper().Contains("SV"))
                 {
-                    SV_MENU userTab = new SV_MENU();
-                    userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
-                    userTab.Show();
+                    Program.human = Human.getClass("Sinh viên");
+                    Form sub = Human.getForm("Sinh viên");
+                    sub.Closed += (s, args) => this.Show();
+                    sub.Show();
                 }
-                else
+                else // worst case ever
                 {
                     SV_MENU userTab = new SV_MENU();
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
@@ -107,4 +78,3 @@ namespace ATBM_A_14
         }
     }
 }
-

@@ -26,5 +26,15 @@ namespace ATBM_A_14
         {
 
         }
+
+        private void HandleRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

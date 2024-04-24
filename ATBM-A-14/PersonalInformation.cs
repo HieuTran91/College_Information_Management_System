@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 
@@ -13,22 +7,19 @@ namespace ATBM_A_14
 {
     public partial class PersonalInformation : Form
     {
-        private static string role = "";
+        string table = "";
         public PersonalInformation()
         {
             InitializeComponent();
+            table = (!Program.human.getName().Contains("Trưởng khoa")) ? "VIEW_THONGTIN_NVCB" : "NHANSU";
         }
 
         private void PersonalInformation_Load(object sender, EventArgs e)
         {
-            string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.VIEW_THONGTIN_NVCB WHERE MANV = sys_context('userenv','current_user')";
-            OracleCommand cmd = new OracleCommand(sql, Program.conn);
-            role = cmd.ExecuteScalar().ToString();
-            if (role.Contains("Trưởng khoa"))
+            if (Program.human.getName().Contains("Trưởng khoa"))
             {
                 groupBox2.Visible = false;
             }
-            string table = (!role.Contains("Trưởng khoa")) ? "VIEW_THONGTIN_NVCB" : "NHANSU";
             string sql1 = $"select * from {Program.SCHEMA}.{table}";
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
@@ -40,7 +31,7 @@ namespace ATBM_A_14
             }
             catch (OracleException ex) { MessageBox.Show(ex.Message); }
         }
-        // update phone number button
+        // update phone number button, for non-Truong khoa role
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Length != 10)
@@ -67,17 +58,7 @@ namespace ATBM_A_14
         // refresh button
         private void button2_Click(object sender, EventArgs e)
         {
-            string table = (!role.Contains("Trưởng khoa")) ? "VIEW_THONGTIN_NVCB" : "NHANSU";
-            string sql1 = $"select * from {Program.SCHEMA}.{table}";
-            OracleCommand command = new OracleCommand(sql1, Program.conn);
-            try
-            {
-                DataTable data = new DataTable();
-                OracleDataAdapter adapter = new OracleDataAdapter(command);
-                adapter.Fill(data);
-                dataGridView1.DataSource = data;
-            }
-            catch (OracleException ex) { MessageBox.Show(ex.Message); }
+            PersonalInformation_Load(sender, e);
         }
     }
 }

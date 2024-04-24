@@ -35,3 +35,8 @@ select VAITRO from ad.VIEW_THONGTIN_NVCB;
 SELECT distinct GRANTEE, GRANTED_ROLE FROM DBA_ROLE_PRIVS WHERE GRANTEE like '%SV%' and GRANTED_ROLE <> 'CONNECT';
 
 select * from dba_roles where role like 'RL%';
+
+select * from DANGKY, NHANSU where manv = magv and vaitro like 'Giảng viên';
+
+select * from ad.VIEW_TDV_PC_GV , ad.VIEW_TDV_PC;
+

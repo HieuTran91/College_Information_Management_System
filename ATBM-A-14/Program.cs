@@ -7,9 +7,9 @@ namespace ATBM_A_14
     internal static class Program
     {
         public static OracleConnection conn;
-        // public static string connectionString = ""; // just variable, dont touch
         public static string username = ""; // just variable, dont touch
         public static string password = ""; // just variable, dont touch
+        public static Human human = null;
 
         // config here
         public static string HOST = "localhost";

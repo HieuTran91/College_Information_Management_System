@@ -14,7 +14,7 @@ namespace ATBM_A_14
 
         private void Registration_Load(object sender, EventArgs e)
         {
-            string sql1 = $"select * from {Program.SCHEMA}.DANGKY";
+            string sql1 = $"select * from {Program.SCHEMA}.{Program.human.DANGKY()}";
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
             {
@@ -28,7 +28,7 @@ namespace ATBM_A_14
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql1 = $"select * from {Program.SCHEMA}.DANGKY";
+            string sql1 = $"select * from {Program.SCHEMA}.{Program.human.DANGKY()}";
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
             {

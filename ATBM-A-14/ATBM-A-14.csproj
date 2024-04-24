@@ -173,6 +173,7 @@
     <Compile Include="Audit.Designer.cs">
       <DependentUpon>Audit.cs</DependentUpon>
     </Compile>
+    <Compile Include="TABLE_CLASS.cs" />
     <Compile Include="CourseInformation.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -447,7 +447,6 @@ WHERE dv.trgdv = SYS_CONTEXT('USERENV', 'SESSION_USER');
 GRANT SELECT, INSERT, DELETE, UPDATE ON VIEW_TDV_PC TO RL_TDV;
 
 ---- Được xem dữ liệu phân công giảng dạy của các giảng viên thuộc các đơn vị mà mình làm trưởng.  
-
 CREATE OR REPLACE VIEW VIEW_TDV_PC_GV AS
 SELECT PC.*
 FROM ad.DONVI dv join ad.NHANSU NS ON ns.madv = dv.madv JOIN ad.PHANCONG PC ON pc.magv = ns.manv

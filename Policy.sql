@@ -225,6 +225,14 @@ grant select,update on ad.PHANCONG to RL_GIAOVU;
 ---- Xóa hoặc Thêm mới dữ liệu trên quan hệ ĐANGKY theo yêu cầu của sinh viên trong khoảng thời gian còn cho hiệu chỉnh đăng ký, xem điều kiện có thể hiệu chỉnh đăng ký học phần được mô tả bên dưới.
 grant insert, delete, select on ad.DANGKY to RL_GIAOVU;
 
+-- Grant quyền cho những role thừa hành
+grant RL_NVCB to RL_GIAOVU;
+grant RL_NVCB to RL_GIANGVIEN;
+grant RL_GIANGVIEN to RL_TDV;
+grant RL_GIANGVIEN to RL_TK;
+
+--- Hàm tính ngày bắt đầu của học kì
+
 CREATE OR REPLACE FUNCTION FUNC_DATE (
     p_hk IN NUMBER,
     p_nam IN NUMBER

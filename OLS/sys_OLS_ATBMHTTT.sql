@@ -42,8 +42,6 @@ GRANT notification_policy_DBA to ADMIN_OLS;
 
 --GRANT CREATE SESSION TO ADMIN_OLS;
 ----TEST USER
---CREATE USER sales_manager IDENTIFIED BY 123;
---GRANT CONNECT TO sales_manager;
 --BEGIN
 -- SA_USER_ADMIN.SET_USER_LABELS('notification_policy','admin_ols','TK:HTTT:CS1');
 --END; 
@@ -54,5 +52,6 @@ GRANT notification_policy_DBA to ADMIN_OLS;
 --FROM user_policies
 --WHERE policy_name = 'TEN_POLICY_BAN_MUON_KIEM_TRA';
 
-
+GRANT inherit privileges ON USER sys TO lbacsys;
+GRANT lbac_dba to SYS;
 

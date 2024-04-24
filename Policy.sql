@@ -832,3 +832,46 @@ BEGIN
   );
 END;
 /
+
+CREATE OR REPLACE TRIGGER trg_insert_dangky
+BEFORE INSERT ON AD.DANGKY
+FOR EACH ROW
+DECLARE
+    v_count NUMBER;
+BEGIN
+    IF :NEW.MAGV IS NOT NULL THEN
+        SELECT COUNT(*)
+        INTO v_count
+        FROM AD.PHANCONG
+        WHERE MAGV = :NEW.MAGV
+        AND MAHP = :NEW.MAHP
+        AND HK = :NEW.HK
+        AND NAM = :NEW.NAM
+        AND MACT = :NEW.MACT;
+    
+        IF v_count = 0 THEN
+            RAISE_APPLICATION_ERROR(-20001, 'Invalid combination of (MAGV, MAHP, HK, NAM, MACT).');
+        END IF;
+    END IF;
+    IF :NEW.MAGV IS NULL THEN
+        SELECT COUNT(*)
+        INTO v_count
+        FROM AD.PHANCONG
+        WHERE MAHP = :NEW.MAHP
+        AND HK = :NEW.HK
+        AND NAM = :NEW.NAM
+        AND MACT = :NEW.MACT;
+        IF v_count = 0 THEN
+            RAISE_APPLICATION_ERROR(-20001, 'Invalid combination of (MAHP, HK, NAM, MACT).');
+        ELSE
+            SELECT MAGV
+            INTO :NEW.MAGV
+            FROM AD.PHANCONG
+            WHERE MAHP = :NEW.MAHP
+            AND HK = :NEW.HK
+            AND NAM = :NEW.NAM
+            AND MACT = :NEW.MACT;
+        END IF;
+    END IF;
+END;
+/

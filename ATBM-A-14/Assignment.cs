@@ -15,7 +15,6 @@ namespace ATBM_A_14
         private void Assigment_Load(object sender, EventArgs e)
         {
             string sql1 = $"select * from {Program.SCHEMA}.{Program.human.PHANCONG()}";
-            MessageBox.Show(sql1);
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
             {

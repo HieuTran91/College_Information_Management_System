@@ -67,6 +67,16 @@ namespace ATBM_A_14
             handlingDepartment.TopLevel = false;
             panel6.Controls.Add(handlingDepartment);
             handlingDepartment.Show();
+
+            Registration registration = new Registration();
+            registration.TopLevel = false;
+            panel9.Controls.Add(registration);
+            registration.Show();
+
+            HandleRegistration handleRegistration = new HandleRegistration();
+            handleRegistration.TopLevel = false;
+            panel11.Controls.Add(handleRegistration);
+            handleRegistration.Show();
         }
     }
 }

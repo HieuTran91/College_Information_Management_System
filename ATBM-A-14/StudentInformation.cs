@@ -54,6 +54,7 @@ namespace ATBM_A_14
                 cmd.Parameters.Add(param);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Successfully changed user phone");
+                StudentInformation_Load(sender, e);
             }
             catch (OracleException ex)
             {
@@ -70,6 +71,7 @@ namespace ATBM_A_14
                 cmd.Parameters.Add(new OracleParameter("address", OracleDbType.Varchar2)).Value = textBox2.Text;
                 cmd.ExecuteNonQuery();
                 MessageBox.Show($"Successfully changed user phone");
+                StudentInformation_Load(sender, e);
             }
             catch (OracleException ex)
             {

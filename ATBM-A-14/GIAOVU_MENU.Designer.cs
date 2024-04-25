@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -46,7 +47,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.tabPage10.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -56,6 +60,8 @@
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage10
@@ -69,6 +75,14 @@
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "Department";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(510, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(561, 581);
+            this.panel6.TabIndex = 1;
             // 
             // panel10
             // 
@@ -90,14 +104,6 @@
             this.tabPage8.Text = "Course Plan";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // panel8
-            // 
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(3, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(695, 581);
-            this.panel8.TabIndex = 0;
-            // 
             // panel12
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -105,6 +111,14 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(373, 581);
             this.panel12.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(695, 581);
+            this.panel8.TabIndex = 0;
             // 
             // tabPage7
             // 
@@ -230,6 +244,8 @@
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -237,13 +253,43 @@
             this.tabControl1.Size = new System.Drawing.Size(1082, 616);
             this.tabControl1.TabIndex = 0;
             // 
-            // panel6
+            // tabPage6
             // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(510, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(561, 581);
-            this.panel6.TabIndex = 1;
+            this.tabPage6.Controls.Add(this.panel9);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1074, 587);
+            this.tabPage6.TabIndex = 10;
+            this.tabPage6.Text = "Registration";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1068, 581);
+            this.panel9.TabIndex = 0;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.panel11);
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(1074, 587);
+            this.tabPage9.TabIndex = 11;
+            this.tabPage9.Text = "Registration Modification";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(3, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1068, 581);
+            this.panel11.TabIndex = 0;
             // 
             // GIAOVU_MENU
             // 
@@ -264,6 +310,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -288,5 +336,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.Panel panel11;
     }
 }

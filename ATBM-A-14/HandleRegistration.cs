@@ -31,22 +31,10 @@ namespace ATBM_A_14
                 MessageBox.Show(ex.Message);
             }
 
-            // load Training Program
-            comboBox1.Items.Add("CTTT");
-            comboBox1.Items.Add("CQ");
-            comboBox1.Items.Add("CLC");
-            comboBox1.Items.Add("VP");
-
-            comboBox2.Items.Add(1);
-            comboBox2.Items.Add(2);
-            comboBox2.Items.Add(3); 
-
             if (Program.human.getName().Contains("Sinh viên"))
             {
                 label1.Visible = false; // ID Student
                 textBox1.Visible = false; // above
-                label2.Visible = false; // ID Teacher
-                textBox7.Visible = false; // above
 
                 groupBox2.Visible = false; // Score board
                 button3.Visible = false; // no update
@@ -58,9 +46,6 @@ namespace ATBM_A_14
             }
             else
             {
-                label2.Visible = false; // ID Teacher
-                textBox7.Visible = false; // above
-
                 button1.Visible = false; // no insert
                 button2.Visible = false; // no delete
             }
@@ -81,10 +66,6 @@ namespace ATBM_A_14
             if (set.Length <= 4) return;
 
             if (string.IsNullOrEmpty(comboBox4.Text)) return;
-            if (string.IsNullOrEmpty(comboBox2.Text)) return;
-            if (string.IsNullOrEmpty(textBox2.Text)) return;
-            if (string.IsNullOrEmpty(comboBox1.Text)) return;
-            // "SET DIEMTH = :diemth, DIEMQT = :diemqt, DIEMCK = :diemck, DIEMTK = :diemtk "
 
             string sql = $"UPDATE {Program.SCHEMA}.{Program.human.DANGKY()} " + set +
                 " WHERE MASV = :masv and MAGV = :magv and MAHP = :mahp and HK = :hk and NAM = :nam and MACT = :mact";
@@ -98,20 +79,10 @@ namespace ATBM_A_14
                     masv = (Program.masv == "") ? "NULL" : Program.masv;
                 }
                 else masv = textBox1.Text.ToUpper();
-
-                string magv = "";
-                if (textBox7.Text == "" || textBox7.Visible == false)
-                {
-                    magv = (Program.manv == "") ? "NULL" : Program.manv;
-                }
-                else magv = textBox7.Text.ToUpper();
+                if (masv == "") return;
 
                 cmd.Parameters.Add(new OracleParameter("masv", OracleDbType.Varchar2)).Value = masv;
-                cmd.Parameters.Add(new OracleParameter("magv", OracleDbType.Varchar2)).Value = magv;
                 cmd.Parameters.Add(new OracleParameter("mahp", OracleDbType.Varchar2)).Value = comboBox4.Text;
-                cmd.Parameters.Add(new OracleParameter("hk", OracleDbType.Int64)).Value = comboBox2.Text;
-                cmd.Parameters.Add(new OracleParameter("nam", OracleDbType.Int64)).Value = textBox2.Text;
-                cmd.Parameters.Add(new OracleParameter("mact", OracleDbType.Varchar2)).Value = comboBox1.Text;
 
                 if (!string.IsNullOrEmpty(textBox3.Text))
                     cmd.Parameters.Add(new OracleParameter("diemth", OracleDbType.Varchar2)).Value = textBox3.Text; //DBNull.Value; //double.Parse(textBox3.Text);
@@ -134,34 +105,21 @@ namespace ATBM_A_14
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(comboBox4.Text)) return;
-            if (string.IsNullOrEmpty(comboBox2.Text)) return;
-            if (string.IsNullOrEmpty(textBox2.Text)) return;
-            if (string.IsNullOrEmpty(comboBox1.Text)) return;
             string sql = $"INSERT INTO {Program.SCHEMA}.DANGKY(MASV,MAGV,MAHP,HK,NAM,MACT) " + 
-                         "VALUES(:masv,:magv,:mahp,:hk,:nam,:mact)";
+                         $"VALUES(:masv,null,:mahp,{Program.getHK()},to_char(sysdate,'YYYY'),'{Program.mact}')";
             OracleCommand cmd = new OracleCommand(sql, Program.conn);
             try
             {
                 string masv = "";
                 if (textBox1.Text == "" || textBox1.Visible == false)
                 {
-                    masv = (Program.masv == "") ? "NULL" : Program.masv;
+                    masv = (Program.masv == "") ? null : Program.masv;
                 }
                 else masv = textBox1.Text.ToUpper();
-
-                string magv = "";
-                if (textBox7.Text == "" || textBox7.Visible == false)
-                {
-                    magv = (Program.manv == "") ? "NULL" : Program.manv;
-                }
-                else magv = textBox7.Text.ToUpper();
+                if (masv == "") return;
 
                 cmd.Parameters.Add(new OracleParameter("masv", OracleDbType.Varchar2)).Value = masv;
-                cmd.Parameters.Add(new OracleParameter("magv", OracleDbType.Varchar2)).Value = magv;
                 cmd.Parameters.Add(new OracleParameter("mahp", OracleDbType.Varchar2)).Value = comboBox4.Text;
-                cmd.Parameters.Add(new OracleParameter("hk", OracleDbType.Int64)).Value = comboBox2.Text;
-                cmd.Parameters.Add(new OracleParameter("nam", OracleDbType.Int64)).Value = textBox2.Text;
-                cmd.Parameters.Add(new OracleParameter("mact", OracleDbType.Varchar2)).Value = comboBox1.Text;
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Sucessfully inserted");
@@ -172,11 +130,7 @@ namespace ATBM_A_14
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(comboBox4.Text)) return;
-            if (string.IsNullOrEmpty(comboBox2.Text)) return;
-            if (string.IsNullOrEmpty(textBox2.Text)) return;
-            if (string.IsNullOrEmpty(comboBox1.Text)) return;
-            string sql = $"DELETE FROM {Program.SCHEMA}.DANGKY WHERE " +
-                "MASV = :masv and MAGV = :magv and MAHP = :mahp and HK = :hk and NAM = :nam and MACT = :mact";
+            string sql = $"DELETE FROM {Program.SCHEMA}.DANGKY WHERE MASV = :masv and MAHP = :mahp";
             OracleCommand cmd = new OracleCommand(sql, Program.conn);
             try
             {
@@ -186,20 +140,10 @@ namespace ATBM_A_14
                     masv = (Program.masv == "") ? "NULL" : Program.masv;
                 }
                 else masv = textBox1.Text.ToUpper();
-
-                string magv = "";
-                if (textBox7.Text == "" || textBox7.Visible == false)
-                {
-                    magv = (Program.manv == "") ? "NULL" : Program.manv;
-                }
-                else magv = textBox7.Text.ToUpper();
+                if (masv == "") return;
 
                 cmd.Parameters.Add(new OracleParameter("masv", OracleDbType.Varchar2)).Value = masv;
-                cmd.Parameters.Add(new OracleParameter("magv", OracleDbType.Varchar2)).Value = magv;
                 cmd.Parameters.Add(new OracleParameter("mahp", OracleDbType.Varchar2)).Value = comboBox4.Text;
-                cmd.Parameters.Add(new OracleParameter("hk", OracleDbType.Int64)).Value = comboBox2.Text;
-                cmd.Parameters.Add(new OracleParameter("nam", OracleDbType.Int64)).Value = textBox2.Text;
-                cmd.Parameters.Add(new OracleParameter("mact", OracleDbType.Varchar2)).Value = comboBox1.Text;
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Sucessfully deleted");

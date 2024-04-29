@@ -10,6 +10,8 @@ namespace ATBM_A_14
         public static string username = ""; // just variable, dont touch
         public static string password = ""; // just variable, dont touch
         public static Human human = null;
+        public static string masv = "";
+        public static string manv = "";
 
         // config here
         public static string HOST = "localhost";

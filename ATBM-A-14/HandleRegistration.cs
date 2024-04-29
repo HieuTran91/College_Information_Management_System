@@ -11,16 +11,6 @@ namespace ATBM_A_14
         {
             InitializeComponent();
         }
-        // insert
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-        // delete
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
         // loader
         private void HandleRegistration_Load(object sender, EventArgs e)
         {
@@ -53,18 +43,24 @@ namespace ATBM_A_14
 
             if (Program.human.getName().Contains("Sinh viên"))
             {
-                label1.Visible = false;
-                textBox1.Visible = false;
-                label2.Visible = false;
-                comboBox3.Visible = false;
-            }
+                label1.Visible = false; // ID Student
+                textBox1.Visible = false; // above
+                label2.Visible = false; // ID Teacher
+                textBox7.Visible = false; // above
 
-            if (Program.human.getName().Contains("Giáo vụ"))
+                groupBox2.Visible = false; // Score board
+                button3.Visible = false; // no update
+            }
+            else if (Program.human.getName().Contains("Giáo vụ"))
             {
+                groupBox2.Visible = false;
                 button3.Visible = false; // no update
             }
             else
             {
+                label2.Visible = false; // ID Teacher
+                textBox7.Visible = false; // above
+
                 button1.Visible = false; // no insert
                 button2.Visible = false; // no delete
             }
@@ -72,12 +68,143 @@ namespace ATBM_A_14
         // update
         private void button3_Click(object sender, EventArgs e)
         {
+            string set = "SET ";
+            if (!string.IsNullOrEmpty(textBox3.Text))
+                set += "DIEMTH = :diemth,";
+            if (!string.IsNullOrEmpty(textBox4.Text))
+                set += "DIEMQT = :diemqt,";
+            if (!string.IsNullOrEmpty(textBox5.Text))
+                set += "DIEMCK = :diemck,";
+            if (!string.IsNullOrEmpty(textBox6.Text))
+                set += "DIEMTK = :diemtk,";
+            set = set.Remove(set.Length - 1);
+            if (set.Length <= 4) return;
 
+            if (string.IsNullOrEmpty(comboBox4.Text)) return;
+            if (string.IsNullOrEmpty(comboBox2.Text)) return;
+            if (string.IsNullOrEmpty(textBox2.Text)) return;
+            if (string.IsNullOrEmpty(comboBox1.Text)) return;
+            // "SET DIEMTH = :diemth, DIEMQT = :diemqt, DIEMCK = :diemck, DIEMTK = :diemtk "
+
+            string sql = $"UPDATE {Program.SCHEMA}.{Program.human.DANGKY()} " + set +
+                " WHERE MASV = :masv and MAGV = :magv and MAHP = :mahp and HK = :hk and NAM = :nam and MACT = :mact";
+            
+            OracleCommand cmd = new OracleCommand(sql, Program.conn);
+            try
+            {
+                string masv = "";
+                if (textBox1.Text == "" || textBox1.Visible == false)
+                {
+                    masv = (Program.masv == "") ? "NULL" : Program.masv;
+                }
+                else masv = textBox1.Text.ToUpper();
+
+                string magv = "";
+                if (textBox7.Text == "" || textBox7.Visible == false)
+                {
+                    magv = (Program.manv == "") ? "NULL" : Program.manv;
+                }
+                else magv = textBox7.Text.ToUpper();
+
+                cmd.Parameters.Add(new OracleParameter("masv", OracleDbType.Varchar2)).Value = masv;
+                cmd.Parameters.Add(new OracleParameter("magv", OracleDbType.Varchar2)).Value = magv;
+                cmd.Parameters.Add(new OracleParameter("mahp", OracleDbType.Varchar2)).Value = comboBox4.Text;
+                cmd.Parameters.Add(new OracleParameter("hk", OracleDbType.Int64)).Value = comboBox2.Text;
+                cmd.Parameters.Add(new OracleParameter("nam", OracleDbType.Int64)).Value = textBox2.Text;
+                cmd.Parameters.Add(new OracleParameter("mact", OracleDbType.Varchar2)).Value = comboBox1.Text;
+
+                if (!string.IsNullOrEmpty(textBox3.Text))
+                    cmd.Parameters.Add(new OracleParameter("diemth", OracleDbType.Varchar2)).Value = textBox3.Text; //DBNull.Value; //double.Parse(textBox3.Text);
+                                                                                                   
+                if (!string.IsNullOrEmpty(textBox4.Text))                                          
+                    cmd.Parameters.Add(new OracleParameter("diemqt", OracleDbType.Varchar2)).Value = textBox4.Text;
+                                                                                                   
+                if (!string.IsNullOrEmpty(textBox5.Text))                                          
+                    cmd.Parameters.Add(new OracleParameter("diemck", OracleDbType.Double)).Value = textBox5.Text;
+                                                                                                   
+                if (!string.IsNullOrEmpty(textBox6.Text))                                          
+                    cmd.Parameters.Add(new OracleParameter("diemtk", OracleDbType.Double)).Value = textBox6.Text;
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Sucessfully updated");
+            }
+            catch(OracleException ex) { MessageBox.Show("Failed to update " + ex.Message); }
         }
-        // search
-        private void button4_Click(object sender, EventArgs e)
+        // insert
+        private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(comboBox4.Text)) return;
+            if (string.IsNullOrEmpty(comboBox2.Text)) return;
+            if (string.IsNullOrEmpty(textBox2.Text)) return;
+            if (string.IsNullOrEmpty(comboBox1.Text)) return;
+            string sql = $"INSERT INTO {Program.SCHEMA}.DANGKY(MASV,MAGV,MAHP,HK,NAM,MACT) " + 
+                         "VALUES(:masv,:magv,:mahp,:hk,:nam,:mact)";
+            OracleCommand cmd = new OracleCommand(sql, Program.conn);
+            try
+            {
+                string masv = "";
+                if (textBox1.Text == "" || textBox1.Visible == false)
+                {
+                    masv = (Program.masv == "") ? "NULL" : Program.masv;
+                }
+                else masv = textBox1.Text.ToUpper();
 
+                string magv = "";
+                if (textBox7.Text == "" || textBox7.Visible == false)
+                {
+                    magv = (Program.manv == "") ? "NULL" : Program.manv;
+                }
+                else magv = textBox7.Text.ToUpper();
+
+                cmd.Parameters.Add(new OracleParameter("masv", OracleDbType.Varchar2)).Value = masv;
+                cmd.Parameters.Add(new OracleParameter("magv", OracleDbType.Varchar2)).Value = magv;
+                cmd.Parameters.Add(new OracleParameter("mahp", OracleDbType.Varchar2)).Value = comboBox4.Text;
+                cmd.Parameters.Add(new OracleParameter("hk", OracleDbType.Int64)).Value = comboBox2.Text;
+                cmd.Parameters.Add(new OracleParameter("nam", OracleDbType.Int64)).Value = textBox2.Text;
+                cmd.Parameters.Add(new OracleParameter("mact", OracleDbType.Varchar2)).Value = comboBox1.Text;
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Sucessfully inserted");
+            }
+            catch (OracleException ex) { MessageBox.Show("Failed to insert " + ex.Message); }
+        }
+        // delete
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(comboBox4.Text)) return;
+            if (string.IsNullOrEmpty(comboBox2.Text)) return;
+            if (string.IsNullOrEmpty(textBox2.Text)) return;
+            if (string.IsNullOrEmpty(comboBox1.Text)) return;
+            string sql = $"DELETE FROM {Program.SCHEMA}.DANGKY WHERE " +
+                "MASV = :masv and MAGV = :magv and MAHP = :mahp and HK = :hk and NAM = :nam and MACT = :mact";
+            OracleCommand cmd = new OracleCommand(sql, Program.conn);
+            try
+            {
+                string masv = "";
+                if (textBox1.Text == "" || textBox1.Visible == false)
+                {
+                    masv = (Program.masv == "") ? "NULL" : Program.masv;
+                }
+                else masv = textBox1.Text.ToUpper();
+
+                string magv = "";
+                if (textBox7.Text == "" || textBox7.Visible == false)
+                {
+                    magv = (Program.manv == "") ? "NULL" : Program.manv;
+                }
+                else magv = textBox7.Text.ToUpper();
+
+                cmd.Parameters.Add(new OracleParameter("masv", OracleDbType.Varchar2)).Value = masv;
+                cmd.Parameters.Add(new OracleParameter("magv", OracleDbType.Varchar2)).Value = magv;
+                cmd.Parameters.Add(new OracleParameter("mahp", OracleDbType.Varchar2)).Value = comboBox4.Text;
+                cmd.Parameters.Add(new OracleParameter("hk", OracleDbType.Int64)).Value = comboBox2.Text;
+                cmd.Parameters.Add(new OracleParameter("nam", OracleDbType.Int64)).Value = textBox2.Text;
+                cmd.Parameters.Add(new OracleParameter("mact", OracleDbType.Varchar2)).Value = comboBox1.Text;
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Sucessfully deleted");
+            }
+            catch (OracleException ex) { MessageBox.Show("Failed to delete " + ex.Message); }
         }
     }
 }

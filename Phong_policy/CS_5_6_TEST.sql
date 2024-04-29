@@ -36,7 +36,13 @@ SELECT distinct GRANTEE, GRANTED_ROLE FROM DBA_ROLE_PRIVS WHERE GRANTEE like '%S
 
 select * from dba_roles where role like 'RL%';
 
-select * from DANGKY, NHANSU where manv = magv and vaitro like 'Giảng viên';
+select * from ad.DANGKY, NHANSU where manv = magv and vaitro like 'Giảng viên';
 
 select * from ad.VIEW_TDV_PC_GV , ad.VIEW_TDV_PC;
 
+select * from ad.VIEW_GV_DK where masv = 'SV0105' and magv = sys_context('userenv','current_user') and hk = 2 and nam = 2020 and mact = 'CLC';
+
+update ad.VIEW_GV_DK set diemck = '10' where masv = 'SV0105' and magv = 'NV012' and hk = 2 and nam = 2020 and mact = 'CLC';
+
+insert into ad.DANGKY(MASV,MAHP,HK,NAM,MACT) 
+values ('SV0001','HP39',3,2024,'CTTT')

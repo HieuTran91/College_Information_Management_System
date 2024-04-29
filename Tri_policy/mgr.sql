@@ -1,5 +1,10 @@
 alter session set current_schema = ad;
 
+SELECT * FROM DBA_ROLE_PRIVs where GRANTEE = 'SV0001';
+SELECT * FROM SYS.FGA_LOG$;
+
+grant RL_SV to SV0001
+
 select * from ad.sinhvien;
 
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;

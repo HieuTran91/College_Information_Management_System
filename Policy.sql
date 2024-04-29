@@ -83,6 +83,9 @@ create role RL_TDV;
 create role RL_TK;
 create role RL_SV;
 
+---- test audit
+--select * from dangky;
+
 -- gán role cho user
 CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_SV authid current_user
 AS 
@@ -156,6 +159,7 @@ grant select on ad.DONVI to RL_NVCB;
 grant select on ad.HOCPHAN to RL_NVCB;
 grant select on ad.KHMO to RL_NVCB;
 
+
 -- grant select on ad.NHANSU to RL_NVCB; -- này lỗi rồi nhé 
 
 ---- Xem dòng dữ liệu của chính mình trong quan hệ NHANSU, có thể chỉnh sửa số điện thoại (ĐT) của chính mình (nếu số điện thoại có thay đổi). 
@@ -197,10 +201,6 @@ GRANT SELECT ON VIEW_GV_DK TO RL_GIANGVIEN;
 
 ---- Cập nhật dữ liệu tại các trường liên quan điểm số (trong quan hệ ĐANGKY) của các sinh viên có tham gia lớp học phần mà giảng viên đó được phân công giảng dạy. Các trường liên quan điểm số bao gồm: ĐIEMTH, ĐIEMQT, ĐIEMCK, ĐIEMTK. 
 GRANT UPDATE(DIEMTH, DIEMQT, DIEMCK, DIEMTK) ON VIEW_GV_DK TO RL_GIANGVIEN;
-
-
-
-
 
 
 
@@ -249,6 +249,7 @@ BEGIN
     END CASE;
     RETURN l_hoc_ky_start_date;
 END;
+/
 
 CREATE OR REPLACE FUNCTION GV (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -286,6 +287,8 @@ BEGIN
         end if;
     end if;
 END;
+/
+
 
 BEGIN
  DBMS_RLS.ADD_POLICY(
@@ -298,6 +301,7 @@ BEGIN
  UPDATE_CHECK => TRUE 
  );
 END;
+/
 
 create or replace function FUNC_GV_Delete (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
@@ -462,10 +466,6 @@ WHERE dv.trgdv = SYS_CONTEXT('USERENV', 'SESSION_USER');
 
 GRANT SELECT ON VIEW_TDV_PC_GV TO RL_TDV;
 
-
-
-
-
 --cs5: Người dùng có VAITRO là “Trưởng khoa” 
 
 ---- Như một người dùng có vai trò “Giảng viên”  
@@ -501,9 +501,7 @@ grant select on ad.KHMO to RL_TK;
 grant select on ad.HOCPHAN to RL_TK;
 grant select on ad.DONVI to RL_TK;
 
-
-
-
+--revoke update on ad.DANGKY from RL_TK;
 
 -- cs6: Người dùng có VAITRO là “Sinh viên”
 

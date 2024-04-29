@@ -51,6 +51,11 @@ namespace ATBM_A_14
                     string sql = $"SELECT VAITRO FROM {Program.SCHEMA}.VIEW_THONGTIN_NVCB";
                     OracleCommand cmd = new OracleCommand(sql, Program.conn);
                     string role = cmd.ExecuteScalar().ToString();
+
+                    sql = $"SELECT MANV FROM {Program.SCHEMA}.VIEW_THONGTIN_NVCB";
+                    cmd = new OracleCommand(sql, Program.conn);
+                    Program.manv = cmd.ExecuteScalar().ToString();
+
                     Program.human = Human.getClass(role);
                     Form sub = Human.getForm(role);
                     sub.Closed += (s, args) => this.Show();
@@ -58,6 +63,10 @@ namespace ATBM_A_14
                 }
                 else if (_username.ToUpper().Contains("SV"))
                 {
+                    string sql = $"SELECT MASV FROM {Program.SCHEMA}.SINHVIEN";
+                    OracleCommand cmd = new OracleCommand(sql, Program.conn);
+                    Program.masv = cmd.ExecuteScalar().ToString();
+
                     Program.human = Human.getClass("Sinh viên");
                     Form sub = Human.getForm("Sinh viên");
                     sub.Closed += (s, args) => this.Show();
@@ -65,9 +74,10 @@ namespace ATBM_A_14
                 }
                 else // worst case ever
                 {
-                    SV_MENU userTab = new SV_MENU();
-                    userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
-                    userTab.Show();
+                    return;
+                    //SV_MENU userTab = new SV_MENU();
+                    //userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
+                    //userTab.Show();
                 }
             }
             catch (OracleException ex)

@@ -35,13 +35,13 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
@@ -109,17 +109,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Object";
             // 
-            // radioButton1
+            // checkBox1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(53, 179);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(158, 20);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Whenever Successful";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.checkBox1.Location = new System.Drawing.Point(135, 194);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(118, 20);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "SUCCESSFUL";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // ModifyAudit
             // 
@@ -145,6 +145,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

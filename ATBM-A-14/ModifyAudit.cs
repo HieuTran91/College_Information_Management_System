@@ -44,7 +44,7 @@ namespace ATBM_A_14
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text)) return;
-            string when = (radioButton1.Checked) ? "SUCCESSFUL" : "NO SUCCESSFUL";
+            string when = (checkBox1.Checked) ? "SUCCESSFUL" : "NO SUCCESSFUL";
             string sql = "BEGIN EXECUTE IMMEDIATE 'AUDIT ' || :action || ' ON ' || :schema || '.' || :table || ' BY ACCESS WHENEVER ' || :when; END;";
             OracleCommand cmd = new OracleCommand(sql, Program.conn);
             try
@@ -62,7 +62,7 @@ namespace ATBM_A_14
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text)) return;
-            string when = (radioButton1.Checked) ? "SUCCESSFUL" : "NO SUCCESSFUL";
+            string when = (checkBox1.Checked) ? "SUCCESSFUL" : "NO SUCCESSFUL";
             string sql = "BEGIN EXECUTE IMMEDIATE 'NOAUDIT ' || :action || ' ON ' || :schema || '.' || :table || ' WHENEVER ' || :when; END;";
             OracleCommand cmd = new OracleCommand(sql, Program.conn);
             try
@@ -75,6 +75,11 @@ namespace ATBM_A_14
                 MessageBox.Show("Successfully turned audit off");
             }
             catch (OracleException ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -41,6 +41,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -48,6 +50,7 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -58,6 +61,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ItemSize = new System.Drawing.Size(106, 21);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -189,6 +193,25 @@
             this.panel6.Size = new System.Drawing.Size(1078, 570);
             this.panel6.TabIndex = 0;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.panel7);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1084, 576);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Recovery";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1078, 570);
+            this.panel7.TabIndex = 0;
+            // 
             // Admin_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -208,6 +231,7 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -227,5 +251,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Panel panel7;
     }
 }

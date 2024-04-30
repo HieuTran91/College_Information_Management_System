@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\audit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:audit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\college\\security in information system\\atbmdl\\atbm-a-14\\recovery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:recovery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\college\\security in information system\\atbmdl\\atbm-a-14\\recovery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:recovery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\modifyaudit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:modifyaudit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\college\\security in information system\\atbmdl\\atbm-a-14\\create_delete_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:create_delete_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\college\\security in information system\\atbmdl\\atbm-a-14\\admin_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:admin_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\college\\security in information system\\atbmdl\\atbm-a-14\\modifyaudit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\college\\security in information system\\atbmdl\\atbm-a-14\\admin_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:admin_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|d:\\college\\security in information system\\atbmdl\\atbm-a-14\\audit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:audit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\modifyaudit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:modifyaudit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\audit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:audit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,62 +42,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Create_Delete_Update.cs",
-              "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Create_Delete_Update.cs",
-              "RelativeDocumentMoniker": "Create_Delete_Update.cs",
-              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Create_Delete_Update.cs",
-              "RelativeToolTip": "Create_Delete_Update.cs",
-              "ViewState": "AQIAAMIAAAAAAAAAAAAUwM4AAAANAAAA",
+              "DocumentIndex": 3,
+              "Title": "Admin_Menu.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Admin_Menu.cs",
+              "RelativeDocumentMoniker": "Admin_Menu.cs",
+              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Admin_Menu.cs",
+              "RelativeToolTip": "Admin_Menu.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAywCEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T10:05:21.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StudentView.cs",
-              "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\StudentView.cs",
-              "RelativeDocumentMoniker": "StudentView.cs",
-              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\StudentView.cs",
-              "RelativeToolTip": "StudentView.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAIwCMAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T08:19:58.79Z",
+              "WhenOpened": "2024-04-30T11:15:43.331Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "StudentView.cs [Design]",
-              "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\StudentView.cs",
-              "RelativeDocumentMoniker": "StudentView.cs",
-              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\StudentView.cs [Design]",
-              "RelativeToolTip": "StudentView.cs [Design]",
+              "Title": "Admin_Menu.cs [Design]",
+              "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Admin_Menu.cs",
+              "RelativeDocumentMoniker": "Admin_Menu.cs",
+              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Admin_Menu.cs [Design]",
+              "RelativeToolTip": "Admin_Menu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T08:19:56.065Z",
+              "WhenOpened": "2024-04-30T11:14:59.197Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Recovery.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Recovery.cs",
+              "RelativeDocumentMoniker": "Recovery.cs",
+              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Recovery.cs",
+              "RelativeToolTip": "Recovery.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAqwBoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:00:04.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Recovery.cs [Design]",
+              "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Recovery.cs",
+              "RelativeDocumentMoniker": "Recovery.cs",
+              "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Recovery.cs [Design]",
+              "RelativeToolTip": "Recovery.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T10:57:58.035Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ModifyAudit.cs",
               "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\ModifyAudit.cs",
               "RelativeDocumentMoniker": "ModifyAudit.cs",
               "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\ModifyAudit.cs",
               "RelativeToolTip": "ModifyAudit.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAYwDsAAAAJAAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAYwEQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-30T07:27:59.924Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ModifyAudit.cs [Design]",
               "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\ModifyAudit.cs",
               "RelativeDocumentMoniker": "ModifyAudit.cs",
@@ -105,28 +121,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Audit.cs",
               "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Audit.cs",
               "RelativeDocumentMoniker": "Audit.cs",
               "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Audit.cs",
               "RelativeToolTip": "Audit.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAuwCIAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T08:41:36.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Audit.cs [Design]",
               "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Audit.cs",
               "RelativeDocumentMoniker": "Audit.cs",
               "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\Audit.cs [Design]",
               "RelativeToolTip": "Audit.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T08:41:36.16Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-24T08:41:36.16Z"
             }
           ]
         }

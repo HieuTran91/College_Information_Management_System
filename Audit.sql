@@ -5,9 +5,9 @@ show parameter audit;
 show parameter audit_trail;
 
 -- xem các audit đã được ghi
-select * from DBA_FGA_AUDIT_TRAIL order by extended_timestamp
-Union
-select * from dba_audit_trail where OWNER = 'AD' order by extended_timestamp;
+--select * from DBA_FGA_AUDIT_TRAIL order by extended_timestamp
+--Union
+--select * from dba_audit_trail where OWNER = 'AD' order by extended_timestamp;
 
 select * from DBA_FGA_AUDIT_TRAIL order by extended_timestamp;
 select * from dba_audit_trail where OWNER = 'AD' order by extended_timestamp;

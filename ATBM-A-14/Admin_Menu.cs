@@ -37,6 +37,11 @@ namespace ATBM_A_14
             panel5.Controls.Add(audit);
             audit.Show();
 
+            ModifyAudit modifyAudit = new ModifyAudit();
+            modifyAudit.TopLevel = false;
+            panel6.Controls.Add(modifyAudit);
+            modifyAudit.Show();
+
             // turn this one for uncommon user
             string sql = "ALTER SESSION SET \"_ORACLE_SCRIPT\" = TRUE";
             OracleCommand cmd = new OracleCommand(sql, Program.conn);

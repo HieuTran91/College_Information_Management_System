@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:handleregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\table_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:table_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\handleregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:handleregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\table_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|solutionrelative:table_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{495A349C-0D20-451D-8C9F-8926A75EFB8D}|ATBM-A-14.csproj|D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\create_delete_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -183,14 +183,14 @@
               "RelativeDocumentMoniker": "HandleRegistration.cs",
               "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\HandleRegistration.cs",
               "RelativeToolTip": "HandleRegistration.cs",
-              "ViewState": "AQIAAJsAAAAAAAAAAAAUwKgAAABNAAAA",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAuwHQAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T08:41:36.19Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TABLE_CLASS.cs",
               "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\TABLE_CLASS.cs",
               "RelativeDocumentMoniker": "TABLE_CLASS.cs",
@@ -198,19 +198,19 @@
               "RelativeToolTip": "TABLE_CLASS.cs",
               "ViewState": "AQIAADIAAAAAAAAAAAAUwD4AAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T08:42:04.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T08:42:04.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HandleRegistration.cs [Design]",
               "DocumentMoniker": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\HandleRegistration.cs",
               "RelativeDocumentMoniker": "HandleRegistration.cs",
               "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\HandleRegistration.cs [Design]",
               "RelativeToolTip": "HandleRegistration.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T08:41:36.17Z"
+              "WhenOpened": "2024-04-24T08:41:36.17Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -546,7 +546,8 @@
               "RelativeToolTip": "HandleRegistration.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T08:41:36.189Z"
+              "WhenOpened": "2024-04-24T08:41:36.189Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -626,7 +627,8 @@
               "ToolTip": "D:\\COLLEGE\\Security in Information System\\ATBMDL\\ATBM-A-14\\LoginForm.resx",
               "RelativeToolTip": "LoginForm.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-04-24T08:41:36.202Z"
+              "WhenOpened": "2024-04-24T08:41:36.202Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

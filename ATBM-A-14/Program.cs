@@ -12,6 +12,7 @@ namespace ATBM_A_14
         public static Human human = null;
         public static string masv = "";
         public static string manv = "";
+        public static string mact = "";
 
         // config here
         public static string HOST = "localhost";
@@ -23,6 +24,14 @@ namespace ATBM_A_14
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+
+        public static int getHK()
+        {
+            int currentMonth = DateTime.Now.Month;
+            if (currentMonth >= 1 && currentMonth <= 5) return 1;
+            else if (currentMonth >= 6 && currentMonth <= 9) return 2;
+            return 3;
+        }
         static void Main()
         {
             Application.EnableVisualStyles();

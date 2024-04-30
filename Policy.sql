@@ -251,6 +251,23 @@ BEGIN
 END;
 /
 
+-- get hoc ky hien tai
+CREATE OR REPLACE FUNCTION FUNC_HK
+RETURN INT
+IS
+    l_hoc_ky_start_date DATE;
+BEGIN
+    CASE
+        WHEN TO_NUMBER(TO_CHAR(SYSDATE, 'MM')) BETWEEN 1 AND 5 THEN
+            RETURN 1; -- Fall semester
+        WHEN TO_NUMBER(TO_CHAR(SYSDATE, 'MM')) BETWEEN 5 AND 9 THEN
+            RETURN 2; -- Spring semester
+        ELSE
+            RETURN 3; -- Summer semester
+    END CASE;
+END;
+/
+
 CREATE OR REPLACE FUNCTION GV (P_SCHEMA varchar2, P_OBJ varchar2)
 return varchar2
 as
@@ -831,6 +848,7 @@ BEGIN
 END;
 /
 
+-- trigger for insertion into DANGKY
 CREATE OR REPLACE TRIGGER trg_insert_dangky
 BEFORE INSERT ON AD.DANGKY
 FOR EACH ROW
@@ -846,9 +864,8 @@ BEGIN
         AND HK = :NEW.HK
         AND NAM = :NEW.NAM
         AND MACT = :NEW.MACT;
-    
         IF v_count = 0 THEN
-            RAISE_APPLICATION_ERROR(-20001, 'Invalid combination of (MAGV, MAHP, HK, NAM, MACT).');
+            RAISE_APPLICATION_ERROR(-20001, 'Môn học chưa được phân công cho giáo viên');
         END IF;
     END IF;
     IF :NEW.MAGV IS NULL THEN
@@ -860,7 +877,7 @@ BEGIN
         AND NAM = :NEW.NAM
         AND MACT = :NEW.MACT;
         IF v_count = 0 THEN
-            RAISE_APPLICATION_ERROR(-20001, 'Invalid combination of (MAHP, HK, NAM, MACT).');
+            RAISE_APPLICATION_ERROR(-20001, 'Môn học chưa được mở');
         ELSE
             SELECT MAGV
             INTO :NEW.MAGV
@@ -868,8 +885,11 @@ BEGIN
             WHERE MAHP = :NEW.MAHP
             AND HK = :NEW.HK
             AND NAM = :NEW.NAM
-            AND MACT = :NEW.MACT;
+            AND MACT = :NEW.MACT
+            AND ROWNUM = 1;
         END IF;
     END IF;
 END;
 /
+
+drop trigger trg_insert_dangky;

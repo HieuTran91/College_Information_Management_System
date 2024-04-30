@@ -63,9 +63,16 @@ namespace ATBM_A_14
                 }
                 else if (_username.ToUpper().Contains("SV"))
                 {
-                    string sql = $"SELECT MASV FROM {Program.SCHEMA}.SINHVIEN";
+                    string sql = $"SELECT MASV,MACT FROM {Program.SCHEMA}.SINHVIEN";
                     OracleCommand cmd = new OracleCommand(sql, Program.conn);
-                    Program.masv = cmd.ExecuteScalar().ToString();
+                    OracleDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        // Read the value from the second column (MACT)
+                        Program.masv = reader[0].ToString();
+                        Program.mact = reader[1].ToString();
+                    }
 
                     Program.human = Human.getClass("Sinh viên");
                     Form sub = Human.getForm("Sinh viên");

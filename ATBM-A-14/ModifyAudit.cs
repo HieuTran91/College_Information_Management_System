@@ -41,5 +41,10 @@ namespace ATBM_A_14
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

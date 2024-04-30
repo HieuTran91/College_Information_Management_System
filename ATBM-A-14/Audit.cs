@@ -16,7 +16,7 @@ namespace ATBM_A_14
         private void Audit_Load(object sender, EventArgs e)
         {
             // load standard
-            string sql1 = $"select * from dba_audit_trail where OWNER = '{Program.SCHEMA}' order by extended_timestamp";
+            string sql1 = $"select * from dba_audit_trail where OWNER = '{Program.SCHEMA.ToUpper()}' order by extended_timestamp";
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try
             {

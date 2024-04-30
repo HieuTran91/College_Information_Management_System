@@ -4,19 +4,17 @@ show parameter audit;
 
 show parameter audit_trail;
 
+-- STANDARD AUDIT
 -- xem các audit đã được ghi
---select * from DBA_FGA_AUDIT_TRAIL order by extended_timestamp
---Union
---select * from dba_audit_trail where OWNER = 'AD' order by extended_timestamp;
 
 select * from DBA_FGA_AUDIT_TRAIL order by extended_timestamp;
 select * from dba_audit_trail where OWNER = 'AD' order by extended_timestamp;
-
 
 -- audit trên đối tượng cụ thể và chỉ định thành công
 AUDIT SELECT ON AD.NHANSU BY ACCESS WHENEVER SUCCESSFUL;
 AUDIT UPDATE ON AD.NHANSU BY ACCESS WHENEVER SUCCESSFUL;
 
+-- FINE-GRAINED AUDIT
 -- xem policy audit đã được tạo
 SELECT * FROM DBA_AUDIT_POLICIES;
 

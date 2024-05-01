@@ -31,32 +31,27 @@ select * from AD.NHANSU;
 -- xem policy audit đã được tạo
 SELECT * FROM DBA_AUDIT_POLICIES;
 
-
-
-
 -- Hành vi Cập nhật quan hệ ĐANGKY tại các trường liên quan đến điểm số nhưng người đó không thuộc vai trò Giảng viên. 
---begin
---DBMS_FGA.drop_policy(
---    OBJECT_SCHEMA => 'AD',
---    OBJECT_NAME => 'NHANSU',
---    POLICY_NAME => 'TT_PHUCAP');
---end;
---/
-
 CREATE OR REPLACE FUNCTION FUNC_IS_GIANGVIEN 
 RETURN NUMBER
 AS USER_ROLE NVARCHAR2(20);
+    User_name varchar2(6);
+    role_user varchar2(2);
 BEGIN
-    SELECT VAITRO INTO USER_ROLE
-    FROM AD.VIEW_THONGTIN_NVCB;
-    
-    if(USER_ROLE = 'Giảng viên') then
-        return 1;
+    User_name := SYS_CONTEXT('USERENV','SESSION_USER');
+    role_user := substr(user,1,2);
+    if role_user = 'NV' then
+        SELECT VAITRO INTO USER_ROLE
+        FROM AD.VIEW_THONGTIN_NVCB;
+        
+        if(USER_ROLE = 'Giảng viên') then
+            return 1;
+        end if;
+        return 0;
     end if;
     return 0;
 END;
 /
-
 
 begin
 DBMS_FGA.ADD_POLICY(

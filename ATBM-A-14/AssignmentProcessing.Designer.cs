@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -60,6 +60,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Assignment";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(887, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 30);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -95,7 +105,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(376, 167);
+            this.button4.Location = new System.Drawing.Point(357, 167);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(108, 32);
             this.button4.TabIndex = 12;
@@ -206,16 +216,6 @@
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID Teacher";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(887, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AssignmentProcessing
             // 

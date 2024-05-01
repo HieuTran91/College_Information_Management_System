@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 
@@ -13,6 +15,8 @@ namespace ATBM_A_14
         public static string masv = "";
         public static string manv = "";
         public static string mact = "";
+        public static System.Threading.Timer backupTimer;
+        public static bool autobackup = false;
 
         // config here
         public static string HOST = "localhost";
@@ -32,8 +36,29 @@ namespace ATBM_A_14
             else if (currentMonth >= 6 && currentMonth <= 9) return 2;
             return 3;
         }
+        public static void backup(object state)
+        {
+            if (!autobackup) return;
+            string command = "/C cd /D D:/backup/ && backup.bat"; // Change directory and run your command here
+            ProcessStartInfo procStartInfo = new ProcessStartInfo("CMD.exe", command);
+            procStartInfo.RedirectStandardOutput = true;
+            procStartInfo.UseShellExecute = false;
+            procStartInfo.CreateNoWindow = true;
+            Process proc = new Process();
+            proc.StartInfo = procStartInfo;
+            proc.Start();
+
+            // Get the output into a string
+            string result = proc.StandardOutput.ReadToEnd();
+            MessageBox.Show(result + "Check the backup.log in D:/backup");
+        }
         static void Main()
         {
+            // Create a TimerCallback delegate that specifies the method to be executed
+            TimerCallback tcb = backup;
+            // Create a new Timer that calls the backup method every 5 minutes
+            backupTimer = new System.Threading.Timer(tcb, null, 0, 5 * 60 * 1000);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());

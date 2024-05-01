@@ -15,7 +15,6 @@ namespace ATBM_A_14
         }
         private void AssignmentProcessing_Load(object sender, EventArgs e)
         {
-            // string table = (!Program.human.getName().Contains("Trưởng đơn vị")) ? Program.human.PHANCONG() : ;
             string sql1 = $"select * from {Program.SCHEMA}.{Program.human.PHANCONG()}";
             OracleCommand command = new OracleCommand(sql1, Program.conn);
             try

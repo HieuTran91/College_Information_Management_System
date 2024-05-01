@@ -100,10 +100,11 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "Update";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(282, 397);
+            this.button4.Location = new System.Drawing.Point(300, 397);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 18;
@@ -113,12 +114,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(138, 397);
+            this.button3.Location = new System.Drawing.Point(165, 397);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 17;
             this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox3
             // 
@@ -177,9 +179,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(188, 347);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 16);
+            this.label8.Size = new System.Drawing.Size(93, 16);
             this.label8.TabIndex = 9;
-            this.label8.Text = "IDUnit";
+            this.label8.Text = "Department ID";
             // 
             // label7
             // 
@@ -216,7 +218,6 @@
             this.label4.Size = new System.Drawing.Size(79, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Date of Birth";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -257,9 +258,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(188, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID Human";
+            this.label1.Text = "Employee ID";
             // 
             // HandlingEmployee
             // 

@@ -16,18 +16,27 @@ namespace ATBM_A_14
         {
             InitializeComponent();
         }
+        private void HandlingEmployee_Load(object sender, EventArgs e)
+        {
+            comboBox2.Items.Add("Nhân viên cơ bản");
+            comboBox2.Items.Add("Giảng viên");
+            comboBox2.Items.Add("Giáo vụ");
+            comboBox2.Items.Add("Trưởng đơn vị");
+            comboBox2.Items.Add("Trưởng khoa");
 
-        private void label4_Click(object sender, EventArgs e)
+        }
+        // insert
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
-
+        // delete
         private void button4_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void HandlingEmployee_Load(object sender, EventArgs e)
+        // update
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }

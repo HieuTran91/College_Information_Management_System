@@ -1,3 +1,5 @@
+alter session set container = PDB_ATBMHTTT;
+
 alter session set current_schema = ad;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
@@ -144,15 +146,12 @@ BEGIN
         END IF;
         EXECUTE IMMEDIATE(STRSQL);     
     END LOOP; 
-    
-    
-    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
-    EXECUTE IMMEDIATE(STRSQL); 
     CLOSE CUR;
 END; 
 /
 
 EXEC GRANT_ROLE_TO_SV;
+
 EXEC GRANT_ROLE_TO_NV;
 
 --

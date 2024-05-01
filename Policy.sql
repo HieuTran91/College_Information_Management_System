@@ -81,7 +81,7 @@ exec USP_CREATENHANVIEN;
 
 
 -- kiểm tra user đã tạo
-SELECT username, created FROM dba_users where username like 'SV%' or username like 'NV%';
+--SELECT username, created FROM dba_users where username like 'SV%' or username like 'NV%';
 
 --tạo role
 create role RL_NVCB;

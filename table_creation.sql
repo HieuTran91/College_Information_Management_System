@@ -1,6 +1,5 @@
 
 alter session set current_schema = ad;
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 alter session set container = PDB_ATBMHTTT;
 -- top 3 important commands
 

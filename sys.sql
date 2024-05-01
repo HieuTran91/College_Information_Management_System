@@ -21,7 +21,7 @@ show con_name;
 GRANT EXECUTE ANY PROCEDURE TO ad; 
 GRANT ALL PRIVILEGES TO ad;
 
-select * from dba_users where username = 'AD';
+--select * from dba_users where username = 'AD';
 
 grant execute on sys.DBMS_RLS to ad; -- to add policy
 

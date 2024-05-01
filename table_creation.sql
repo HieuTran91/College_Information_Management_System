@@ -8,7 +8,7 @@ alter session set container = PDB_ATBMHTTT;
 -- Code xóa những bảng đã tồn tại
 DECLARE
    tables_to_drop   DBMS_SQL.VARCHAR2_TABLE
-      := DBMS_SQL.VARCHAR2_TABLE ('SINHVIEN', 'DONVI', 'NHANSU','HOCPHAN','KHMO','PHANCONG','DANGKY');
+      := DBMS_SQL.VARCHAR2_TABLE ('SINHVIEN', 'DONVI', 'NHANSU','HOCPHAN','KHMO','PHANCONG','DANGKY', 'THONGBAO');
 BEGIN
    FOR i IN 1 .. tables_to_drop.COUNT
    LOOP
@@ -33,6 +33,7 @@ CREATE TABLE SINHVIEN (
     MANGANH VARCHAR2(10),
     SOTCTL INT,
     DTBTL FLOAT,
+    MACS char(3),
     
     PRIMARY KEY (MASV),
     constraint SV_PHAI check (PHAI = N'Nam' or PHAI = N'Nữ'),
@@ -58,6 +59,7 @@ create table NHANSU
     DT char(10),
     VAITRO nvarchar2(20),
     MADV CHAR(4),
+    MACS char(3),
     
     PRIMARY KEY (MANV),
     constraint NHANSU_Phai check (PHAI = N'Nam' OR PHAI = N'Nữ'),
@@ -120,4 +122,15 @@ CREATE TABLE DANGKY (
     constraint FK_DK_NS foreign key (MAGV) references NHANSU(MANV),
     constraint FK_DK_HP foreign key (MAHP) references HOCPHAN(MAHP),
     constraint DK_NUM check (HK >=0 and NAM >= 0)
+);
+
+create table THONGBAO
+(
+    MATB CHAR(5),
+    NOIDUNG NVARCHAR2(200),
+    VAITRO nvarchar2(4),
+    MADV CHAR(4),
+    COSO NVARCHAR2(4),
+    
+    PRIMARY KEY (MATB)
 );

@@ -36,7 +36,7 @@ namespace ATBM_A_14
         {
 
         }
-
+        // load backup files
         private void Recovery_Load(object sender, EventArgs e)
         {
             string folderPath = @"D:\oracle_fra\XE\AUTOBACKUP\2024_05_01";

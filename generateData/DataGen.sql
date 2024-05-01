@@ -9,37 +9,37 @@ DELETE FROM DANGKY;
 DELETE FROM THONGBAO;
 
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0001', 'Thông báo 1 - nội dung mẫu', 'TK', 'HTTT', 'CS1');
+VALUES ('A0001', 'Notification 1', 'TK', 'HTTT', 'CS1');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0002', 'Thông báo 2 - nội dung khác', 'TK', 'HTTT', 'CS2');
+VALUES ('A0002', 'Notification 2', 'TK', 'HTTT', 'CS2');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0003', 'Thông báo 3 - nội dung khác', 'TK', NULL, NULL);
+VALUES ('A0003', 'Notification 3', 'TK', NULL, NULL);
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0004', 'Thông báo 4 - nội dung khác', 'TK', 'KHMT', NULL);
+VALUES ('A0004', 'Notification 4', 'TK', 'KHMT', NULL);
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0005', 'Thông báo 5 - nội dung mẫu', 'TDV', 'HTTT', 'CS1');
+VALUES ('A0005', 'Notification 5', 'TDV', 'HTTT', 'CS1');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0006', 'Thông báo 6 - nội dung khác', 'TDV', 'HTTT', 'CS2');
+VALUES ('A0006', 'Notification 6', 'TDV', 'HTTT', 'CS2');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0007', 'Thông báo 7 - nội dung khác', 'TDV', 'KHMT', NULL);
+VALUES ('A0007', 'Notification 7', 'TDV', 'KHMT', NULL);
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0008', 'Thông báo 8 - nội dung khác', 'GV', NULL, NULL);
+VALUES ('A0008', 'Notification 8', 'GV', NULL, NULL);
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0009', 'Thông báo 9 - nội dung mẫu', 'GV', 'HTTT', 'CS1');
+VALUES ('A0009', 'Notification 9', 'GV', 'HTTT', 'CS1');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0010', 'Thông báo 10 - nội dung khác', 'TDV', NULL, NULL);
+VALUES ('A0010', 'Notification 10', 'TDV', NULL, NULL);
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0011', 'Thông báo 11 - nội dung khác', 'SV', 'HTTT', 'CS1');
+VALUES ('A0011', 'Notification 11', 'SV', 'HTTT', 'CS1');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0012', 'Thông báo 12 - nội dung khác', 'SV', 'KHMT', 'CS1');
+VALUES ('A0012', 'Notification 12', 'SV', 'KHMT', 'CS1');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0013', 'Thông báo 13 - nội dung mẫu', 'TDV', 'KHMT', 'CS1');
+VALUES ('A0013', 'Notification 13 ', 'TDV', 'KHMT', 'CS1');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0014', 'Thông báo 14 - nội dung khác', 'TDV', 'HTTT', 'CS1');
+VALUES ('A0014', 'Notification 14', 'TDV', 'HTTT', 'CS1');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0015', 'Thông báo 15 - nội dung khác', 'TDV', 'KHMT', 'CS2');
+VALUES ('A0015', 'Notification 15', 'TDV', 'KHMT', 'CS2');
 INSERT INTO THONGBAO (MATB, NOIDUNG, VAITRO, MADV, COSO)
-VALUES ('A0016', 'Thông báo 16 - nội dung khác', 'TDV', 'HTTT', 'CS2');
+VALUES ('A0016', 'Notification 16', 'TDV', 'HTTT', 'CS2');
 
 insert into SINHVIEN (MASV,HOTEN,PHAI,NGSINH,DCHI,DT,MACT,MANGANH,SOTCTL,DTBTL,MACS) values('SV0001','Mrs. Kelly Cook',N'Nam',TO_DATE('2005-10-28','YY-MM-DD'),'479 Conner Pass, New Tara','0354311270','VP','MMT',22,8.1,'CS2');
 insert into SINHVIEN (MASV,HOTEN,PHAI,NGSINH,DCHI,DT,MACT,MANGANH,SOTCTL,DTBTL,MACS) values('SV0002','Theresa Miller',N'Nữ',TO_DATE('2004-09-11','YY-MM-DD'),'1661 Davis Parkway, East Dawnborough','0293883101','CQ','HTTT',99,6.65,'CS1');

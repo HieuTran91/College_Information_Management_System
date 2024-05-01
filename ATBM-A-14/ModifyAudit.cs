@@ -22,17 +22,30 @@ namespace ATBM_A_14
 
         private void ModifyAudit_Load(object sender, EventArgs e)
         {
-            // label4.Text = "OFF"; // read from the database
-
-
-            // load object
-            comboBox1.Items.Add("NHANSU");
-            comboBox1.Items.Add("SINHVIEN");
-            comboBox1.Items.Add("DANGKY");
-            comboBox1.Items.Add("PHANCONG");
-            comboBox1.Items.Add("KHMO");
-            comboBox1.Items.Add("HOCPHAN");
-            comboBox1.Items.Add("DONVI");
+            // load Object
+            string sql = $"SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = UPPER('{Program.SCHEMA}')";
+            OracleCommand cmd = new OracleCommand(sql, Program.conn);
+            OracleDataReader reader = null;
+            try
+            {
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string privilege = reader.GetString(0);
+                    comboBox1.Items.Add(privilege);
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+            }
 
             // load action
             comboBox2.Items.Add("SELECT");
@@ -44,7 +57,7 @@ namespace ATBM_A_14
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text)) return;
-            string when = (checkBox1.Checked) ? "SUCCESSFUL" : "NO SUCCESSFUL";
+            string when = (checkBox1.Checked) ? "SUCCESSFUL" : "NOT SUCCESSFUL";
             string sql = "BEGIN EXECUTE IMMEDIATE 'AUDIT ' || :action || ' ON ' || :schema || '.' || :table || ' BY ACCESS WHENEVER ' || :when; END;";
             OracleCommand cmd = new OracleCommand(sql, Program.conn);
             try

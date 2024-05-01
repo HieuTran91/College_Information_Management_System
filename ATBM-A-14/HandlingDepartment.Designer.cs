@@ -79,6 +79,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -138,7 +139,6 @@
             this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Department ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // HandlingDepartment
             // 

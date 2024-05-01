@@ -16,13 +16,13 @@ namespace ATBM_A_14
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        // Insert
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        // Update
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

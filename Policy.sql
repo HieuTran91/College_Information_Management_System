@@ -1075,7 +1075,7 @@ BEGIN
         AND NAM = :NEW.NAM
         AND MACT = :NEW.MACT;
         IF v_count = 0 THEN
-            RAISE_APPLICATION_ERROR(-20001, 'Môn học chưa được phân công cho giáo viên');
+            RAISE_APPLICATION_ERROR(-20001, 'No teacher is assigned to this course yet');
         END IF;
     END IF;
     IF :NEW.MAGV IS NULL THEN
@@ -1087,7 +1087,7 @@ BEGIN
         AND NAM = :NEW.NAM
         AND MACT = :NEW.MACT;
         IF v_count = 0 THEN
-            RAISE_APPLICATION_ERROR(-20001, 'Môn học chưa được mở');
+            RAISE_APPLICATION_ERROR(-20001, 'Course hasnt been opened yet');
         ELSE
             SELECT MAGV
             INTO :NEW.MAGV
@@ -1101,5 +1101,13 @@ BEGIN
     END IF;
 END;
 /
+
+SELECT COUNT(*)
+        INTO v_count
+        FROM AD.PHANCONG
+        WHERE MAHP = :NEW.MAHP
+        AND HK = :NEW.HK
+        AND NAM = :NEW.NAM
+        AND MACT = :NEW.MACT;
 
 -- drop trigger trg_insert_dangky;

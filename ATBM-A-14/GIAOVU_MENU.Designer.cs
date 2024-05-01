@@ -51,6 +51,8 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.tabPage10.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -62,6 +64,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.tabPage11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage10
@@ -246,6 +249,7 @@
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -291,6 +295,25 @@
             this.panel11.Size = new System.Drawing.Size(1068, 581);
             this.panel11.TabIndex = 0;
             // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.panel13);
+            this.tabPage11.Location = new System.Drawing.Point(4, 25);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(1074, 587);
+            this.tabPage11.TabIndex = 12;
+            this.tabPage11.Text = "Notification";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // panel13
+            // 
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel13.Location = new System.Drawing.Point(3, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1068, 581);
+            this.panel13.TabIndex = 0;
+            // 
             // GIAOVU_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -312,6 +335,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
+            this.tabPage11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -340,5 +364,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.Panel panel13;
     }
 }

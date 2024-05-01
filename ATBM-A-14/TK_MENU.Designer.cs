@@ -48,6 +48,8 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -58,6 +60,7 @@
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,6 +74,7 @@
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -249,6 +253,25 @@
             this.panel9.Size = new System.Drawing.Size(1068, 581);
             this.panel9.TabIndex = 0;
             // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.panel10);
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1074, 587);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Notification";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1068, 581);
+            this.panel10.TabIndex = 0;
+            // 
             // TK_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -269,6 +292,7 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
+            this.tabPage10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -294,5 +318,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Panel panel10;
     }
 }

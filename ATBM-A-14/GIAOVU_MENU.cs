@@ -77,6 +77,11 @@ namespace ATBM_A_14
             handleRegistration.TopLevel = false;
             panel11.Controls.Add(handleRegistration);
             handleRegistration.Show();
+
+            OLS_Notification notification = new OLS_Notification();
+            notification.TopLevel = false;
+            panel13.Controls.Add(notification);
+            notification.Show();
         }
     }
 }

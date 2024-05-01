@@ -3,13 +3,11 @@ ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 alter session set container = PDB_ATBMHTTT;
 alter pluggable database PDB_ATBMHTTT open READ WRITE;
 
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-
 --DROP USER ad cascade;
 
 CREATE user ad IDENTIFIED by 123;
 GRANT CREATE SESSION TO ad container = current;
-CONNECT ad/123;
+--CONNECT ad/123;
 show con_name;
 
 Grant SYSDBA TO AD;
@@ -17,7 +15,7 @@ GRANT EXECUTE ANY PROCEDURE TO ad;
 GRANT ALL PRIVILEGES TO ad;
 grant execute on sys.DBMS_RLS to ad; -- to add policy
 GRANT INHERIT PRIVILEGES ON USER sys TO ad; -- to create function
-
+-------------------------------------------------------------------------------------------------
 
 --select * from dba_users where username = 'ADMIN_OLS';
 

@@ -338,3 +338,4 @@ D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Recovery.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.TDV_MENU.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.TK_MENU.resources
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.OLS_Notification.resources

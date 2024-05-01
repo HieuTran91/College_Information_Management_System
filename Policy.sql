@@ -559,6 +559,7 @@ grant select on ad.SINHVIEN to RL_TK;
 grant select on ad.DONVI to RL_TK;
 grant select on ad.HOCPHAN to RL_TK;
 grant select on ad.KHMO to RL_TK;
+grant select on ad.PHANCONG to RL_TK;
 
 GRANT SELECT ON VIEW_THONGTIN_NVCB TO RL_TK;
 GRANT UPDATE(DT) ON VIEW_THONGTIN_NVCB TO RL_TK;

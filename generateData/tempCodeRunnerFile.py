@@ -12,3 +12,9 @@ text = """update DONVI set TRGDV = {0} where MADV = {1};\n"""
 
 diemth = round(random.uniform(0.0,10.0),2)
 print(diemth)
+
+
+
+
+MACS = 'CS1' if random.randint(0,1) == 1 else 'CS2'
+print(MACS)

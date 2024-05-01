@@ -56,8 +56,9 @@ for i in range(1, student_size + 1):
     MANGANH = gen_MANGANH()
     SOTC = random.randint(0,138)
     DTB = round(random.uniform(5.0,10.0),2)
-    text = """insert into SINHVIEN (MASV,HOTEN,PHAI,NGSINH,DCHI,DT,MACT,MANGANH,SOTCTL,DTBTL) values('{9}',{0},{1},TO_DATE({2},'YY-MM-DD'),{3},{4},{5},{6},{7},{8})"""
-    text_val = text.format(name,phai,ngsinh,dchi, dt, MACT, MANGANH, random.randint(0,138),DTB,student_id)
+    MACS = 'CS1' if random.randint(0,1) == 1 else 'CS2'
+    text = """insert into SINHVIEN (MASV,HOTEN,PHAI,NGSINH,DCHI,DT,MACT,MANGANH,SOTCTL,DTBTL,MACS) values('{9}',{0},{1},TO_DATE({2},'YY-MM-DD'),{3},{4},{5},{6},{7},{8},'{10}')"""
+    text_val = text.format(name,phai,ngsinh,dchi, dt, MACT, MANGANH, random.randint(0,138),DTB,student_id,MACS)
     temp += text_val + ";\n"
     # cursor.execute(text_val)
 
@@ -85,11 +86,12 @@ for i in range(1,EmployeeSize + 1):
     phucap = round(random.uniform(0.0,5.0),1)
     vaitro = gen_ROLE(manv)
     madv = ""
+    MACS = 'CS1' if random.randint(0,1) == 1 else 'CS2'
     if vaitro == "N'Nhân viên cơ bản'" or vaitro == "N'Giáo vụ'": madv = "DV01"
     elif vaitro == "N'Trưởng đơn vị'": madv = f"DV{len(DONVI_TRG) + 1:02}" if len(DONVI_TRG) > 0 else "DV01"
     else: madv = f"DV{random.choice([2,3,4,5,6,7]):02}"
-    text = """insert into NHANSU(MANV,HOTEN,PHAI,NGSINH,PHUCAP,DT,VAITRO,MADV) values('{7}',{0},{1},TO_DATE({2},'YY-MM-DD'),{3},{4},{5},'{6}');\n"""
-    text_val = text.format(name,phai,ngsinh,phucap,dt,vaitro,madv,manv)
+    text = """insert into NHANSU(MANV,HOTEN,PHAI,NGSINH,PHUCAP,DT,VAITRO,MADV,MACS) values('{7}',{0},{1},TO_DATE({2},'YY-MM-DD'),{3},{4},{5},'{6}','{8}');\n"""
+    text_val = text.format(name,phai,ngsinh,phucap,dt,vaitro,madv,manv,MACS)
     File.write(text_val)
 
 #--------------UPDATE DONVI

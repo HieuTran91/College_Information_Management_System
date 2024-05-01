@@ -1,6 +1,8 @@
 alter session set current_schema = sys;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 alter session set container = PDB_ATBMHTTT;
+alter pluggable database PDB_ATBMHTTT open READ WRITE;
+
 
 SELECT VALUE FROM v$option WHERE parameter = 'Oracle Label Security'; 
 SELECT status FROM dba_ols_status WHERE name = 'OLS_CONFIGURE_STATUS'; 

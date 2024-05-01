@@ -58,7 +58,7 @@ namespace ATBM_A_14
     public class TK : GIANGVIEN
     {
         public string PC_CRUD() => "VIEW_TK_PC";
-        public override string PHANCONG() => "PHANCONG";
+        public override string PHANCONG() => "PHANCONG"; // VIEW_TK_PC
         public override string DANGKY() => "DANGKY";
         public override string getName() => "Trưởng khoa";
     }

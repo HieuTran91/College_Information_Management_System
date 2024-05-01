@@ -124,19 +124,19 @@ BEGIN
     LOOP 
         FETCH CUR INTO USR, ROLE_USR; 
         EXIT WHEN CUR%NOTFOUND; 
-        IF ROLE_USR = 'Nhân viên cơ bản' THEN
+        IF ROLE_USR = N'Nhân viên cơ bản' THEN
             STRSQL := 'GRANT RL_NVCB TO '||USR; 
         END IF;
-        IF ROLE_USR = 'Giảng viên' THEN
+        IF ROLE_USR = N'Giảng viên' THEN
             STRSQL := 'GRANT RL_GIANGVIEN TO '||USR; 
         END IF;
-        IF ROLE_USR = 'Giáo vụ' THEN
+        IF ROLE_USR = N'Giáo vụ' THEN
             STRSQL := 'GRANT RL_GIAOVU TO '||USR; 
         END IF;
-        IF ROLE_USR = 'Trưởng đơn vị' THEN
+        IF ROLE_USR = N'Trưởng đơn vị' THEN
             STRSQL := 'GRANT RL_TDV TO '||USR; 
         END IF;
-        IF ROLE_USR = 'Trưởng khoa' THEN
+        IF ROLE_USR = N'Trưởng khoa' THEN
             STRSQL := 'GRANT RL_TK TO '||USR; 
         END IF;
         EXECUTE IMMEDIATE(STRSQL);     

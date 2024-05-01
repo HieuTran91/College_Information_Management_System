@@ -651,6 +651,31 @@ begin
 end;
 /
 
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'HOCPHAN'
+  AND POLICY_NAME = 'SV_HP'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'HOCPHAN',
+      policy_name     => 'SV_HP'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
+/
+
+
+
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',

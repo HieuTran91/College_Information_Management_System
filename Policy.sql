@@ -1,6 +1,13 @@
+alter session set current_schema = ad;
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
+
+show con_name;
+
+
 ------Yêu cầu 1: Cấp quyền truy cập 
 
-select * from AD.NHANSU;
+--select * from AD.NHANSU;
 -- xác đinh schema
 alter session set current_schema = ad;
 
@@ -36,8 +43,7 @@ BEGIN
     EXECUTE IMMEDIATE(STRSQL); 
     CLOSE CUR; 
 END; 
-
-Exec USP_CREATENHANVIEN;
+/
 
 CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN authid current_user
 AS 
@@ -66,6 +72,7 @@ BEGIN
     EXECUTE IMMEDIATE(STRSQL); 
     CLOSE CUR; 
 END; 
+/
 
 exec USP_CREATESINHVIEN;
 exec USP_CREATENHANVIEN;
@@ -306,6 +313,28 @@ BEGIN
 END;
 /
 
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'PHANCONG'
+  AND POLICY_NAME = 'GV_PHANCONG'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'PHANCONG',
+      policy_name     => 'GV_PHANCONG'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
+/
 
 BEGIN
  DBMS_RLS.ADD_POLICY(
@@ -366,6 +395,29 @@ begin
         end if;
     end if;
 end;
+/
+
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'DANGKY'
+  AND POLICY_NAME = 'GV_Delete'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'DANGKY',
+      policy_name     => 'GV_Delete'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
 /
 
 BEGIN
@@ -434,6 +486,29 @@ begin
         end if;
     end if;
 end;
+/
+
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'DANGKY'
+  AND POLICY_NAME = 'GV_Insert'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'DANGKY',
+      policy_name     => 'GV_Insert'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
 /
 
 BEGIN
@@ -548,6 +623,29 @@ begin
 end;
 /
 
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'SINHVIEN'
+  AND POLICY_NAME = 'SV_SV'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'SINHVIEN',
+      policy_name     => 'SV_SV'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
+/
+
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -601,6 +699,29 @@ begin
 end;
 /
 
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'KHMO'
+  AND POLICY_NAME = 'SV_KHMO'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'KHMO',
+      policy_name     => 'SV_KHMO'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
+/
+
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -651,6 +772,30 @@ begin
 end;
 /
 
+
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'HOCPHAN'
+  AND POLICY_NAME = 'SV_HP'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'HOCPHAN',
+      policy_name     => 'SV_HP'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
+/
+
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -687,6 +832,30 @@ begin
         end if;
     end if;
 end;
+/
+
+
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'DANGKY'
+  AND POLICY_NAME = 'SV_DK'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'DANGKY',
+      policy_name     => 'SV_DK'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
 /
 
 BEGIN
@@ -767,6 +936,29 @@ begin
 end;
 /
 
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'DANGKY'
+  AND POLICY_NAME = 'SV_Delete'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'DANGKY',
+      policy_name     => 'SV_Delete'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
+/
+
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -835,6 +1027,29 @@ begin
 end;
 /
 
+DECLARE
+  policy_exists NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO policy_exists
+  FROM ALL_POLICIES
+  WHERE OBJECT_NAME = 'DANGKY'
+  AND POLICY_NAME = 'SV_Insert'
+  AND OBJECT_OWNER = 'AD';
+
+  IF policy_exists > 0 THEN
+    DBMS_RLS.DROP_POLICY(
+      object_schema   => 'AD',
+      object_name     => 'DANGKY',
+      policy_name     => 'SV_Insert'
+    );
+    DBMS_OUTPUT.PUT_LINE('Policy dropped.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Policy does not exist.');
+  END IF;
+END;
+/
+
 BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'AD',
@@ -892,4 +1107,4 @@ BEGIN
 END;
 /
 
-drop trigger trg_insert_dangky;
+-- drop trigger trg_insert_dangky;

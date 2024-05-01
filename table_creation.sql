@@ -1,5 +1,5 @@
 
-alter session set current_schema = ad;
+alter session set current_schema = AD;
 alter session set container = PDB_ATBMHTTT;
 -- top 3 important commands
 

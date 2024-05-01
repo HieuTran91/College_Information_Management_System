@@ -1,5 +1,7 @@
 alter session set current_schema = ad;
 
+SELECT * FROM v$option where PARAMETER like '%Audit%'
+
 show parameter audit;
 
 show parameter audit_trail;

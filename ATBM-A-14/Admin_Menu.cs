@@ -47,10 +47,6 @@ namespace ATBM_A_14
             panel7.Controls.Add(recovery);
             recovery.Show();
 
-            // turn this one for uncommon user
-            string sql = "ALTER SESSION SET \"_ORACLE_SCRIPT\" = TRUE";
-            OracleCommand cmd = new OracleCommand(sql, Program.conn);
-            cmd.ExecuteNonQuery();
         }
         private void button1_Click(object sender, EventArgs e)
         {

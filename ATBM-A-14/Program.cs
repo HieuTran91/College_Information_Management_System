@@ -20,7 +20,7 @@ namespace ATBM_A_14
 
         // config here
         public static string HOST = "localhost";
-        public static string SERVICE = "xe"; // SID is also fine here
+        public static string SERVICE = "PDB_ATBMHTTT"; // SID is also fine here
         public static string PORT = "1521";
         public static string SCHEMA = "ad";
 

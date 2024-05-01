@@ -1,4 +1,10 @@
+
 alter session set current_schema = ad;
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+alter session set container = PDB_ATBMHTTT;
+-- top 3 important commands
+
+
 -- Code xóa những bảng đã tồn tại
 DECLARE
    tables_to_drop   DBMS_SQL.VARCHAR2_TABLE

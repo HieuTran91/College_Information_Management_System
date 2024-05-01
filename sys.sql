@@ -1,5 +1,6 @@
 alter session set current_schema = sys;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+alter session set container = PDB_ATBMHTTT;
 
 SELECT VALUE FROM v$option WHERE parameter = 'Oracle Label Security'; 
 SELECT status FROM dba_ols_status WHERE name = 'OLS_CONFIGURE_STATUS'; 
@@ -10,7 +11,9 @@ ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 --DROP USER ad cascade;
 
 CREATE user ad IDENTIFIED by 123;
-GRANT CREATE SESSION TO ad container = all;
+GRANT CREATE SESSION TO ad container = current;
+Grant SYSDBA TO AD;
+
 CONNECT ad/123;
 
 show con_name;
@@ -18,8 +21,8 @@ show con_name;
 GRANT EXECUTE ANY PROCEDURE TO ad; 
 GRANT ALL PRIVILEGES TO ad;
 
-grant execute on sys.DBMS_RLS to ad;
+select * from dba_users where username = 'AD';
 
-Grant SYSDBA TO AD;
+grant execute on sys.DBMS_RLS to ad; -- to add policy
 
-GRANT INHERIT PRIVILEGES ON USER sys TO ad;
+GRANT INHERIT PRIVILEGES ON USER sys TO ad; -- to create function

@@ -43,6 +43,11 @@ namespace ATBM_A_14
             coursePlan.TopLevel = false;
             panel5.Controls.Add(coursePlan);
             coursePlan.Show();
+
+            OLS_Notification notification = new OLS_Notification();
+            notification.TopLevel = false;
+            panel6.Controls.Add(notification);
+            notification.Show();
         }
     }
 }

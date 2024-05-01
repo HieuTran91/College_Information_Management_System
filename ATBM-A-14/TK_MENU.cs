@@ -62,6 +62,11 @@ namespace ATBM_A_14
             handlingEmployee.TopLevel = false;
             panel9.Controls.Add(handlingEmployee);
             handlingEmployee.Show();
+
+            OLS_Notification notification = new OLS_Notification();
+            notification.TopLevel = false;
+            panel10.Controls.Add(notification);
+            notification.Show();
         }
     }
 }

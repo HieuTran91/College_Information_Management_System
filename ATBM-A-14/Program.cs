@@ -32,8 +32,8 @@ namespace ATBM_A_14
         public static int getHK()
         {
             int currentMonth = DateTime.Now.Month;
-            if (currentMonth >= 1 && currentMonth <= 5) return 1;
-            else if (currentMonth >= 6 && currentMonth <= 9) return 2;
+            if (currentMonth >= 1 && currentMonth < 5) return 1;
+            else if (currentMonth >= 5 && currentMonth < 9) return 2;
             return 3;
         }
         public static void backup(object state)

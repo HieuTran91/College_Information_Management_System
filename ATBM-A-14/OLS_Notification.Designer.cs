@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +46,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notification";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(656, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 30);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Refresh ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -57,15 +67,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(620, 267);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(656, 279);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Refresh ";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // OLS_Notification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -75,6 +76,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OLS_Notification";
             this.Text = "OLS_Notification";
+            this.Load += new System.EventHandler(this.OLS_Notification_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

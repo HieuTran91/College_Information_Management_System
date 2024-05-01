@@ -1,17 +1,24 @@
 alter session set current_schema = ad;
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-
 
 show con_name;
-
 
 ------Yêu cầu 1: Cấp quyền truy cập 
 
 --select * from AD.NHANSU;
--- xác đinh schema
-alter session set current_schema = ad;
 
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+-- DROP USERS
+
+--BEGIN
+--  FOR user_rec IN (
+--    SELECT username
+--    FROM dba_users
+--    WHERE username LIKE 'NV%' OR username LIKE 'SV%'
+--  ) LOOP
+--    -- Add additional checks and validations here if necessary
+--    EXECUTE IMMEDIATE 'DROP USER ' || user_rec.username || ' CASCADE'; 
+--  END LOOP;
+--END;
+--/
 
 -- tạo user
 
@@ -25,9 +32,7 @@ AS
     STRSQL VARCHAR(2000); 
     USR VARCHAR2(5); 
 BEGIN 
-    OPEN CUR; 
-    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
-    EXECUTE IMMEDIATE(STRSQL); 
+    OPEN CUR;
     LOOP 
         FETCH CUR INTO USR; 
         EXIT WHEN CUR%NOTFOUND; 
@@ -39,8 +44,6 @@ BEGIN
         
         -- do some if else to grant specific role here
     END LOOP; 
-    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
-    EXECUTE IMMEDIATE(STRSQL); 
     CLOSE CUR; 
 END; 
 /
@@ -55,9 +58,7 @@ AS
     STRSQL VARCHAR(2000); 
     USR VARCHAR2(6); 
 BEGIN 
-    OPEN CUR; 
-    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
-    EXECUTE IMMEDIATE(STRSQL); 
+    OPEN CUR;
     LOOP 
         FETCH CUR INTO USR; 
         EXIT WHEN CUR%NOTFOUND; 
@@ -67,9 +68,7 @@ BEGIN
         STRSQL := 'GRANT CONNECT TO '||USR; 
         EXECUTE IMMEDIATE(STRSQL);
         
-    END LOOP; 
-    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
-    EXECUTE IMMEDIATE(STRSQL); 
+    END LOOP;  
     CLOSE CUR; 
 END; 
 /
@@ -100,21 +99,19 @@ AS
     STRSQL VARCHAR(2000); 
     USR VARCHAR2(6);
 BEGIN 
-    OPEN CUR; 
-    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
-    EXECUTE IMMEDIATE(STRSQL); 
+    OPEN CUR;
     LOOP 
         FETCH CUR INTO USR; 
         EXIT WHEN CUR%NOTFOUND; 
              
         STRSQL := 'GRANT RL_SV TO '|| USR; 
         EXECUTE IMMEDIATE(STRSQL);     
-    END LOOP;     
-    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
-    EXECUTE IMMEDIATE(STRSQL); 
+    END LOOP;
     CLOSE CUR;
 END; 
 /
+
+EXEC GRANT_ROLE_TO_SV;
 
 CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_NV authid current_user
 AS 
@@ -144,15 +141,10 @@ BEGIN
         END IF;
         EXECUTE IMMEDIATE(STRSQL);     
     END LOOP; 
-    
-    
-    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
-    EXECUTE IMMEDIATE(STRSQL); 
     CLOSE CUR;
-END; 
+END;
 /
 
-EXEC GRANT_ROLE_TO_SV;
 EXEC GRANT_ROLE_TO_NV;
 
 --

@@ -290,7 +290,6 @@ D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\bin\
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.csproj.AssemblyReference.cache
-D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Assigment.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.AssignmentProcessing.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.CourseInformation.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.CoursePlanInformation.resources
@@ -312,7 +311,6 @@ D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.StudentInformation.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.SV_MENU.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.DepartmentInformation.resources
-D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UpdateScore.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.UserTab.resources
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.csproj.GenerateResource.cache
 D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.csproj.CoreCompileInputs.cache
@@ -331,3 +329,12 @@ D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.H
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Audit.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.ModifyAudit.resources
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Recovery.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Assignment.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Audit.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.GIANGVIEN_MENU.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.HandleCoursePlan.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.ModifyAudit.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.OLS_Notification.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Recovery.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.TDV_MENU.resources
+D:\STUDY AT UNIVERSITY\SchoolYear3\Semeter2\ATBMTT\Project\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.TK_MENU.resources

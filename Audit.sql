@@ -1,9 +1,10 @@
 alter session set current_schema = ad;
+alter session set container = PDB_ATBMHTTT;
 
 --SELECT * FROM v$option where PARAMETER like '%Audit%'
 
 show parameter audit;
-
+show con_name;
 show parameter audit_trail;
 
 -- STANDARD AUDIT

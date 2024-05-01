@@ -174,6 +174,12 @@
     <Compile Include="Audit.Designer.cs">
       <DependentUpon>Audit.cs</DependentUpon>
     </Compile>
+    <Compile Include="OLS_Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OLS_Notification.Designer.cs">
+      <DependentUpon>OLS_Notification.cs</DependentUpon>
+    </Compile>
     <Compile Include="TABLE_CLASS.cs" />
     <Compile Include="CourseInformation.cs">
       <SubType>Form</SubType>
@@ -392,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NVCB_MENU.resx">
       <DependentUpon>NVCB_MENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OLS_Notification.resx">
+      <DependentUpon>OLS_Notification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalInformation.resx">
       <DependentUpon>PersonalInformation.cs</DependentUpon>

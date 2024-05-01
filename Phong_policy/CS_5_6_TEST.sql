@@ -28,6 +28,7 @@ select * from ad.DONVI;
 select * from ad.HOCPHAN;
 select * from ad.SINHVIEN;
 
+select manv from ad.NHANSU where VAITRO = N'Giảng viên';
 
 select VAITRO from ad.VIEW_THONGTIN_NVCB;
 

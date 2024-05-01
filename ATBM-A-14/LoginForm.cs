@@ -31,9 +31,8 @@ namespace ATBM_A_14
                 Program.password = _password;
 
                 // if else here for each user each form
-
                 this.Hide();
-                if (_username == Program.SCHEMA)
+                if (_username == Program.SCHEMA || _username.ToLower() == "sys")
                 {
                     conn.Close(); // close the current one and make a new one
                     conn_str = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={Program.HOST})(PORT={Program.PORT})))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={Program.SERVICE})));User Id={_username};Password={_password};DBA Privilege=SYSDBA;";

@@ -39,6 +39,19 @@ namespace ATBM_A_14
                 dataGridView1.DataSource = data;
             }
             catch (OracleException ex) { MessageBox.Show(ex.Message); }
+
+            // load unified
+            sql1 = "select EVENT_TIMESTAMP, ACTION_NAME, RMAN_SESSION_RECID,RMAN_SESSION_STAMP, RMAN_OPERATION, RMAN_OBJECT_TYPE, RMAN_DEVICE_TYPE " +
+            "from unified_audit_trail where ACTION_NAME like '%RMAN%' order by 1";
+            command = new OracleCommand(sql1, Program.conn);
+            try
+            {
+                DataTable data = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(data);
+                dataGridView3.DataSource = data;
+            }
+            catch (OracleException ex) { MessageBox.Show(ex.Message); }
         }
         // refresh buttons
         private void button4_Click(object sender, EventArgs e)
@@ -47,6 +60,11 @@ namespace ATBM_A_14
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Audit_Load(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             Audit_Load(sender, e);
         }

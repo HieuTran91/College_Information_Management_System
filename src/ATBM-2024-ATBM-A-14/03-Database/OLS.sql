@@ -1,0 +1,123 @@
+
+BEGIN 
+    SA_SYSDBA.CREATE_POLICY( 
+    policy_name => 'notification_policy',  
+    column_name => 'notification_label' 
+    ); 
+END;
+
+select * from ad.THONGBAO;
+alter session set current_schema = ad;
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+alter session set container = PDB_ATBMHTTT;
+drop table sys.THONGBAO;
+
+--BEGIN
+--    SA_SYSDBA.DROP_POLICY(
+--        policy_name => 'notification_policy',  -- replace with your policy name
+--        drop_column=> true
+--    );
+--END;
+
+EXEC SA_SYSDBA.ENABLE_POLICY ('notification_policy'); 
+
+-- create level
+EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',300,'TK', 'TRUONG KHOA'); 
+EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',250,'TDV','TRUONG DON VI'); 
+EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',200,'GVN','GIAO VIEN');
+EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',150,'GV','GIAO VU');
+EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',100,'NV','NHAN VIEN');
+EXECUTE SA_COMPONENTS.CREATE_LEVEL('notification_policy',50,'SV','SINH VIEN');
+
+-- create compartment
+EXECUTE SA_COMPONENTS.CREATE_COMPARTMENT('notification_policy',5,'HTTT','HE THONG THONG TIN'); 
+EXECUTE SA_COMPONENTS.CREATE_COMPARTMENT('notification_policy',10,'CNPM','CONG NGHE PHAN MEM'); 
+EXECUTE SA_COMPONENTS.CREATE_COMPARTMENT('notification_policy',15,'KHMT','KHOA HOC MAY TINH'); 
+EXECUTE SA_COMPONENTS.CREATE_COMPARTMENT('notification_policy',20,'CNTT','CONG NGHE THONG TIN'); 
+EXECUTE SA_COMPONENTS.CREATE_COMPARTMENT('notification_policy',25,'TGMT','THI GIAC MAY TINH'); 
+EXECUTE SA_COMPONENTS.CREATE_COMPARTMENT('notification_policy',30,'MMT','MANG MAY TINH'); 
+
+-- create group
+EXECUTE SA_COMPONENTS.CREATE_GROUP('notification_policy',10,'CS1','CO SO 1'); 
+EXECUTE SA_COMPONENTS.CREATE_GROUP('notification_policy',15,'CS2','CO SO 2');
+
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('NV002', 'TK', null, null);
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('NV016', 'TDV', NULL, 'CS2');
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('NV006', 'GV', NULL, NULL);
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('NV017', 'TDV', NULL, NULL);
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('SV0002', 'SV', 'HTTT', 'CS1');
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('NV018', 'TDV', 'KHMT', 'CS1');
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('NV018', 'TDV', 'KHMT', 'CS1');
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('NV028', 'GV', 'KHMT', 'CS2');
+--INSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('SV0015', 'SV', 'HTTT', 'CS1');
+--iNSERT INTO NHANSU_OLS(MANV, VAITRO, MADV, COSO) VALUES('NV014', 'GV', 'HTTT', 'CS1');
+
+select * from ad.nhansu WHERE MADV = 'DV02';
+select * from ad.sinhvien;
+select * from ad.donvi;
+
+--GRANT CONNECT TO NV001, NV002, NV003, NV004, NV005, NV006, NV007, NV008, NV009, NV010;
+GRANT SELECT ON AD.THONGBAO TO NV002, NV006, NV016, NV017, NV018, NV028, NV014, SV0002, SV0015;
+
+--SELECT * FROM USER_POLICIES;
+
+-- CHECK
+--SELECT * FROM DBA_SA_LEVELS; 
+--SELECT * FROM DBA_SA_COMPARTMENTS; 
+--SELECT * FROM DBA_SA_GROUPS; 
+--SELECT * FROM DBA_SA_GROUP_HIERARCHY;   
+
+SELECT * FROM ALL_SA_LABELS;
+
+SELECT * FROM AD.THONGBAO;
+
+BEGIN
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','NV002','TK:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+ SA_USER_ADMIN.SET_USER_LABELS(
+      policy_name    => 'notification_policy',
+      user_name      => 'NV016', 
+      max_read_label => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','NV006','GV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','NV017','TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','SV0002','SV:HTTT:CS1');
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','NV018','TDV:KHMT:CS1');
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','NV018','TDV:KHMT:CS1,CS2');
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','NV028','GVN:HTTT:CS1,CS2');
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','SV0015','SV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+ SA_USER_ADMIN.SET_USER_LABELS('notification_policy','NV014','GVN:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+END; 
+
+BEGIN
+ SA_POLICY_ADMIN.REMOVE_TABLE_POLICY('notification_policy', 'AD', 'THONGBAO');
+ SA_POLICY_ADMIN.APPLY_TABLE_POLICY (
+ POLICY_NAME => 'NOTIFICATION_POLICY',
+ SCHEMA_NAME => 'AD',
+ TABLE_NAME => 'THONGBAO',
+ TABLE_OPTIONS => 'NO_CONTROL'
+ );
+END; 
+
+BEGIN
+    SA_POLICY_ADMIN.REMOVE_TABLE_POLICY('notification_policy', 'AD', 'THONGBAO');
+    SA_POLICY_ADMIN.APPLY_TABLE_POLICY (
+        policy_name    => 'notification_policy',
+        schema_name    => 'AD', 
+        table_name     => 'THONGBAO',
+        table_options  => 'READ_CONTROL',
+        label_function => 'AD.gen_notification_label(:new.VAITRO,:new.MADV,:new.COSO)',
+        predicate => NULL
+    );
+END;
+/
+
+CREATE OR REPLACE FUNCTION gen_notification_label(VAITRO VARCHAR2, MADV VARCHAR2, COSO VARCHAR2)
+RETURN lbacsys.lbac_label AS
+label VARCHAR2(30);
+BEGIN
+    label := VAITRO || ':' || MADV || ':' || COSO;
+    RETURN to_lbac_data_label('notification_policy', label);
+END;
+/
+
+GRANT EXECUTE ON gen_notification_label TO PUBLIC;
+
